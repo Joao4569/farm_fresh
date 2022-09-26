@@ -1,108 +1,143 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# Farm Fresh
 
-Welcome Joao4569,
+## Introduction
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions.
 
-You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Gitpod and the extensions we use. Some of this information has been updated since the video content was created. The last update to this file was: **September 1, 2021**
 
-## Gitpod Reminders
+## Table of Contents
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
+* [Conception](#Conception)
+  * [Project Scope](#Project-Scope)
+  * [Basic Wireframe Design](#Basic-Wireframe-Design)
+  * [Agile](#Agile)
 
-`python3 -m http.server`
+* [Project Setup](#Project-Setup)
+  * [Installing Django and supporting libraries](#Installing-Django-and-supporting-libraries)
+  * [Create new Django project and app](#Create-new-Django-project-and-app)
+  * [Deployment on Heroku](#Deployment-on-Heroku)
+    * [Steps to create Heroku App](#Steps-to-create-Heroku-App)
+    * [Setting up Config Vars](#Setting-up-Config-Vars)
+    * [Wiring up the Database](#Wiring-up-the-Database)
+    * [Cloudinary Setup](Cloudinary-Setup)
+    * [Deployment](#Deployment)
 
-A blue button should appear to click: _Make Public_,
+* [Deployment Testing](#Deployment-Testing)
 
-Another blue button should appear to click: _Open Browser_.
+* [Features - Existing Features](#features---existing-features)
 
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
+* [MVT Architecture](#MVT-Architecture)
+  * [Models](#Models)
+  * [Views](#Views)
+  * [Templates](#Templates)
 
-A blue button should appear to click: _Make Public_,
+* [Access Control](#Access-Control)
 
-Another blue button should appear to click: _Open Browser_.
+* [Features - Features Left To Implement](#features---features-left-to-impliment)
 
-In Gitpod you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
+* [Testing](#Testing)
+  * [Manual Testing](#Manual-Testing)
+  * [Validator Testing](#Validator-Testing)
+    * [Initial Validator Tests](#Initial-Validator-Tests)
+    * [Final Validator Tests](#Final-Validator-Tests)
+  * [Unfixed Bugs](#Unfixed-Bugs)
 
-To log into the Heroku toolbelt CLI:
+* [Credits](#Credits)
+  * [Content](#Content)
+  * [Media](#media)
 
-1. Log in to your Heroku account and go to *Account Settings* in the menu under your avatar.
-2. Scroll down to the *API Key* and click *Reveal*
-3. Copy the key
-4. In Gitpod, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
 
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you so do not share it. If you accidentally make it public then you can create a new one with _Regenerate API Key_.
+## Conception
 
-------
+My thinking was that given the requirements of the project, it would be very beneficial to formulate some kind of plan which would lay out the basic scope and design of my project in order to have some kind of structure with which to work with in order to avoid missing any crucial steps during construction and make the whole construction process as efficient as possible.
 
-## Release History
+I made use of the following resources in order to plan and visualise my project, named Farm Fresh:
+ - I made use of [Lucidchart](https://www.lucidchart.com/pages/) to design flowcharts in order to visualise the scope of my ideas and thought processes.
+ - I also made use [Lucidchart](https://www.lucidchart.com/pages/) to plan my use of Agile methodology and common practices, taught to me by Code Institute.
+ - [Lucidchart](https://www.lucidchart.com/pages/) has a ERD diagram template which I used to plan Ocean Basket's model.
+ - I made use of [Balsamiq](https://balsamiq.com/) in order to create a basic wireframe design for Ocean Basket's webpages.
 
-We continually tweak and adjust this template to help give you the best experience. Here is the version history:
 
-**September 1 2021:** Remove `PGHOSTADDR` environment variable.
+ ### Project Scope
 
-**July 19 2021:** Remove `font_fix` script now that the terminal font issue is fixed.
 
-**July 2 2021:** Remove extensions that are not available in Open VSX.
+### Basic Wireframe Design
 
-**June 30 2021:** Combined the P4 and P5 templates into one file, added the uptime script. See the FAQ at the end of this file.
+Once I had the basic scope and logic in place, I then proceeded to design a visual representation of what is needed for the basic functionality of the project from a user's point of view and how I would represent that.
 
-**June 10 2021:** Added: `font_fix` script and alias to fix the Terminal font issue
 
-**May 10 2021:** Added `heroku_config` script to allow Heroku API key to be stored as an environment variable.
 
-**April 7 2021:** Upgraded the template for VS Code instead of Theia.
+### Agile
 
-**October 21 2020:** Versions of the HTMLHint, Prettier, Bootstrap4 CDN and Auto Close extensions updated. The Python extension needs to stay the same version for now.
+I made use of agile common practises as described in the Code Institute tutorials. I did my best to come up with a complete layout of my agile plan from the get go but will make decisions in logical stages and update my diagrams and processes as the project develops, while documenting everything as the build progressed.
 
-**October 08 2020:** Additional large Gitpod files (`core.mongo*` and `core.python*`) are now hidden in the Explorer, and have been added to the `.gitignore` by default.
+This is how I approached the challenge:
 
-**September 22 2020:** Gitpod occasionally creates large `core.Microsoft` files. These are now hidden in the Explorer. A `.gitignore` file has been created to make sure these files will not be committed, along with other common files.
+1. After reading the project requirements and the User's goal for the project idea that I had selected, I came up with the project's user goal, themes and epics.
+2. From the epic's I derived the various user stories and built on this as the project developed.
+3. Once I had created some user stories, I then came up with the relevant tasks for each user story.
+4. After creating some stucture and scope for how to approach the task at hand, I started recording all my processes on Github:
+    - I created user story templates on Github for efficiency in the Agile process.
+    - I made use of Github issues to create and manage my user stories and for future defects if they arise.
+    - I also came up with user story acceptance criteria which I added to the user stories on Github issues.
+    - I allocated each user story with user story points, just as good practice.
+    - A product backlog was also created using Github milestones, and managed throughout the development of the project in order to structure my development process.
+    - As the build developed I would make refinements to the backlog.
+    - I also created an iteration milestone on Github for use in this project as a timebox.
+    - I made use of MoSCow prioritization by creating labels on Github and allocating them to the relevant user stories.
+    - I created a Kanban board for use as an information radiator in this project by using "projects" on Github.
 
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
 
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
+## Project Setup
 
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
+After completing the basic conception of my idea and designing some basic structure to it, I then proceeded to setting up my IDE for the project using the steps recommended by Code Institute, namely:
+1. Install Django and supported libraries
+2. Create new Django project and app
 
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
+### Installing Django and supporting libraries
 
-------
+1. Install Django version 3.2 which is the Long Term Support version of Django and recommended by Code Institute for the use on our projects.
 
-## FAQ about the uptime script
+### Create new Django project and app
 
-**Why have you added this script?**
+1. Create new blank Django project and name it farm_fresh.
+2. Migrate changes to database after creating the project
+3. Test if project is working correctly.
 
-It will help us to calculate how many running workspaces there are at any one time, which greatly helps us with cost and capacity planning. It will help us decide on the future direction of our cloud-based IDE strategy.
+## Access Control
 
-**How will this affect me?**
+I have created a few users which will be helpfull for testing the project:
 
-For everyday usage of Gitpod, it doesn’t have any effect at all. The script only captures the following data:
+**Superuser**
 
-- An ID that is randomly generated each time the workspace is started.
-- The current date and time
-- The workspace status of “started” or “running”, which is sent every 5 minutes.
+I created a Superuser in order to access the admin functions of Django. The Superuser is also what I use to create employees, as it is now a new employee can register his or her self the same way as a customer and with the Superuser logged in, one can allocate the "is Staff" property on the admin site.
 
-It is not possible for us or anyone else to trace the random ID back to an individual, and no personal data is being captured. It will not slow down the workspace or affect your work.
+ Credentials:
+   - Username: **farmfreshowner**
+   - Email: **joaorodrigues1@gmx.de**
+   - Password: **FreshProduce45** (case sensitive)
 
-**So….?**
+# Testing
 
-We want to tell you this so that we are being completely transparent about the data we collect and what we do with it.
+## Manual Testing
 
-**Can I opt out?**
+- After creating the `farm_fresh` project in Gitpod, I tested it buy running the application and recieved visual confirmation that the application is working successfully from Django.
 
-Yes, you can. Since no personally identifiable information is being captured, we'd appreciate it if you let the script run; however if you are unhappy with the idea, simply run the following commands from the terminal window after creating the workspace, and this will remove the uptime script:
+**Image Placeholder**
 
-```
-pkill uptime.sh
-rm .vscode/uptime.sh
-```
+## Validator Testing
 
-**Anything more?**
+- I Made use of the official [(Jigsaw) validator](https://jigsaw.w3.org/css-validator/) for the CSS file and the official [W3C validator](https://validator.w3.org/) for all HTML file testing.
+- I made use of [PEP8 online checker](http://pep8online.com/) to validate all python code.
 
-Yes! We'd strongly encourage you to look at the source code of the `uptime.sh` file so that you know what it's doing. As future software developers, it will be great practice to see how these shell scripts work.
+## Unfixed Bugs
 
----
+None that I am aware of.
 
-Happy coding!
+## Credits
+
+### Content
+
+ - All flowcharts and ERD diagrams used in this project were designed by making use of [Lucidchart](https://www.lucidchart.com/pages/).
+ - All wireframes used in this project were designed by making use of [Balsamiq](https://balsamiq.com/).
+ - I learned how to use `inline code blocks` in a Markdown file on [RIP Tutorial](https://riptutorial.com/markdown/example/1802/inline-code).
+ - Git commit message best practices taken from [How to Write Good Commit Messages: A Practical Git Guide](https://www.freecodecamp.org/news/writing-good-commit-messages-a-practical-guide/)
