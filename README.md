@@ -124,6 +124,7 @@ Opposed to building my own authentication system, allauth already has all the fe
 7. In settings.py I added The `ACCOUNT_AUTHENTICATION_METHOD = username_email` this is what tells allauth that we want to allow authentication using either usernames or emails.
 8. In settings.py, by setting `ACCOUNT_EMAIL_REQUIRED` to `True`, `ACCOUNT_EMAIL_VERIFICATION` to `mandatory` and `ACCOUNT_SIGNUP_EMAIL_ENTER_TWICE` to `True`, make it so that an email is required to register for the site. Verifying your email is mandatory so we know users are using a real email and they're going to be required to enter their email twice on the registration page to make sure that they haven't made any typos.
 9. I also set a minimum username length of four characters and specified a login url and a url to redirect back to after logging in.
+10. Finally create a allauth directory within the project level templates directory in order to store the customised allauth templates.
 
 ## Access Control
 
