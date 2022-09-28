@@ -140,6 +140,8 @@ I created a Superuser in order to access the admin functions of Django. The Supe
 
 - After creating the `farm_fresh` project in Gitpod, I tested it buy running the application and recieved visual confirmation that the application is working successfully from Django.
 
+- After installing Django allauth, I manually tested logging in and out of the admin site. I found some issues but they are now all resolved and noted in the Bugs found section of this document.
+
 **Image Placeholder**
 
 ## Validator Testing
@@ -150,6 +152,8 @@ I created a Superuser in order to access the admin functions of Django. The Supe
 ## Bugs found
 
 1. While testing Django allauth I found that I did not have a matching Django and Django allauth versions in order to proceed with the project as I was taught - **RESOLVED** by uninstalling Django 3.2 and installing Django 3.0.1, then creating a new SuperUser.
+
+2. While testing Django allauth I found this error in the terminal window: `TypeError: argument of type 'PosixPath' is not iterable`, I found a solution to the issue on [Stackoverflow](https://stackoverflow.com/questions/64634674/django-typeerror-argument-of-type-posixpath-is-not-iterable) by making use of the `os.path.join()` method on the default database name value.
 
 ## Unfixed Bugs
 
@@ -165,3 +169,4 @@ None that I am aware of.
  - Git commit message best practices taken from [How to Write Good Commit Messages: A Practical Git Guide](https://www.freecodecamp.org/news/writing-good-commit-messages-a-practical-guide/)
  - I made extensive use of Code Institute's learning content and tutorials throughout the project for revision as well as usefull content for my readme file.
  - I made extensive use of the Django Allauth documentation for most aspects of setting up authorisation for this project.
+ - Solution to issue found in terminal window while testing Django allauth sourced from [Stackoverflow](https://stackoverflow.com/questions/64634674/django-typeerror-argument-of-type-posixpath-is-not-iterable).
