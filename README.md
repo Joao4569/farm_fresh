@@ -60,7 +60,7 @@ I made use of the following resources in order to plan and visualise my project,
  - I made use of [Balsamiq](https://balsamiq.com/) in order to create a basic wireframe design for Ocean Basket's webpages.
 
 
- ### Project Scope
+### Project Scope
 
 
 ### Basic Wireframe Design
@@ -94,26 +94,30 @@ This is how I approached the challenge:
 
 After completing the basic conception of my idea and designing some basic structure to it, I then proceeded to setting up my IDE for the project using the steps recommended by Code Institute, namely:
 1. Install Django
-2. Create new Django project and app
+2. Create new Django project
 3. Install Django Allauth
-4. Create a `requirements.txt` file.
+4. Create a `requirements.txt` file
+5. Create a directory for storing all of the required and customised Django allauth templates.
+6. Create the MVT Architecture for Farm Fresh.
 
-### Installing Django and supporting libraries
+### Worth Noting:
+
+#### Installing Django and supporting libraries
 
 1. Install Django version 3.2 which is the Long Term Support version of Django and recommended by Code Institute for the use on our projects.
 **Note** - I changed the version of Django from 3.2 to 3.0.1 as I was having issues logging in to the admin site after installing Django allauth version 0.41.0. The Code institute tutorial specified to install Django 3.2 with Django allauth 0.41.0 but in the requirements.txt file for the tutorial it is specified as Django 3.0.1 and this resolved my issues.
 
-### Create new Django project and app
+#### Create new Django project
 
 1. Create new blank Django project and name it farm_fresh.
 2. Migrate changes to database after creating the project
 3. Test if project is working correctly.
 
-### Django Allauth
+#### Django Allauth
 
 Opposed to building my own authentication system, allauth already has all the features I'll need for the site and it's completely customizable and will allow me to add even more functionality later on. Additionally, it's open-source so it's backed by millions of developers who keep it secure and up-to-date and it's unlikely that I would be able to create something better without a ton of extra development time.
 
-#### Required Django Allauth settings
+##### Required Django Allauth settings
 
 1. The request context processor, `'django.template.context_processors.request'`, allows allauth and django itself to access the HTTP request object in the templates, i.e. to access request.user or request.user.email in the django templates. It's required because the allauth templates use the request object frequently.
 2. The authentication backend, `'allauth.account.auth_backends.AuthenticationBackend'`, in the setting.py file of the Farm Fresh project allows users to log into the store via their email address.
@@ -138,6 +142,16 @@ I created a Superuser in order to access the admin functions of Django. The Supe
    - Username: **FarmFresh**
    - Email: **joaorodrigues1@gmx.de**
    - Password: **Produce45** (case sensitive)
+
+# Features - Existing Features
+
+## MVT Architecture
+
+### Models
+
+### Views
+
+### Templates
 
 # Testing
 
@@ -177,3 +191,4 @@ None that I am aware of.
  - I made extensive use of Code Institute's learning content and tutorials throughout the project for revision as well as usefull content for my readme file.
  - I made extensive use of the Django Allauth documentation for most aspects of setting up authorisation for this project.
  - Solution to issue found in terminal window while testing Django allauth sourced from [Stackoverflow](https://stackoverflow.com/questions/64634674/django-typeerror-argument-of-type-posixpath-is-not-iterable).
+ - The Boutique Ado walkthrough project was the biggest source of information for this project and I have used many snippets of code and text from it's tutorial's, all have been commented and credited as and where required.
