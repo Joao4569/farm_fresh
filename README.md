@@ -14,6 +14,7 @@
 * [Project Setup](#Project-Setup)
   * [Installing Django and supporting libraries](#Installing-Django-and-supporting-libraries)
   * [Create new Django project and app](#Create-new-Django-project-and-app)
+  * [Django Allauth](#django-allauth)
   * [Deployment on Heroku](#Deployment-on-Heroku)
     * [Steps to create Heroku App](#Steps-to-create-Heroku-App)
     * [Setting up Config Vars](#Setting-up-Config-Vars)
@@ -103,6 +104,10 @@ After completing the basic conception of my idea and designing some basic struct
 1. Create new blank Django project and name it farm_fresh.
 2. Migrate changes to database after creating the project
 3. Test if project is working correctly.
+
+### Django Allauth
+
+Opposed to building my own authentication system, allauth already has all the features I'll need for the site and it's completely customizable and will allow me to add even more functionality later on. Additionally, it's open-source so it's backed by millions of developers who keep it secure and up-to-date and it's unlikely that I would be able to create something better without a ton of extra development time.
 
 ## Access Control
 
