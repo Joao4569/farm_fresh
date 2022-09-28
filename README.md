@@ -15,6 +15,7 @@
   * [Installing Django and supporting libraries](#Installing-Django-and-supporting-libraries)
   * [Create new Django project and app](#Create-new-Django-project-and-app)
   * [Django Allauth](#django-allauth)
+    * [Required Django Allauth settings](#required-django-allauth-settings)
   * [Deployment on Heroku](#Deployment-on-Heroku)
     * [Steps to create Heroku App](#Steps-to-create-Heroku-App)
     * [Setting up Config Vars](#Setting-up-Config-Vars)
