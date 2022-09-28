@@ -99,6 +99,7 @@ After completing the basic conception of my idea and designing some basic struct
 ### Installing Django and supporting libraries
 
 1. Install Django version 3.2 which is the Long Term Support version of Django and recommended by Code Institute for the use on our projects.
+**Note** - I changed the version of Django from 3.2 to 3.0.1 as I was having issues logging in to the admin site after installing Django allauth version 0.41.0. The Code institute tutorial specified to install Django 3.2 with Django allauth 0.41.0 but in the requirements.txt file for the tutorial it is specified as Django 3.0.1 and this resolved my issues.
 
 ### Create new Django project and app
 
@@ -128,9 +129,9 @@ I have created a few users which will be helpfull for testing the project:
 I created a Superuser in order to access the admin functions of Django. The Superuser is also what I use to create employees, as it is now a new employee can register his or her self the same way as a customer and with the Superuser logged in, one can allocate the "is Staff" property on the admin site.
 
  Credentials:
-   - Username: **farmfreshowner**
+   - Username: **FarmFresh**
    - Email: **joaorodrigues1@gmx.de**
-   - Password: **FreshProduce45** (case sensitive)
+   - Password: **Produce45** (case sensitive)
 
 # Testing
 
@@ -144,6 +145,10 @@ I created a Superuser in order to access the admin functions of Django. The Supe
 
 - I Made use of the official [(Jigsaw) validator](https://jigsaw.w3.org/css-validator/) for the CSS file and the official [W3C validator](https://validator.w3.org/) for all HTML file testing.
 - I made use of [PEP8 online checker](http://pep8online.com/) to validate all python code.
+
+## Bugs found
+
+1. While testing Django allauth I found that I did not have a matching Django and Django allauth versions in order to proceed with the project as I was taught - **RESOLVED** by uninstalling Django 3.2 and installing Django 3.0.1, then creating a new SuperUser.
 
 ## Unfixed Bugs
 
