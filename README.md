@@ -147,3 +147,4 @@ None that I am aware of.
  - All wireframes used in this project were designed by making use of [Balsamiq](https://balsamiq.com/).
  - I learned how to use `inline code blocks` in a Markdown file on [RIP Tutorial](https://riptutorial.com/markdown/example/1802/inline-code).
  - Git commit message best practices taken from [How to Write Good Commit Messages: A Practical Git Guide](https://www.freecodecamp.org/news/writing-good-commit-messages-a-practical-guide/)
+ - I made use of Code Institute's learning content and tutorials throughout the project for revision as well as usefull content for my readme file.
