@@ -41,6 +41,7 @@
   * [Validator Testing](#Validator-Testing)
     * [Initial Validator Tests](#Initial-Validator-Tests)
     * [Final Validator Tests](#Final-Validator-Tests)
+  * [Bugs Found](#bugs-found)
   * [Unfixed Bugs](#Unfixed-Bugs)
 
 * [Credits](#Credits)
