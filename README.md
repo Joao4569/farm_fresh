@@ -153,6 +153,10 @@ I created a Superuser in order to access the admin functions of Django. The Supe
 
 ### Templates
 
+#### Allauth templates
+
+All allauth templates were copied and stored in a unique directory within the project level templates directory in order to store and customise all the required allauth templates for Farm Fresh.
+
 #### base.html
 
 Recommended best practises taken from Boutique Ado walkthrough project. Seperate blocks were created so that I can extend this template later on and replace segments of it as needed.
