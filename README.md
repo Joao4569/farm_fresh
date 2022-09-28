@@ -90,8 +90,9 @@ This is how I approached the challenge:
 ## Project Setup
 
 After completing the basic conception of my idea and designing some basic structure to it, I then proceeded to setting up my IDE for the project using the steps recommended by Code Institute, namely:
-1. Install Django and supported libraries
+1. Install Django
 2. Create new Django project and app
+3. Install Django Allauth
 
 ### Installing Django and supporting libraries
 
