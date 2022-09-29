@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'allauth',  # Taken from Allauth docs
     'allauth.account',  # Taken from Allauth docs
     'allauth.socialaccount',  # Taken from Allauth docs
+    'home',
 ]
 
 MIDDLEWARE = [
@@ -62,7 +63,12 @@ ROOT_URLCONF = 'farm_fresh.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [
+            # Root templates directory
+            os.path.join(BASE_DIR, 'templates'),
+            # Custom allauth templates directory
+            os.path.join(BASE_DIR, 'templates', 'allauth'),
+        ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
