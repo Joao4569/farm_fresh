@@ -145,11 +145,22 @@ I created a Superuser in order to access the admin functions of Django. The Supe
 
 # Features - Existing Features
 
+## Django Apps
+
+### Home App
+
+- contains the home page for Farm Fresh as index.html
+- Contains the [index view](#index-view) which will display the home/landing page to the user.
+
 ## MVT Architecture
 
 ### Models
 
 ### Views
+
+#### Index view
+
+This view acts as the home/landing page for users.
 
 ### Templates
 
@@ -174,6 +185,8 @@ Recommended best practises taken from Boutique Ado walkthrough project. Seperate
 - After installing Django allauth, I manually tested logging in and out of the admin site. I found some issues but they are now all resolved and noted in the Bugs found section of this document.
 
 - After finalising the Django allauth installation I manually went to the accounts login page and tested the authentication by redirecting a successfull login to a "success" url (which does not exist) and confirmed that it is working as expected.
+
+- After creating the home app and index.html template with its associated view and urls, I manually tested that the template was working correctly.
 
 **Image Placeholder**
 
