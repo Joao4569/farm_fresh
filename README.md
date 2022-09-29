@@ -175,6 +175,7 @@ Recommended best practises taken from Boutique Ado walkthrough project. Seperate
 - I incorporated the use of a `http-equiv` meta tag to allow the support of older Internet Explorer versions and eliminate validation errors when validating our HTML.
 - Contains all the relevant script tags needed to run Bootstrap version 4.6.
 - Contains all the secmented sections of blocks so that I can extend this template later on and replace segments of it as needed.
+- Contains the sites main header with logo, search bar, user related links and the link to the shopping cart.
 
 # Testing
 
