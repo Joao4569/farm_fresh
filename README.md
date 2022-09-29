@@ -162,8 +162,8 @@ All allauth templates were copied and stored in a unique directory within the pr
 Recommended best practises taken from Boutique Ado walkthrough project. Seperate blocks were created so that I can extend this template later on and replace segments of it as needed.
 
 - I incorporated the use of a `http-equiv` meta tag to allow the support of older Internet Explorer versions and eliminate validation errors when validating our HTML.
-- Contains all the relevant tags needed to run Bootstrap version 4.6.
-- Contains all the secmented sections of blocks for 
+- Contains all the relevant script tags needed to run Bootstrap version 4.6.
+- Contains all the secmented sections of blocks so that I can extend this template later on and replace segments of it as needed.
 
 # Testing
 
