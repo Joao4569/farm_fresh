@@ -1,0 +1,97 @@
+/* Recommended best practises and css taken from Boutique Ado walkthrough project -
+ the css has been customised to Farm Fresh's application */
+
+/* Google fonts import - Viewed on Farmy.ch - credited in readme */
+@import url('https://fonts.googleapis.com/css2?family=PT+Serif&family=Signika&display=swap');
+
+/* This will allow the h100 Bootstrap classes and vertical centering to work as intended */
+html {
+  height: 100%;
+}
+
+body {
+  background: url('/media/farmer_carrying_box_of_veg.jpg') no-repeat center center fixed;
+  background-size: cover;
+  height: calc(100vh - 164px); /* Height of top header 164px - Check for Farm Fresh application */
+  color: #555;
+  font-family: 'PT Serif', serif;
+}
+
+/* This icon class was taken from Bulma which will ensure that whenever font awesome icons are used,
+they will always stay perfectly centered and have a consistent size - credited in readme */
+.icon {
+  align-items: center;
+  display: inline-flex;
+  justify-content: center;
+  height: 1.5rem;
+  width: 1.5rem;
+}
+
+/* This will maintain the consistency of uppercase lettering and font family of the logo */
+.logo-font {
+  font-family: 'Signika', serif;
+  text-transform: uppercase;
+}
+
+/*  This class makes it so that the logo only takes up as much space as the text requires and no more */
+.main-logo-link {
+  width: fit-content;
+}
+
+/* For buttons so that they consistently match the theme of the shop now button on the homepage. */
+.shop-now-button {
+  background: black;
+  color: white;
+  min-width: 260px;
+}
+
+.btn-black {
+  background: black;
+  color: white;
+}
+
+.shop-now-button:hover,
+.shop-now-button:active,
+.shop-now-button:focus,
+.btn-black:hover,
+.btn-black:active,
+.btn-black:focus {
+  background: #222;
+  color: white;
+}
+
+/* These two classes will be used like bootstraps colour helper classes, I've marked them as important
+because I always want elements using these classes to obey them. These classes will allow Farm Fresh to
+have both primary and secondary calls-to-action styling on all the site buttons, giving our users a
+consistent user experience. */
+.text-black {
+  color: #000 !important;
+}
+
+.border-black {
+  border: 1px solid black !important;
+}
+
+/* -------------------------------- Media Queries */
+
+/* Slightly larger container on xl screens */
+@media (min-width: 1200px) {
+.container {
+  max-width: 80%;
+}
+}
+
+/* fixed top navbar only on medium and up */
+@media (min-width: 992px) {
+  .fixed-top-desktop-only {
+      position: fixed;
+      top: 0;
+      right: 0;
+      left: 0;
+      z-index: 1030;
+  }
+
+  .header-container {
+      padding-top: 164px;
+  }
+}
