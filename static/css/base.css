@@ -14,7 +14,8 @@ body {
   background-size: cover;
   height: calc(100vh - 164px); /* Height of top header 164px - Check for Farm Fresh application */
   color: #555;
-  font-family: 'PT Serif', serif;
+  font-family: 'Signika', serif;
+  /*font-family: 'PT Serif', serif;*/
 }
 
 /* This icon class was taken from Bulma which will ensure that whenever font awesome icons are used,
@@ -29,7 +30,6 @@ they will always stay perfectly centered and have a consistent size - credited i
 
 /* This will maintain the consistency of uppercase lettering and font family of the logo */
 .logo-font {
-  font-family: 'Signika', serif;
   text-transform: uppercase;
 }
 
@@ -40,15 +40,15 @@ they will always stay perfectly centered and have a consistent size - credited i
 
 /* For buttons so that they consistently match the theme of the shop now button on the homepage. */
 .shop-now-button {
-  background: black;
-  color: white;
+  /*background: #28a745;
+  color: white;*/
   min-width: 260px;
 }
 
-.btn-black {
-  background: black;
+/*.btn-green {
+  background: #28a745;
   color: white;
-}
+}*/
 
 .shop-now-button:hover,
 .shop-now-button:active,
@@ -56,32 +56,24 @@ they will always stay perfectly centered and have a consistent size - credited i
 .btn-black:hover,
 .btn-black:active,
 .btn-black:focus {
-  background: #222;
+  background: #eb8909;
   color: white;
-}
-
-/* These two classes will be used like bootstraps colour helper classes, I've marked them as important
-because I always want elements using these classes to obey them. These classes will allow Farm Fresh to
-have both primary and secondary calls-to-action styling on all the site buttons, giving our users a
-consistent user experience. */
-.text-black {
-  color: #000 !important;
-}
-
-.border-black {
-  border: 1px solid black !important;
 }
 
 /* -------------------------------- Media Queries */
 
-/* Slightly larger container on xl screens */
+/* This query will widen the default bootstrap container class on extra-large
+screens just to make better use of the available screen real estate for users
+with extra-large monitors */
 @media (min-width: 1200px) {
-.container {
-  max-width: 80%;
-}
+  .container {
+    max-width: 80%;
+  }
 }
 
-/* fixed top navbar only on medium and up */
+/* This query will add 164 pixels of padding to the header container class
+to push the body down to the bottom of the main page header. fixed top navbar
+only on medium sized screens and larger */
 @media (min-width: 992px) {
   .fixed-top-desktop-only {
       position: fixed;

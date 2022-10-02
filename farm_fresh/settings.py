@@ -157,6 +157,17 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
+"""This will tell Django where all of our static files are located.
+It's worth noting that although normally one would also want to supply a static
+route setting here for Django's collectstatic utility to work. I did not do
+that because it will interfere with setting up Amazon Web Services later on in
+the build."""
+STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
+
+#  This will tell Django where all of our media files are located.
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 

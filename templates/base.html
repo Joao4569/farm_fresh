@@ -1,5 +1,5 @@
-{% load static %}
 <!-- For loading static files -->
+{% load static %}
 
 <!-- Recommended best practises taken from Boutique Ado walkthrough project -->
 
@@ -23,14 +23,17 @@
   {% block corecss %}
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
       integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
   {% endblock %}
 
   <!-- This block will contain any additional CSS required for this application -->
   {% block extra_css %}
   {% endblock %}
 
-  <!-- This block contains all the tags required for Bootstrap -->
+  <!-- This block contains all the tags required for Bootstrap as well as the
+  script tag required for the font awesome kit -->
   {% block corejs %}
+    <script src="https://kit.fontawesome.com/e26a309e14.js" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"
       integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
@@ -52,12 +55,12 @@
 <body>
   <!-- Header has classes of container-fluid and fixed-top to ensure that it sticks to the top of the page -->
   <header class="container-fluid fixed-top">
-    <div id="topnav" class="row bg-white pt-lg-2 d-none d-lg-flex">
+    <div id="topnav" class="row bg-success pt-lg-2 d-none d-lg-flex">
 
       <!-- Farm Fresh Logo -->
       <div class="col-12 col-lg-4 my-auto py-1 py-lg-0 text-center text-lg-left">
         <a href="{% url 'home' %}" class="nav-link main-logo-link">
-          <h2 class="logo-font text-black my-0"><strong>Farm</strong> Fresh</h2>
+          <h2 class="logo-font text-white my-0"><strong>Farm</strong> Fresh</h2>
         </a>
       </div>
 
@@ -65,12 +68,12 @@
       <div class="col-12 col-lg-4 my-auto py-1 py-lg-0">
         <form method="GET" action="">
           <div class="input-group w-100">
-            <input class="form-control border border-black rounded-0" type="text" name="q"
+            <input class="form-control border border-white rounded-0" type="text" name="q"
               placeholder="Search our site">
             <div class="input-group-append">
 
               <!-- Search button -->
-              <button class="form-control btn btn-black border border-black rounded-0" type="submit">
+              <button class="form-control btn btn-black border border-white rounded-0" type="submit">
                 <span class="icon">
                   <i class="fas fa-search"></i>
                 </span>
@@ -84,7 +87,7 @@
 
           <!-- Link to user account/product management/logout/login and for user registration -->
           <li class="list-inline-item dropdown">
-            <a class="text-black nav-link" href="#" id="user-options" data-toggle="dropdown" aria-haspopup="true"
+            <a class="text-white nav-link" href="#" id="user-options" data-toggle="dropdown" aria-haspopup="true"
               aria-expanded="false">
               <div class="text-center">
                 <div><i class="fas fa-user fa-lg"></i></div>
@@ -125,8 +128,8 @@
           <li class="list-inline-item">
             <a class="{% if grand_total %}text-info font-weight-bold{% else %}text-black{% endif %} nav-link" href="">
               <div class="text-center">
-                <div><i class="fas fa-shopping-bag fa-lg"></i></div>
-                <p class="my-0">
+                <div><i class="fas fa-shopping-bag fa-lg text-white"></i></div>
+                <p class="my-0 text-white">
 
                   <!-- To check if the user has selected anything to purchase and display the current total purchase price -->
                   {% if grand_total %}
