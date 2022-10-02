@@ -210,11 +210,16 @@ None that I am aware of.
 
 ### Content
 
- - All flowcharts and ERD diagrams used in this project were designed by making use of [Lucidchart](https://www.lucidchart.com/pages/).
- - All wireframes used in this project were designed by making use of [Balsamiq](https://balsamiq.com/).
+ - All flowcharts and ERD diagrams used in this project were designed by making use of [Lucidchart.com](https://www.lucidchart.com/).
+ - All wireframes used in this project were designed by making use of [Balsamiq.com](https://balsamiq.com/).
  - I learned how to use `inline code blocks` in a Markdown file on [RIP Tutorial](https://riptutorial.com/markdown/example/1802/inline-code).
  - Git commit message best practices taken from [How to Write Good Commit Messages: A Practical Git Guide](https://www.freecodecamp.org/news/writing-good-commit-messages-a-practical-guide/)
  - I made extensive use of Code Institute's learning content and tutorials throughout the project for revision as well as usefull content for my readme file.
  - I made extensive use of the Django Allauth documentation for most aspects of setting up authorisation for this project.
- - Solution to issue found in terminal window while testing Django allauth sourced from [Stackoverflow](https://stackoverflow.com/questions/64634674/django-typeerror-argument-of-type-posixpath-is-not-iterable).
+ - Solution to issue found in terminal window while testing Django allauth sourced from [Stackoverflow.com](https://stackoverflow.com/questions/64634674/django-typeerror-argument-of-type-posixpath-is-not-iterable).
  - The Boutique Ado walkthrough project was the biggest source of information for this project and I have used many snippets of code and text from it's tutorial's, all have been commented and credited as and where required.
+ - Font pairing of Signika and PT Serif viewed and taken from [Farmy.ch](https://www.farmy.ch/).
+ - Background image sourced and taken from [Unsplash.com](https://unsplash.com/).
+ - All image file compressions done on [TinyPNG.com](https://tinypng.com/).
+ - Icons used on Farm Fresh taken from [Font Awesome](https://fontawesome.com/).
+ - Icon class for centering Font Awesome icons taken from [Bulma CSS Framework](https://bulma.io/documentation/elements/icon/).
