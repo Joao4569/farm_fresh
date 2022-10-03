@@ -146,6 +146,26 @@
         </ul>
       </div>
     </div>
+
+    <!-- main navbars -->
+    <div class="row bg-success">
+      <nav class="navbar navbar-expand-lg navbar-light w-100">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-nav" aria-controls="main-nav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <!-- mobile version of the top header -->
+        {% include 'includes/mobile-top-header.html' %}
+        <!-- main navigation menu -->
+        {% include 'includes/main-nav.html' %}
+      </nav>
+    </div>
+
+    <!-- delivery banner -->
+    <div id="delivery-banner" class="row text-center">
+      <div class="col bg-success text-white">
+        <h4 class="my-1">Free delivery in Zürich on orders over ${{ free_shipping_threshold }}!</h4>                
+      </div>            
+    </div>
   </header>
 
   <!-- To display any messages that we send back from Django -->
