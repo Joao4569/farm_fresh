@@ -177,6 +177,18 @@ Recommended best practises taken from Boutique Ado walkthrough project. Seperate
 - Contains all the secmented sections of blocks so that I can extend this template later on and replace segments of it as needed.
 - Contains the sites main header with logo, search bar, user related links and the link to the shopping cart.
 
+#### Includes folder
+
+This is commonly found in larger web projects, this gives us a place where we can create small HTML snippets and then include them in the base template using Django.
+
+#### Mobile top header
+
+The list items here are almost identical to the ones that exist in the header in base.html except for a few key things:
+ - First you'll notice that the links in them each use the d-block and the d-lg none classes from bootstrap. This way they'll be hidden on large screens where      instead they'll show up in the top portion of the header.
+ - Secondly the search form is now in a drop-down menu, instead of creating a list of links like I did for the My Account drop-down, I put a form in it instead.
+
+All of this makes sure that the top portion of the navbar which is separate from the main navigation will display cleanly on mobile and give the user a much better UX.
+
 # Testing
 
 ## Manual Testing
@@ -188,6 +200,8 @@ Recommended best practises taken from Boutique Ado walkthrough project. Seperate
 - After finalising the Django allauth installation I manually went to the accounts login page and tested the authentication by redirecting a successfull login to a "success" url (which does not exist) and confirmed that it is working as expected.
 
 - After creating the home app and index.html template with its associated view and urls, I manually tested that the template was working correctly.
+
+- With each template created, I would manually test that they are working and displaying as intended 
 
 **Image Placeholder**
 
