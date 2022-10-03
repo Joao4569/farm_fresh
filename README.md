@@ -152,9 +152,19 @@ I created a Superuser in order to access the admin functions of Django. The Supe
 - contains the home page for Farm Fresh as index.html
 - Contains the [index view](#index-view) which will display the home/landing page to the user.
 
+### Product App
+
 ## MVT Architecture
 
 ### Models
+
+#### Prodauct App
+
+#### Category Model
+
+#### Product Model
+
+#### Producer Model
 
 ### Views
 
