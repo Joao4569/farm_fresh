@@ -45,7 +45,8 @@ INSTALLED_APPS = [
     'allauth',  # Taken from Allauth docs
     'allauth.account',  # Taken from Allauth docs
     'allauth.socialaccount',  # Taken from Allauth docs
-    'home',
+    'home',  # custom home app
+    'products',  # custom products app
 ]
 
 MIDDLEWARE = [
