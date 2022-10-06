@@ -6,16 +6,19 @@ class Category(models.Model):
     it's related attributes and model methods"""
 
     class Meta:
+        """This model meta class will display the correct spelling of
+        the plural of category, django just adds a single s to the end
+        of the word, which is incorrect in this case"""
         verbose_name_plural = 'Categories'
 
     name = models.CharField(max_length=254)
     friendly_name = models.CharField(max_length=254, null=True, blank=True)
 
     def __str__(self):
-        """This string model method will take the category itself and
-        return it's firendly name for a better UX on the admin site"""
+        """This string model method will take the categoy object itself
+        and return its name"""
 
-        return self.friendly_name
+        return self.name
 
     def get_friendly_name(self):
         """This model method will take the category itself and
@@ -68,11 +71,15 @@ class Packaging(models.Model):
     related attributes"""
 
     class Meta:
+        """This model meta class will display the correct spelling of
+        the plural of packaging, django just adds a single s to the end
+        of the word, which is incorrect in this case"""
         verbose_name_plural = 'Packaging'
 
     name = models.CharField(max_length=254, null=True, blank=True)
 
-    # how to implement choice field taken from stackoverflow
+    """how to implement choice field taken from stackoverflow, credited in
+    readme"""
     PIECE = 'Piece'
     BAG = 'Bag'
     BOTTLE = 'Bottle'
