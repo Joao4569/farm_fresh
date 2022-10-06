@@ -154,17 +154,25 @@ I created a Superuser in order to access the admin functions of Django. The Supe
 
 ### Product App
 
+This app conatins everything needed for Farm Fresh's products, like the product models, views and URL's.
+
 ## MVT Architecture
 
 ### Models
 
-#### Prodauct App
+#### Product App
 
 #### Category Model
 
+This model contains the information for product categories such as it's related attributes and model methods. This model is related to the Product model and only contains the information for a category's programmatic name and an easier to read and use, friendly name..
+
 #### Product Model
 
+This model contains all the information for each product such as it's name, description, price, image and other related attributes such as if a product is in season or organic.
+
 #### Producer Model
+
+This model contains all the information for each producer such as there name, description and an image.
 
 ### Views
 
@@ -172,7 +180,13 @@ I created a Superuser in order to access the admin functions of Django. The Supe
 
 This view acts as the home/landing page for users.
 
+#### All Products view
+
+This view acts as the product page for Farm Fresh
+
 ### Templates
+
+All templates folders for apps were created with inner directories matching the apps names to make sure that django knows which app these templates belong to, in case any of them end up having the same names as other templates.
 
 #### Allauth templates
 
@@ -211,7 +225,9 @@ All of this makes sure that the top portion of the navbar which is separate from
 
 - After creating the home app and index.html template with its associated view and urls, I manually tested that the template was working correctly.
 
-- With each template created, I would manually test that they are working and displaying as intended 
+- With each template created, I would manually test that they are working and displaying as intended.
+
+- Once the initial basic products.html view was created I manually did a test to see if the context, containing products and their attributes were displaying as i expected, confirming that the views, URL's and and templates are all working as planned.
 
 **Image Placeholder**
 
@@ -234,18 +250,25 @@ None that I am aware of.
 
 ## Credits
 
+### Media
+
+- All flowcharts and ERD diagrams used in this project were designed by making use of [Lucidchart.com](https://www.lucidchart.com/).
+- All wireframes used in this project were designed by making use of [Balsamiq.com](https://balsamiq.com/).
+- Background image and all producer images used in Farm Fresh were sourced and taken from [Unsplash.com](https://unsplash.com/).
+- All image files that needed to be compressed were compressed by using [TinyPNG.com](https://tinypng.com/).
+- Icons used on Farm Fresh taken from [Font Awesome](https://fontawesome.com/).
+- Icon class for centering Font Awesome icons taken from [Bulma CSS Framework](https://bulma.io/documentation/elements/icon/), as suggested in the Boutique Ado walkthrough project.
+- All product images sourced and taken from [Farmy.ch](https://www.farmy.ch/).
+
 ### Content
 
- - All flowcharts and ERD diagrams used in this project were designed by making use of [Lucidchart.com](https://www.lucidchart.com/).
- - All wireframes used in this project were designed by making use of [Balsamiq.com](https://balsamiq.com/).
  - I learned how to use `inline code blocks` in a Markdown file on [RIP Tutorial](https://riptutorial.com/markdown/example/1802/inline-code).
  - Git commit message best practices taken from [How to Write Good Commit Messages: A Practical Git Guide](https://www.freecodecamp.org/news/writing-good-commit-messages-a-practical-guide/)
  - I made extensive use of Code Institute's learning content and tutorials throughout the project for revision as well as usefull content for my readme file.
  - I made extensive use of the Django Allauth documentation for most aspects of setting up authorisation for this project.
  - Solution to issue found in terminal window while testing Django allauth sourced from [Stackoverflow.com](https://stackoverflow.com/questions/64634674/django-typeerror-argument-of-type-posixpath-is-not-iterable).
  - The Boutique Ado walkthrough project was the biggest source of information for this project and I have used many snippets of code and text from it's tutorial's, all have been commented and credited as and where required.
- - Font pairing of Signika and PT Serif viewed and taken from [Farmy.ch](https://www.farmy.ch/).
- - Background image sourced and taken from [Unsplash.com](https://unsplash.com/).
- - All image file compressions done on [TinyPNG.com](https://tinypng.com/).
- - Icons used on Farm Fresh taken from [Font Awesome](https://fontawesome.com/).
- - Icon class for centering Font Awesome icons taken from [Bulma CSS Framework](https://bulma.io/documentation/elements/icon/).
+ - Font pairing of Signika and PT Serif sourced and taken from [Farmy.ch](https://www.farmy.ch/).
+ - Method for using the model choices field attribute in the packinging model of the products app sourced from [Stackoverflow.com](https://stackoverflow.com/questions/18676156/how-to-properly-use-the-choices-field-option-in-django).
+ - All product descriptions, pricing and producer content was sourced on [Farmy.ch](https://www.farmy.ch/) and modified where needed to suite its application on Farm Fresh.
+ 
