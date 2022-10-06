@@ -1,0 +1,22 @@
+{% extends "base.html" %} <!-- Template extending from base.html template -->
+{% load static %} <!-- For loading static files -->
+
+{% block page_header %}
+  <div class="container header-container">
+    <div class="row">
+      <div class="col"></div>
+    </div>
+  </div>
+{% endblock %}
+
+<!-- This block contains the main content for this template. -->
+{% block content %}
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        {{ products }}
+      </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}
