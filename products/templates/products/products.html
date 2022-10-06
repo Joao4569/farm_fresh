@@ -1,5 +1,7 @@
-{% extends "base.html" %} <!-- Template extending from base.html template -->
-{% load static %} <!-- For loading static files -->
+<!-- Template extending from base.html template -->
+{% extends "base.html" %}
+<!-- For loading static files -->
+{% load static %}
 
 {% block page_header %}
   <div class="container header-container">
@@ -11,11 +13,95 @@
 
 <!-- This block contains the main content for this template. -->
 {% block content %}
-  <div class="container">
+  <!-- This is a full-page overlay in order to cover up the body's background image
+  and give this page a white background. -->
+  <div class="overlay"></div>
+
+  <div class="container-fluid">
     <div class="row">
-      <div class="col">
-        {{ products }}
+      <div class="col text-center mt-3">
+        <h2 class="logo-font">Products</h2>
+        <hr class="w-50 mb-1">
       </div>
+    </div>
+    <div class="row">
+      <div class="product-container col-10 offset-1">
+        <div class="row mt-1 mb-2"></div>
+
+        <!-- For each product, a column will be generated, inside which will be a bootstrap card. Products will stack
+                on mobile, be side-by-side on small and medium screens, split into three columns on large and four columns
+                on extra large screens. -->
+        <div class="row">
+        {% for product in products %}
+          <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
+            <div class="card h-100 border-0">
+
+              <!-- Top of card with product image -->
+              {% if product.image %}
+                <a href="">
+                  <img class="card-img-top img-fluid" src="/media/{{ product.image }}" alt="{{ product.name }}">
+                </a>
+              {% else %}
+                <a href="">
+                  <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}noimage.png" alt="{{ product.name }}">
+                </a>
+              {% endif %}
+
+              <!-- Body of card containing the products name -->
+              <div class="card-body pb-0">
+                <p class="mb-0">{{ product.name }}</p>
+              </div>
+
+              <!-- Footer of card containg product attributes -->
+              <div class="card-footer bg-white pt-0 border-0 text-left">
+                <div class="row">
+                  <div class="col">
+                    <p class="lead mb-0 text-left font-weight-bold">CHF{{ product.price }}</p>
+                    {% if product.organic %}
+                      <small class="text-muted"><i class="fa-solid fa-seedling mr-1"></i>Organic</small>
+                    {% else %}
+                      <small class="text-muted">Non-Organic</small>
+                    {% endif %}
+                    {% if product.in_season %}
+                      <small class="text-muted"><i class="fa-solid fa-leaf mr-1"></i>In Season</small>
+                    {% else %}
+                      <small class="text-muted">Not in Season</small>
+                    {% endif %}
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- Taken from Boutique Ado walkthrough project - credited in readme - display products various screen sizes-->
+
+          <!-- For very small screens -->
+          {% if forloop.counter|divisibleby:1 %}
+            <div class="col-12 d-sm-none mb-5">
+              <hr>
+            </div>
+          {% endif %}
+          <!-- For small to medium screens -->
+          {% if forloop.counter|divisibleby:2 %}
+            <div class="col-12 d-none d-sm-block d-md-block d-lg-none mb-5">
+              <hr>
+            </div>
+          {% endif %}
+          <!-- For large screens -->
+          {% if forloop.counter|divisibleby:3 %}
+            <div class="col-12 d-none d-lg-block d-xl-none mb-5">
+              <hr>
+            </div>
+          {% endif %}
+          <!-- For larger screens -->
+          {% if forloop.counter|divisibleby:4 %}
+            <div class="col-12 d-none d-xl-block mb-5">
+              <hr>
+            </div>
+          {% endif %}
+        {% endfor %}
+        </div>
       </div>
     </div>
   </div>

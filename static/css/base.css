@@ -60,6 +60,19 @@ they will always stay perfectly centered and have a consistent size - credited i
   color: white;
 }
 
+/* This overlay will have a 100% height and width, fixed at the top left of the screen.
+With a white background and a z-index of negative 1 to make sure that it sits behind all the content.
+It will be reused in multiple templates and I think this will be the easiest solution. */
+.overlay {
+	height: 100%;
+	width: 100%;
+	top: 0;
+	left: 0;
+	position: fixed;
+	background: white;
+	z-index: -1;
+}
+
 /* -------------------------------- Media Queries */
 
 /* This query will widen the default bootstrap container class on extra-large

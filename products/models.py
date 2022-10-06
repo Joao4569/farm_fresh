@@ -2,7 +2,7 @@ from django.db import models
 
 
 class Category(models.Model):
-    """This model will contain each product category and
+    """This model contains each product category and
     it's related attributes and model methods"""
 
     class Meta:
@@ -82,14 +82,20 @@ class Packaging(models.Model):
     readme"""
     PIECE = 'Piece'
     BAG = 'Bag'
+    BOX = 'Box'
     BOTTLE = 'Bottle'
     JAR = 'Jar'
+    PWRAP = 'Plastic Wrap'
+    FWRAP = 'Foil Wrap'
 
     PACKAGING_CHOICES = [
         (PIECE, 'Piece'),
         (BAG, 'Bag'),
+        (BOX, 'Box'),
         (BOTTLE, 'Bottle'),
         (JAR, 'Jar'),
+        (PWRAP, 'Plastic Wrap'),
+        (FWRAP, 'Foil Wrap'),
     ]
 
     packaging_type = models.CharField(
@@ -100,19 +106,29 @@ class Packaging(models.Model):
     KG1 = '1 Kg'
     G500 = '500g'
     G250 = '250g'
+    G200 = '200g'
+    G120 = '120g'
     G100 = '100g'
     LT1 = '1 ltr'
-    LT2 = '2 ltrs'
+    ML390 = '390ml'
+    ML500 = '500ml'
     CA250350 = 'ca. 250-350g'
+    CA911 = 'ca. 0.9-1.1kg'
+    G5310pc = '10 pieces of 53g+'
 
     WEIGHT_CHOICES = [
         (KG1, '1 Kg'),
         (G500, '500g'),
         (G250, '250g'),
+        (G200, '200g'),
+        (G120, '120g'),
         (G100, '100g'),
         (LT1, '1 Ltr'),
-        (LT2, '2 Ltrs'),
+        (ML390, '390ml'),
+        (ML500, '500ml'),
         (CA250350, 'ca. 250-350g'),
+        (CA911, 'ca. 0.9 - 1.1kg'),
+        (G5310pc, '10 pieces of 53g+'),
     ]
 
     weight = models.CharField(
