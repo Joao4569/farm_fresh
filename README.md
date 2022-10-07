@@ -182,7 +182,17 @@ This view acts as the home/landing page for users.
 
 #### All Products view
 
-This view acts as the product page for Farm Fresh
+This view acts as the main products page for Farm Fresh. It also contains the neccessary code in order for the search bar functionality to function.
+
+**Worth Noting**
+
+- The object Q was imported and used in this view to generate a search query. In Django if you use `product.objects.filter()` in order to filter a list of products, like I did in this view, everything will be ended together. In the case of our queries, when a user submits a query, in order for it to match the search term it would have to appear in both the product name and the product description. Instead I wanted to return results where the query is matched in either the product name or the description. In order to accomplish this "or" logic, I needed to use Q.
+
+ - Example of code :
+   `queries = Q(name__icontains=query) | Q(description__icontains=query)`
+   `products = products.filter(queries)`
+
+ - By setting a `queries` variable equal to a Q object, where the product name contains the query or the product description contains the query, the pipe here then generates the "or" statement and the `i` in front of `contains` makes the queries case insensitive. With those queries constructed one can pass them to the filter method in order to actually filter the products.
 
 ### Templates
 
@@ -230,6 +240,8 @@ All of this makes sure that the top portion of the navbar which is separate from
 - Once the initial basic products.html view was created I manually did a test to see if the context, containing products and their attributes were displaying as i expected, confirming that the views, URL's and and templates are all working as planned.
 
 - After creating the product detail tamplate, I manually tested that all links to individual products and product images worked and that the shop now button worked as intended. All worked as expected but I found a bug, on a small mobile device the empty header container wasn't pushing the top of the page down to the bottom of the main site header, the bug and fix is recorded as bug number 4 in the [Bugs found section](#bugs-found).
+
+- Once the logic was in place for the search bar functionality, I manually tested it by running multiple search queries with search terms that were either in the products names or descriptions and checking the results. I did not find an error with this and it is working as expected.
 
 **Image Placeholder**
 
