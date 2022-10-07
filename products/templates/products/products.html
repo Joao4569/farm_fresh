@@ -38,11 +38,11 @@
 
               <!-- Top of card with product image -->
               {% if product.image %}
-                <a href="">
+                <a href="{% url 'product_detail' product.id %}">
                   <img class="card-img-top img-fluid" src="/media/{{ product.image }}" alt="{{ product.name }}">
                 </a>
               {% else %}
-                <a href="">
+                <a href="{% url 'product_detail' product.id %}">
                   <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}noimage.png" alt="{{ product.name }}">
                 </a>
               {% endif %}
@@ -56,7 +56,7 @@
               <div class="card-footer bg-white pt-0 border-0 text-left">
                 <div class="row">
                   <div class="col">
-                    <p class="lead mb-0 text-left font-weight-bold">CHF{{ product.price }}</p>
+                    <p class="lead mb-0 text-left font-weight-bold">CHF {{ product.price }}</p>
                     {% if product.organic %}
                       <small class="text-muted"><i class="fa-solid fa-seedling mr-1"></i>Organic</small>
                     {% else %}

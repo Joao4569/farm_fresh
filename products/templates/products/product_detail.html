@@ -1,0 +1,59 @@
+<!-- Template extending from base.html template -->
+{% extends "base.html" %}
+<!-- For loading static files -->
+{% load static %}
+
+{% block page_header %}
+  <div class="container header-container">
+    <div class="row">
+      <div class="col"></div>
+    </div>
+  </div>
+{% endblock %}
+
+<!-- This block contains the main content for this template. -->
+{% block content %}
+  <!-- This is a full-page overlay in order to cover up the body's background image
+  and give this page a white background. -->
+  <div class="overlay"></div>
+
+  <div class="container-fluid">
+    <div class="row">
+
+      <!-- product image container -->
+      <div class="col-12 col-md-6 col-lg-4 offset-lg-2">
+        <div class="image-container my-5">
+          {% if product.image %}
+            <a href="/media/{{ product.image }}" target="_blank">
+              <img class="card-img-top img-fluid" src="/media/{{ product.image }}" alt="{{ product.name }}">
+            </a>
+          {% else %}
+            <a href="">
+              <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}noimage.png" alt="{{ product.name }}">
+            </a>
+          {% endif %}
+        </div>
+      </div>
+
+      <!-- product information container -->
+      <div class="col-12 col-md-6 col-lg-4">
+        <div class="product-details-container mb-5 mt-md-5">
+          <p class="mb-0">{{ product.name }}</p>
+          <p class="lead mb-0 text-left font-weight-bold">CHF {{ product.price }}</p>
+          {% if product.organic %}
+            <small class="text-muted"><i class="fa-solid fa-seedling mr-1"></i>Organic</small>
+          {% else %}
+            <small class="text-muted">Non-Organic</small>
+          {% endif %}
+          {% if product.in_season %}
+            <small class="text-muted"><i class="fa-solid fa-leaf mr-1"></i>In Season</small>
+          {% else %}
+            <small class="text-muted">Not in Season</small>
+          {% endif %}
+          <p class="mt-3">{{ product.description }}</p>
+      </div>
+
+      </div>
+    </div>
+  </div>
+{% endblock %}
