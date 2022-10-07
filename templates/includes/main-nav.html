@@ -21,9 +21,10 @@
         Fruit &amp; Veg
       </a>
       <div class="dropdown-menu border-0" aria-labelledby="fruit-veg-link">
-        <a href="" class="dropdown-item">Fruit</a>
-        <a href="" class="dropdown-item">Vegetables</a>
-        <a href="" class="dropdown-item">All Fruit &amp; Veg</a>
+        <a href="{% url 'products' %}?category=fruit" class="dropdown-item">Fruit</a>
+        <a href="{% url 'products' %}?category=veg" class="dropdown-item">Vegetables</a>
+        <a href="{% url 'products' %}?category=mushrooms" class="dropdown-item">Mushrooms</a>
+        <a href="{% url 'products' %}?category=fruit,veg,mushrooms" class="dropdown-item">All Fruit &amp; Veg</a>
       </div>
     </li>
 
@@ -34,9 +35,11 @@
         Milk &amp; Eggs
       </a>
       <div class="dropdown-menu border-0" aria-labelledby="milk-eggs-link">
-        <a href="" class="dropdown-item">Milk</a>
-        <a href="" class="dropdown-item">Eggs</a>
-        <a href="" class="dropdown-item">All Milk &amp; Eggs</a>
+        <a href="{% url 'products' %}?category=milk" class="dropdown-item">Milk</a>
+        <a href="{% url 'products' %}?category=eggs" class="dropdown-item">Eggs</a>
+        <a href="{% url 'products' %}?category=butter" class="dropdown-item">Butter</a>
+        <a href="{% url 'products' %}?category=cheese" class="dropdown-item">Cheese</a>
+        <a href="{% url 'products' %}?category=milk,eggs,butter,cheese" class="dropdown-item">All Milk &amp; Eggs</a>
       </div>
     </li>
 
@@ -47,9 +50,10 @@
         Pantry
       </a>
       <div class="dropdown-menu border-0" aria-labelledby="pantry-link">
-        <a href="" class="dropdown-item">Test1</a>
-        <a href="" class="dropdown-item">Test2</a>
-        <a href="" class="dropdown-item">All Pantry</a>
+        <a href="{% url 'products' %}?category=broth" class="dropdown-item">Broth</a>
+        <a href="{% url 'products' %}?category=sauce" class="dropdown-item">Sauce</a>
+        <a href="{% url 'products' %}?category=jus" class="dropdown-item">Jus</a>
+        <a href="{% url 'products' %}?category=broth,sauce,jus" class="dropdown-item">All Pantry</a>
       </div>
     </li>
 
@@ -60,9 +64,7 @@
         Special Offers
       </a>
       <div class="dropdown-menu border-0" aria-labelledby="specials-link">
-        <a href="" class="dropdown-item">New Arrivals</a>
-        <a href="" class="dropdown-item">Deals</a>
-        <a href="" class="dropdown-item">All Specials</a>
+        <a href="{% url 'products' %}?category=special_offers" class="dropdown-item">All Specials</a>
       </div>
     </li>
   </ul>
