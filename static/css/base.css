@@ -73,6 +73,15 @@ It will be reused in multiple templates and I think this will be the easiest sol
 	z-index: -1;
 }
 
+.text-black {
+  color: black;
+}
+
+a.category-badge > span.badge:hover {
+  background: #28a745 !important;
+  color: #fff !important;
+}
+
 /* -------------------------------- Media Queries */
 
 /* This query will widen the default bootstrap container class on extra-large

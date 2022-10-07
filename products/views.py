@@ -13,7 +13,8 @@ def all_products(request):
     sort = None
     direction = None
 
-    if 'sort' in request.GET:
+    if request.GET:
+        if 'sort' in request.GET:
             sortkey = request.GET['sort']
             sort = sortkey
 
@@ -21,9 +22,16 @@ def all_products(request):
                 sortkey = 'lower_name'
                 products = products.annotate(lower_name=Lower('name'))
 
+            if sortkey == 'category':
+                sortkey = 'category__name'
+
+            if 'direction' in request.GET:
+                direction = request.GET['direction']
+                if direction == 'desc':
+                    sortkey = f'-{sortkey}'
+
             products = products.order_by(sortkey)
 
-    if request.GET:
         if 'category' in request.GET:
             """ This will convert a list of strings consisting of category
             names passed through the URL into a list of actual category
