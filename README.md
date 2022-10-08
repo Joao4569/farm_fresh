@@ -67,6 +67,25 @@ I made use of the following resources in order to plan and visualise my project,
 
 Once I had the basic scope and logic in place, I then proceeded to design a visual representation of what is needed for the basic functionality of the project from a user's point of view and how I would represent that.
 
+#### Landing Page Wireframe
+
+![wf_landing_page](media/wf_landing_page.png)
+
+#### Products Page Wireframe
+
+![wf_product_page](media/wf_products.png)
+
+#### Products Detail Page Wireframe
+
+![wf_product_detail_page](media/wf_product_detail.png)
+
+#### Shopping Cart Wireframe
+
+![wf_shopping_cart](media/wf_shopping_cart.png)
+
+#### Checkout Page Wireframe
+
+![wf_checkout_page](media/wf_checkout.png)
 
 
 ### Agile
@@ -240,6 +259,8 @@ All of this makes sure that the top portion of the navbar which is separate from
 ## Manual Testing
 
 - After creating the `farm_fresh` project in Gitpod, I tested it buy running the application and recieved visual confirmation that the application is working successfully from Django.
+
+![django_app_test](media/django_test_app.png)
 
 - After installing Django allauth, I manually tested logging in and out of the admin site. I found some issues but they are now all resolved and noted in the Bugs found section of this document.
 
