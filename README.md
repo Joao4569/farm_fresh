@@ -90,6 +90,18 @@ This is how I approached the challenge:
     - I created a Kanban board for use as an information radiator in this project by using "projects" on Github.
 
 
+#### Kanban Example
+
+![kanban](media/kanban.png)
+
+#### Product Backlog Example
+
+![product_backlog](media/product_backlog.png)
+
+#### Moscow Prioritisation Example
+
+![moscow_prioritisation](media/moscow_prioritisation.png)
+
 ## Project Setup
 
 After completing the basic conception of my idea and designing some basic structure to it, I then proceeded to setting up my IDE for the project using the steps recommended by Code Institute, namely:
