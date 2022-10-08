@@ -81,6 +81,10 @@ It will be reused in multiple templates and I think this will be the easiest sol
   color: #28a745 !important;
 }
 
+.text-orange {
+  color: #eb8909 !important;
+}
+
 .bg-orange {
   background: #eb8909 !important;
 }
@@ -88,6 +92,19 @@ It will be reused in multiple templates and I think this will be the easiest sol
 a.category-badge > span.badge:hover {
   background: #28a745 !important;
   color: #fff !important;
+}
+
+/* This is for the back to top button and link on the products page */
+.btt-button {
+  height: 42px;
+  width: 42px;
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+}
+
+.btt-link {
+  cursor: pointer;
 }
 
 /* -------------------------------- Media Queries */
