@@ -77,6 +77,14 @@ It will be reused in multiple templates and I think this will be the easiest sol
   color: black;
 }
 
+.text-green {
+  color: #28a745 !important;
+}
+
+.bg-orange {
+  background: #eb8909 !important;
+}
+
 a.category-badge > span.badge:hover {
   background: #28a745 !important;
   color: #fff !important;
