@@ -51,7 +51,7 @@ they will always stay perfectly centered and have a consistent size - credited i
 }*/
 
 .btn-outline-black {
-  background: white;
+  background: #eb8909;
   color: black !important; /* !important will override link colors for <a> elements */
 }
 
