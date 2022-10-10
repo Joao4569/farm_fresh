@@ -187,6 +187,9 @@ I created a Superuser in order to access the admin functions of Django. The Supe
 
 This app conatins everything needed for Farm Fresh's products, like the product models, views and URL's.
 
+
+### Cart App
+
 ## MVT Architecture
 
 ### Models
@@ -275,6 +278,8 @@ All of this makes sure that the top portion of the navbar which is separate from
 - After creating the product detail tamplate, I manually tested that all links to individual products and product images worked and that the shop now button worked as intended. All worked as expected but I found a bug, on a small mobile device the empty header container wasn't pushing the top of the page down to the bottom of the main site header, the bug and fix is recorded as bug number 4 in the [Bugs found section](#bugs-found).
 
 - Once the logic was in place for the search bar functionality, I manually tested it by running multiple search queries with search terms that were either in the products names or descriptions and checking the results. I did not find an error with this and it is working as expected.
+
+- After creating the shopping cart view, it's URL's and template, I then set up the links in the base.html template as well as the mobile top header template, ran the server and tested that all the links were working as planned.
 
 **Image Placeholder**
 
