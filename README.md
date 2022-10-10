@@ -238,6 +238,19 @@ This view acts as the main products page for Farm Fresh. It also contains the ne
 
  - By setting a `queries` variable equal to a Q object, where the product name contains the query or the product description contains the query, the pipe here then generates the "or" statement and the `i` in front of `contains` makes the queries case insensitive. With those queries constructed one can pass them to the filter method in order to actually filter the products.
 
+#### Add to cart view
+
+In modern versions of HTTP every request-response cycle between the server and the client, in my case between the django view on the server-side and our form making the request on the client-side. Uses what's called a session, to allow information to be stored until the client and server are done communicating. This is especially handy in a situation like an e-commerce store.
+
+Because it allows us to store the contents of the shopping cart in the HTTP session while the user browses the site and adds items to be purchased.By storing the shopping bag in the session. It will persist until the user closes their browser so that they can add something to the cart. Then browse to a different part of the site add something else and so on without losing the contents of their cart. I created this view to implement this concept.
+
+ So for a brief review:
+
+ - The user submits the form to this view including the product id and the quantity.
+ - Once in the view we'll get the cart variable if it exists in the session or create it if it doesn't.
+ - Finally the item gets added to the cart or the quantity gets updated if it already exists and then the variable in the session gets overwritten with the updated  version.
+
+
 ### Templates
 
 All templates folders for apps were created with inner directories matching the apps names to make sure that django knows which app these templates belong to, in case any of them end up having the same names as other templates.
@@ -267,6 +280,12 @@ The list items here are almost identical to the ones that exist in the header in
 
 All of this makes sure that the top portion of the navbar which is separate from the main navigation will display cleanly on mobile and give the user a much better UX.
 
+#### Products Template
+
+#### Product Detail Template
+
+- CSRF Token used in form in order to take advantage of Django's cross-site request forgery protection. As a security precaution without this token Django won't allow you to submit the form.
+
 # Testing
 
 ## Manual Testing
@@ -290,6 +309,8 @@ All of this makes sure that the top portion of the navbar which is separate from
 - Once the logic was in place for the search bar functionality, I manually tested it by running multiple search queries with search terms that were either in the products names or descriptions and checking the results. I did not find an error with this and it is working as expected.
 
 - After creating the shopping cart view, it's URL's and template, I then set up the links in the base.html template as well as the mobile top header template, ran the server and tested that all the links were working as planned.
+
+- After completing the add to cart view, In order to test its functionality, I printed the shopping cart from the session in the add to cart view. By adding a couple products to the cart and checking the console I could see each products id and the quantity added.
 
 **Image Placeholder**
 
