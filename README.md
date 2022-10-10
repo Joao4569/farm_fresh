@@ -312,6 +312,8 @@ All of this makes sure that the top portion of the navbar which is separate from
 
 - After completing the add to cart view, In order to test its functionality, I printed the shopping cart from the session in the add to cart view. By adding a couple products to the cart and checking the console I could see each products id and the quantity added.
 
+- After adding the increment and decrementing buttons to the various pages, I manually tested and adjusted their operation for the desired functionality.
+
 **Image Placeholder**
 
 ## Validator Testing
