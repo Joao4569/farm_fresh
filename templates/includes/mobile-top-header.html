@@ -28,8 +28,8 @@
   <a class="text-white nav-link d-block d-lg-none" href="#" id="user-options" data-toggle="dropdown"
     aria-haspopup="true" aria-expanded="false">
     <div class="text-center">
-      <div><i class="fas fa-user fa-lg"></i></div>
-      <p class="my-0">My Account</p>
+      <div><i class="fas fa-user fa-lg text-green"></i></div>
+      <p class="my-0 text-green">My Account</p>
     </div>
   </a>
   <div class="dropdown-menu border-0" aria-labelledby="user-options">
@@ -51,8 +51,8 @@
   <a class="{% if grand_total %}text-primary font-weight-bold{% else %}text-black{% endif %} nav-link d-block d-lg-none"
     href="{% url 'view_cart' %}">
     <div class="text-center">
-      <div><i class="fas fa-shopping-bag fa-lg text-white"></i></div>
-      <p class="my-0 text-white">
+      <div><i class="fas fa-shopping-bag fa-lg text-green"></i></div>
+      <p class="my-0 text-green">
         {% if grand_total %}
           CHF {{ grand_total|floatformat:2 }}
         {% else %}

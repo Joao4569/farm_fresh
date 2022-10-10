@@ -41,25 +41,28 @@
                 </tr>
               </thead>
 
+              <!-- This table row will display the shopping cart products information -->
               {% for item in cart_items %}
                 <tr>
                   <td class="p-3 w-25">
-                    <img class="img-fluid rounded" src="{{ item.product.image }}">
+                    <img class="img-fluid rounded" src="/media/{{ item.product.image }}">
                   </td>
                   <td class="py-3">
                     <p class="my-0"><strong>{{ item.product.name }}</strong></p>
                   </td>
                   <td class="py-3">
-                    <p class="my-0">${{ item.product.price }}</p>
+                    <p class="my-0">CHF {{ item.product.price }}</p>
                   </td>
                   <td class="py-3 w-25">
                     <p class="my-0">{{ item.quantity }}</p>
                   </td>
                   <td class="py-3">
-                    <p class="my-0">${{ item.product.price }}</p>
+                    <p class="my-0">CHF {{ item.product.price }}</p>
                   </td>
                 </tr>
               {% endfor %}
+
+              <!-- Table row displaying summary of costs and outstanding amount for free delivery -->
               <tr>
                 <td colspan="5" class="pt-5 text-right">
                   <h6><strong>Cart Total: CHF {{ total|floatformat:2 }}</strong></h6>
@@ -73,10 +76,10 @@
                 </td>
               </tr>
 
-              
+              <!-- Table row containing checkout and keep shopping buttons -->
               <tr>
                 <td colspan="5" class="text-right">
-                  <a href="{% url 'products' %}" class="btn btn-outline-black rounded-0 btn-lg">
+                  <a href="{% url 'products' %}" class="btn btn-outline-green rounded-0 btn-lg">
                     <span class="icon">
                       <i class="fas fa-chevron-left"></i>
                     </span>

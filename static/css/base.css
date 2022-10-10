@@ -50,8 +50,8 @@ they will always stay perfectly centered and have a consistent size - credited i
   color: white;
 }*/
 
-.btn-outline-black {
-  background: #eb8909;
+.btn-outline-green {
+  background: #28a745;
   color: black !important; /* !important will override link colors for <a> elements */
 }
 
