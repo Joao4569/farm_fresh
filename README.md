@@ -190,6 +190,16 @@ This app conatins everything needed for Farm Fresh's products, like the product 
 
 ### Cart App
 
+#### Context Processor
+
+This is Farm fresh's context processor for the shopping cart and its purpose is to make a dictionary available to all templates across the entire application much like you can use `request.user` in any template, due to the presence of the built-in request context processor.
+
+In order to make this context processor available to the entire application I added it to the list of context processors in the templates variable in settings.py
+This simple change means that anytime we need to access the cart contents in any template across the entire site they'll be available to us without having to return them from a whole bunch of different views across different apps.
+
+Within this context processor, for convenience to the user, to let the user know how much more they need to spend in order to get a free delivery by creating a variable called `free_delivery_delta`. This way we'll be able to entice the users across the site by letting them know that they can get a free delivery if they just buy a couple more items.
+
+
 ## MVT Architecture
 
 ### Models
