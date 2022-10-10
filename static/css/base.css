@@ -50,6 +50,11 @@ they will always stay perfectly centered and have a consistent size - credited i
   color: white;
 }*/
 
+.btn-outline-black {
+  background: white;
+  color: black !important; /* !important will override link colors for <a> elements */
+}
+
 .shop-now-button:hover,
 .shop-now-button:active,
 .shop-now-button:focus,
