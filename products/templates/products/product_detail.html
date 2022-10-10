@@ -49,14 +49,14 @@ and give this page a white background. -->
           </p>
         {% endif %}
         {% if product.organic %}
-          <small class="text-muted"><i class="fa-solid fa-seedling mr-1"></i>Organic</small>
+          <small class="text-muted"><i class="fa-solid fa-seedling mr-1 text-green"></i>Organic</small>
         {% else %}
-          <small class="text-muted">Non-Organic</small>
+          <small class="text-muted text-orange">Non-Organic</small>
         {% endif %}
         {% if product.in_season %}
-          <small class="text-muted"><i class="fa-solid fa-leaf mr-1"></i>In Season</small>
+          <small class="text-muted"><i class="fa-solid fa-leaf mr-1 text-green"></i>In Season</small>
         {% else %}
-          <small class="text-muted">Not in Season</small>
+          <small class="text-muted text-orange">Not in Season</small>
         {% endif %}
         <p class="mt-3">{{ product.description }}</p>
 
