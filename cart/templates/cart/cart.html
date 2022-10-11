@@ -1,7 +1,11 @@
 <!-- template extending from base.html template -->
 {% extends "base.html" %}
+
 <!-- For loading static files -->
 {% load static %}
+
+<!-- For loading custom templatetag -->
+{% load cart_tools %}
 
 {% block page_header %}
   <div class="container header-container">
@@ -66,7 +70,7 @@
                   <td class="py-3 w-25">
 
                     <!-- Quantity selector -->
-                    <form class="form update-form" method="POST" action="">
+                    <form class="form update-form" method="POST" action="{% url 'adjust_cart' item.item_id %}">
                       {% csrf_token %}
                       <div class="form-group">
                         <div class="input-group">
@@ -98,7 +102,7 @@
                     <a class="remove-item text-danger float-right" id="remove_{{ item.item_id }}"><small>Remove</small></a>
                   </td>
                   <td class="py-3">
-                    <p class="my-0">CHF {{ item.product.price }}</p>
+                    <p class="my-0">CHF {{ item.product.price|calc_subtotal:item.quantity }}</p>
                   </td>
                 </tr>
               {% endfor %}
@@ -172,7 +176,7 @@
   $('.remove-item').click(function(e) {
       var csrfToken = "{{ csrf_token }}";
       var itemId = $(this).attr('id').split('remove_')[1];
-      var url = `/cart/remove/${itemId}`;
+      var url = `/cart/remove/${itemId}/`;
       var data = {'csrfmiddlewaretoken': csrfToken};
 
       $.post(url, data)
