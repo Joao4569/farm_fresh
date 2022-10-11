@@ -309,6 +309,10 @@ All of this makes sure that the top portion of the navbar which is separate from
 
 - CSRF Token used in form in order to take advantage of Django's cross-site request forgery protection. As a security precaution without this token Django won't allow you to submit the form.
 
+#### Toasts
+
+
+
 # Testing
 
 ## Manual Testing
@@ -338,6 +342,9 @@ All of this makes sure that the top portion of the navbar which is separate from
 - After adding the increment and decrementing buttons to the various pages, I manually tested and adjusted their operation for the desired functionality.
 
 - Throughout the process of creating the shopping cart, the buttons for quantity adjustment of a product and the links for updating and removing items from the shopping cart, I extensively tested for the expected functionality and found all buttons, links and pricing functioned as I had envisioned.
+
+- After creating the success toast, I manually added a product to the cart and tested its operation. It worked as expected.
+ - Once the logic for different toasts allocated to different levels was in place, I also tested its functiionality by creating various toast allocations using my views in order to test its operation. All worked successfully.
 
 **Image Placeholder**
 

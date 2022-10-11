@@ -171,7 +171,24 @@
 
   <!-- To display any messages that we send back from Django -->
   {% if messages %}
-    <div class="message-container"></div>
+    <div class="message-container">
+      {% for message in messages %}
+
+        <!-- This will allocate toasts according to their levels -->
+        {% with message.level as level %}
+          {% if level == 40 %}
+            {% include 'includes/toasts/toast_error.html' %}
+          {% elif level == 30 %}
+            {% include 'includes/toasts/toast_warning.html' %}
+          {% elif level == 25 %}
+            {% include 'includes/toasts/toast_success.html' %}
+          {% else %}
+            {% include 'includes/toasts/toast_info.html' %}
+          {% endif %}
+        {% endwith %}
+        
+      {% endfor %}
+    </div>
   {% endif %}
 
   <!-- This page header block will act as an additional header added to the top of pages but underneath the main header. -->
@@ -182,8 +199,11 @@
   {% block content %}
   {% endblock %}
 
-  <!-- This block will add JavaScript that we want to load at the end of the body when needed. -->
+  <!-- This block will add JavaScript needed in order to display toasts -->
   {% block postloadjs %}
+  <script type="text/javascript">
+     $('.toast').toast('show');
+  </script>
   {% endblock %}
 
 

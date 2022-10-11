@@ -89,6 +89,9 @@ TEMPLATES = [
     },
 ]
 
+# To store messages in the session for toasts
+MESSAGE_STORAGE = 'django.contrib.messages.storage.session.SessionStorage'
+
 # Taken from Django allauth documentation.
 AUTHENTICATION_BACKENDS = (
     # Needed to login by username in Django admin, regardless of allauth.
