@@ -190,6 +190,29 @@ This app conatins everything needed for Farm Fresh's products, like the product 
 
 ### Cart App
 
+ - templatetags:
+
+  - A useful trick to have in your arsenal.
+For this column, the subtotal should be the quantity times the product price.
+In a new folder called template tags.
+I'll create a file called bag_tools.py
+And I'll also create an empty file called `__init__ .py`
+which will ensure that this directory is treated as a Python package
+making our bag tools module available for imports and to use in templates.
+Now in the bag tools file from django i'll import template.
+And then create a function called calc_subtotal
+Which takes in a price and a quantity as parameters and simply returns their irproduct.
+Now to register this filter we need to create a variable called register.
+Which is an instance of template.library
+And then use the register filter decorator to register our function as a template filter.
+All of this is straight from the django documentation by the way
+so if you'd like a deeper explanation of how it works
+just go there and look up creating custom template tags and filters.
+With the filter finished all we need to do to use it is load it in the bag template with load bag tools.
+Then we can pipe the price into it as the first argument.
+And send the item quantity as the second.
+
+
 #### Context Processor
 
 This is Farm fresh's context processor for the shopping cart and its purpose is to make a dictionary available to all templates across the entire application much like you can use `request.user` in any template, due to the presence of the built-in request context processor.
@@ -313,6 +336,8 @@ All of this makes sure that the top portion of the navbar which is separate from
 - After completing the add to cart view, In order to test its functionality, I printed the shopping cart from the session in the add to cart view. By adding a couple products to the cart and checking the console I could see each products id and the quantity added.
 
 - After adding the increment and decrementing buttons to the various pages, I manually tested and adjusted their operation for the desired functionality.
+
+- Throughout the process of creating the shopping cart, the buttons for quantity adjustment of a product and the links for updating and removing items from the shopping cart, I extensively tested for the expected functionality and found all buttons, links and pricing functioned as I had envisioned.
 
 **Image Placeholder**
 
