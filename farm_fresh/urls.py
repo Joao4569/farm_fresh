@@ -23,5 +23,6 @@ urlpatterns = [
     path('accounts/', include('allauth.urls')),  # Path to Django Allauth URL's
     path('', include('home.urls')),  # Path to Home app URL's
     path('products/', include('products.urls')),  # Path to Products app URL's
-    path('cart/', include('cart.urls')),  # Path to Products app URL's
+    path('cart/', include('cart.urls')),  # Path to Shopping cart app URL's
+    path('checkout/', include('checkout.urls')),  # Path to Checkout app URL's
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)  # media path

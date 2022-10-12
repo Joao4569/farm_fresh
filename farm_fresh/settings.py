@@ -49,6 +49,9 @@ INSTALLED_APPS = [
     'products',  # Custom products app
     'cart',  # Custom shopping cart app
     'checkout',  # Custom checkout app
+
+    # Additional apps
+    'crispy_forms',  # Crispy forms
 ]
 
 MIDDLEWARE = [
@@ -62,6 +65,8 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'farm_fresh.urls'
+
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 TEMPLATES = [
     {
@@ -83,9 +88,17 @@ TEMPLATES = [
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
 
+                # Media context processor
+                'django.template.context_processors.media',
+
                 # This context processor is for the cart contents
                 'cart.contexts.cart_contents',
             ],
+            # These will give the whole site access to crispy forms
+            'builtins': [
+                'crispy_forms.templatetags.crispy_forms_tags',
+                'crispy_forms.templatetags.crispy_forms_field',
+            ]
         },
     },
 ]
