@@ -20,7 +20,8 @@ class Order(models.Model):
                                     null=False, editable=False)
     street_address1 = models.CharField(max_length=80, null=False, blank=False)
     street_address2 = models.CharField(max_length=80, null=True, blank=True)
-    canton = models.CharField(max_length=80, null=True, blank=True)
+    canton = models.CharField(default='Zürich', max_length=80, null=False,
+                              editable=False)
     date = models.DateTimeField(auto_now_add=True)
     delivery_cost = models.DecimalField(max_digits=6, decimal_places=2,
                                         null=False, default=0)
