@@ -224,6 +224,9 @@ Within this context processor, for convenience to the user, to let the user know
 
 #### checkout app
 
+- Crispy  forms
+- settings.py built-ins
+
 ## MVT Architecture
 
 ### Models
