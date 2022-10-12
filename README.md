@@ -222,6 +222,7 @@ This simple change means that anytime we need to access the cart contents in any
 
 Within this context processor, for convenience to the user, to let the user know how much more they need to spend in order to get a free delivery by creating a variable called `free_delivery_delta`. This way we'll be able to entice the users across the site by letting them know that they can get a free delivery if they just buy a couple more items.
 
+#### checkout app
 
 ## MVT Architecture
 
