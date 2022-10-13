@@ -1,5 +1,6 @@
 from django.urls import path
 from . import views
+from .webhooks import webhook
 
 urlpatterns = [
     # Path to checkout page
@@ -7,5 +8,8 @@ urlpatterns = [
 
     # Path to checkout success page
     path('checkout_success/<order_number>',
-         views.checkout_success, name='checkout_success')
+         views.checkout_success, name='checkout_success'),
+
+    # Path for stripe webhooks
+    path('wh/', webhook, name='webhook'),
 ]
