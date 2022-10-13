@@ -12,4 +12,8 @@ urlpatterns = [
 
     # Path for stripe webhooks
     path('wh/', webhook, name='webhook'),
+
+    # Path for cached checkout data
+    path('cache_checkout_data/', views.cache_checkout_data,
+         name='cache_checkout_data'),
 ]
