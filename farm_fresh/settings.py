@@ -188,12 +188,16 @@ that because it will interfere with setting up Amazon Web Services later on in
 the build."""
 STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
 
-#  This will tell Django where all of our media files are located.
+# This will tell Django where all of our media files are located.
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
+# Stripe
 FREE_DELIVERY_THRESHOLD = 30
-STANDARD_DELIVERY_PERCENTAGE = 10
+STANDARD_DELIVERY_PERCENTAGE = 15
+STRIPE_CURRENCY = 'chf'
+STRIPE_PUBLIC_KEY = os.getenv('STRIPE_PUBLIC_KEY', '')
+STRIPE_SECRET_KEY = os.getenv('STRIPE_SECRET_KEY', '')
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
