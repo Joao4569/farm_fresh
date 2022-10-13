@@ -350,6 +350,16 @@ All of this makes sure that the top portion of the navbar which is separate from
 - After creating the success toast, I manually added a product to the cart and tested its operation. It worked as expected.
  - Once the logic for different toasts allocated to different levels was in place, I also tested its functiionality by creating various toast allocations using my views in order to test its operation. All worked successfully.
 
+- While checking the checkout flow by adding items to the cart, processing a test checkout payment, checking that the form is submitted and testing that the checkout_success page was working as expected, I found that the costs for the order did not appear in the order on the admin site, I suspected that the signals were not working as intended. The bug and it's fix is recorded as bug number 5 in the [Bugs found section](#bugs-found).
+
+### Stripe Testing
+
+When entering an invalid card number, the numbers change to red indicating an invalid card number.
+
+After initial installation I used the Stripe test card number and processed a payment, the form submitted and the payment was shown as successfull on the Stripe site.
+
+
+
 **Image Placeholder**
 
 ## Validator Testing
@@ -366,6 +376,8 @@ All of this makes sure that the top portion of the navbar which is separate from
 3. While creating the products models and attempting to make migrations I recieved the following error from the terminla window : `(fields.E210) Cannot use ImageField because Pillow is not installed.` - **RESOLVED** by installing Pillow.
 
 4. While testing the product detail template I found that on a small mobile device the empty header container wasn't pushing the top of the page down to the bottom of the main site header - **RESOLVED** by adding another 3 media queries in the base.css file in order to push the body down on mobile devies due to the slightly different layout used.
+
+5. Found a bug with the checkout signals while testing the checkout flow - first I found a duplicate function name in signals.py within the checkout app, I changed this and added a print message in order to test the delete signal in the update on delete function.**RESOLVED** by finding that the signal was recieved, printed my message to the terminal and updated the orders totals. Just to make sure I then created and deleted another order, updated and modified a few line items and found it all was working as expected, including the delivery costs while I was busy testing the rest of the functionality.
 
 ## Unfixed Bugs
 
