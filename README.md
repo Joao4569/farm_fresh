@@ -364,6 +364,8 @@ All of this makes sure that the top portion of the navbar which is separate from
 
 - Once everything was in place for the users information to be pre-filled on an order if they have the neccessary information saved, I then proceeded to test this by creating a new order and checking that the users info was in place as expected. All was in order.
 
+- After adding the functionality to the webhook handler of the checkout app, to handle the form submision if for some reason the checkout view fails, I adjusted the Javascipt not to submit the form and tested if the webhook handler performed as expected. I found all to be in order and functioning as intended. The users order history also updated and got saved to the users profile.
+
 ### Stripe Testing
 
 When entering an invalid card number, the numbers change to red indicating an invalid card number.
