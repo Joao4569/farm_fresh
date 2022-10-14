@@ -1,1 +1,19 @@
 {% extends "base.html" %}
+
+<!-- Customisation of standard allauth template design -->
+{% block content %}
+<div class="container header-container">
+  <div class="overlay"></div>
+  <div class="row">
+    <div class="col-12 col-md-6">
+      <div class="allauth-form-inner-content">
+
+        <!-- Custom block to prevent confusion -->
+        {% block inner_content %}
+        {% endblock %}
+        
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

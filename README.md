@@ -352,6 +352,8 @@ All of this makes sure that the top portion of the navbar which is separate from
 
 - While checking the checkout flow by adding items to the cart, processing a test checkout payment, checking that the form is submitted and testing that the checkout_success page was working as expected, I found that the costs for the order did not appear in the order on the admin site, I suspected that the signals were not working as intended. The bug and it's fix is recorded as bug number 5 in the [Bugs found section](#bugs-found).
 
+- I did a test log in and logout and found that the standard Allauth templates did not function well and started with their customisation thereafter.
+
 ### Stripe Testing
 
 When entering an invalid card number, the numbers change to red indicating an invalid card number.

@@ -5,9 +5,13 @@
 
 {% block head_title %}{% trans "Confirm E-mail Address" %}{% endblock %}
 
+<!-- Custom block to prevent confusion -->
+{% block inner_content %}
 
-{% block content %}
-<h1>{% trans "Confirm E-mail Address" %}</h1>
+<!-- Custom header -->
+<hr>
+<h2 class="logo-font mb-4">{% trans "Confirm E-mail Address" %}</h2>
+<hr>
 
 {% if confirmation %}
 
