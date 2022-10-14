@@ -49,6 +49,7 @@ INSTALLED_APPS = [
     'products',  # Custom products app
     'cart',  # Custom shopping cart app
     'checkout',  # Custom checkout app
+    'user_profiles',  # Custom user profiles app
 
     # Additional apps
     'crispy_forms',  # Crispy forms

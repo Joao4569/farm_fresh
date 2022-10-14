@@ -19,10 +19,27 @@ from django.conf import settings
 from django.conf.urls.static import static
 
 urlpatterns = [
-    path('admin/', admin.site.urls),  # Path to Django admin site
-    path('accounts/', include('allauth.urls')),  # Path to Django Allauth URL's
-    path('', include('home.urls')),  # Path to Home app URL's
-    path('products/', include('products.urls')),  # Path to Products app URL's
-    path('cart/', include('cart.urls')),  # Path to Shopping cart app URL's
-    path('checkout/', include('checkout.urls')),  # Path to Checkout app URL's
-] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)  # media path
+    # Path to Django admin site
+    path('admin/', admin.site.urls),
+
+    # Path to Django Allauth URL's
+    path('accounts/', include('allauth.urls')),
+
+    # Path to Home app URL's
+    path('', include('home.urls')),
+
+    # Path to Products app URL's
+    path('products/', include('products.urls')),
+
+    # Path to Shopping cart app URL's
+    path('cart/', include('cart.urls')),
+
+    # Path to Checkout app URL's
+    path('checkout/', include('checkout.urls')),
+
+    # Path to User profile app URL's
+    path('profile/',
+         include('user_profiles.urls')),
+
+    # media path
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

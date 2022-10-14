@@ -12,7 +12,10 @@ class OrderForm(forms.ModelForm):
     def __init__(self, *args, **kwargs):
         """
         Add placeholders and classes, remove auto-generated
-        labels and set autofocus on first field
+        labels and set autofocus on first field. I also left placeholders
+        for fields which are not currently needed but in future when
+        delivery to other cities or countries is needed then the basics
+        are already in place without currently causing errors.
         """
         super().__init__(*args, **kwargs)
         placeholders = {
