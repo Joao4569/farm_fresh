@@ -356,6 +356,8 @@ All of this makes sure that the top portion of the navbar which is separate from
 
 - Once all the Allauth templates were customised, I then proceeded to test login, logout and registration by creating a new user. At the same time I also tested that the confirmation emails were functioning. I had to temporary block out the signal for the model function of the UserProfile model in order to log in with the superuser as it was created prior to the signal, this was to avoid it giving an error and to avoid having to create a new superuser. All tests were successfull.
 
+- Once the functionality was in place for users to update their profile with new information, I tested it for the expected functionality and found it all to be in order.
+
 ### Stripe Testing
 
 When entering an invalid card number, the numbers change to red indicating an invalid card number.
