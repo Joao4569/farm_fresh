@@ -199,15 +199,29 @@
       </div>
     </div>
 
-    <!-- Link to special offers -->
     <div class="row">
       <div class="col-12 col-lg-7 text-right">
-        <a href="{% url 'products' %}?category=special_offers" class="btn btn-black rounded-0 my-2">
-          <span class="icon mr-2">
-            <i class="fas fa-gifts"></i>
-          </span>
-          <span class="text-uppercase">Now check out our Specials!</span>
-        </a>
+        {% if from_profile %}
+
+          <!-- Link to profile page if user is coming from the profile page -->
+          <a href="{% url 'profile' %}" class="btn btn-black rounded-0 my-2">
+            <span class="icon mr-2">
+              <i class="fas fa-angle-left"></i>
+            </span>
+            <span class="text-uppercase">Return to Profile</span>
+          </a>
+
+        {% else %}
+
+          <!-- Link to special offers -->
+          <a href="{% url 'products' %}?category=special_offers" class="btn btn-black rounded-0 my-2">
+            <span class="icon mr-2">
+              <i class="fas fa-gifts"></i>
+            </span>
+            <span class="text-uppercase">Now check out our Specials!</span>
+          </a>
+
+        {% endif %}
       </div>
     </div>
   </div>
