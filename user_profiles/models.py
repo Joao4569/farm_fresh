@@ -17,8 +17,6 @@ class UserProfile(models.Model):
     default_country = models.CharField(default='Switzerland', max_length=40,
                                        null=False, editable=False)
 
-    default_postcode = models.CharField(max_length=20, null=True, blank=True)
-
     default_town_or_city = models.CharField(default='Zürich', max_length=40,
                                             null=False, editable=False)
 
@@ -31,6 +29,8 @@ class UserProfile(models.Model):
     default_canton = models.CharField(default='Zürich', max_length=80,
                                       null=False,
                                       editable=False)
+
+    default_postcode = models.CharField(max_length=20, null=True, blank=True)
 
     def __str__(self):
         return self.user.username
