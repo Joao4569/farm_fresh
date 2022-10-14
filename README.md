@@ -358,6 +358,12 @@ All of this makes sure that the top portion of the navbar which is separate from
 
 - Once the functionality was in place for users to update their profile with new information, I tested it for the expected functionality and found it all to be in order.
 
+- Once all the functionality was in place to test the order history and if user information is saved, if so selected by the user, I then proceeded to place an order as a authenticated user, process a test payment with test information to update the test users information. All functioned as expected and the order history is diplayed and the users information was updated and stored.
+
+ - I also tested the order history link by clicking on the order number on the profile pages order history section and was redirected to the information of the specific order.
+
+- Once everything was in place for the users information to be pre-filled on an order if they have the neccessary information saved, I then proceeded to test this by creating a new order and checking that the users info was in place as expected. All was in order.
+
 ### Stripe Testing
 
 When entering an invalid card number, the numbers change to red indicating an invalid card number.
