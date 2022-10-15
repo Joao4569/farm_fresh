@@ -366,6 +366,8 @@ All of this makes sure that the top portion of the navbar which is separate from
 
 - After adding the functionality to the webhook handler of the checkout app, to handle the form submision if for some reason the checkout view fails, I adjusted the Javascipt not to submit the form and tested if the webhook handler performed as expected. I found all to be in order and functioning as intended. The users order history also updated and got saved to the users profile.
 
+- After creeating the add product form and view, I tested its operation buy adding the url, going to the page and testing all fields. All tested well and as expected.
+
 ### Stripe Testing
 
 When entering an invalid card number, the numbers change to red indicating an invalid card number.
