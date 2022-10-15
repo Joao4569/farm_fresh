@@ -15,6 +15,7 @@ The newest version of Django does not automatically import the os module.
 """
 import os
 from pathlib import Path
+import dj_database_url
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -137,19 +138,17 @@ WSGI_APPLICATION = 'farm_fresh.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
-if 'DATABASE_URL' in os.environ:
-    DATABASES = {
-        'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
+# if 'DATABASE_URL' in os.environ:
+# DATABASES = {
+    # 'default': dj_database_url.parse('')
+ # }
+# else:
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
-else:
-    DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.sqlite3',
-            'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-        }
-    }
-
-# postgres://qupcojtcujymeb:68fe258b2d6f8a31135309c58cc77cc758ebba0e4fb9cb34eb0dfde622bb9b4b@ec2-54-77-40-202.eu-west-1.compute.amazonaws.com:5432/d8jdeh9vvo8usd
+}
 
 
 # Password validation
