@@ -370,6 +370,8 @@ All of this makes sure that the top portion of the navbar which is separate from
 
 - I then proceeded to add product, with and without images and found that the add product functionality is working exactly as expected.
 
+- Once all product admin functions and links were in place, I then proceeded to add, edit and delete products and found that all CRUD functionality and links were working as expected.
+
 ### Stripe Testing
 
 When entering an invalid card number, the numbers change to red indicating an invalid card number.
