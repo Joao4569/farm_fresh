@@ -29,7 +29,9 @@ SECRET_KEY = 'django-insecure-#v*a$%bqcv!($+k87bz8np-)522t9*l2pva7y65%1tr_w$nb&-
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    'farm-fresh-ch.herokuapp.com', 'localhost'
+]
 
 
 # Application definition
@@ -135,13 +137,19 @@ WSGI_APPLICATION = 'farm_fresh.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        # Solution to bug from Stackoverflow - noted in readme file.
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+if 'DATABASE_URL' in os.environ:
+    DATABASES = {
+        'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
     }
-}
+else:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        }
+    }
+
+# postgres://qupcojtcujymeb:68fe258b2d6f8a31135309c58cc77cc758ebba0e4fb9cb34eb0dfde622bb9b4b@ec2-54-77-40-202.eu-west-1.compute.amazonaws.com:5432/d8jdeh9vvo8usd
 
 
 # Password validation
