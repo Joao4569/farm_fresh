@@ -107,7 +107,7 @@
                 {% if request.user.is_superuser %}
 
                   <!-- Product management link -->
-                  <a href="" class="dropdown-item">Product Management</a>
+                  <a href="{% url 'add_product' %}" class="dropdown-item">Product Management</a>
                 {% endif %}
 
                 <!-- Link to user account/profile -->
