@@ -161,6 +161,12 @@ Opposed to building my own authentication system, allauth already has all the fe
 9. I also set a minimum username length of four characters and specified a login url and a url to redirect back to after logging in.
 10. Finally create a allauth directory within the project level templates directory in order to store the customised allauth templates.
 
+## Deployment
+
+- create heroku app
+
+## Deployment testing
+
 ## Access Control
 
 I have created a few users which will be helpfull for testing the project:
