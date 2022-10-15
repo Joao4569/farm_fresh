@@ -10,4 +10,7 @@ urlpatterns = [
 
     # Path to add product page for superusers
     path('add/', views.add_product, name='add_product'),
+
+    # Path to edit a product page for superusers
+    path('edit/<int:product_id/', views.edit_product, name='edit_product'),
 ]
