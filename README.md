@@ -356,7 +356,7 @@ All of this makes sure that the top portion of the navbar which is separate from
 - After creating the success toast, I manually added a product to the cart and tested its operation. It worked as expected.
  - Once the logic for different toasts allocated to different levels was in place, I also tested its functiionality by creating various toast allocations using my views in order to test its operation. All worked successfully.
 
-- While checking the checkout flow by adding items to the cart, processing a test checkout payment, checking that the form is submitted and testing that the checkout_success page was working as expected, I found that the costs for the order did not appear in the order on the admin site, I suspected that the signals were not working as intended. The bug and it's fix is recorded as bug number 5 in the [Bugs found section](#bugs-found).
+- While checking the checkout flow by adding items to the cart, processing a test checkout payment, checking that the form is submitted and testing that the checkout_success page was working as expected, I found that the costs for the order did not appear in the order on the admin site, I suspected that the signals were not working as intended. The bug and it's fix is recorded as bug no. 5 in the [Bugs found section](#bugs-found).
 
 - I did a test log in and logout and found that the standard Allauth templates did not function well and started with their customisation thereafter.
 
@@ -381,6 +381,8 @@ All of this makes sure that the top portion of the navbar which is separate from
 - When I completed the new style image field in the product admin section, I tested it by adding and editing a new test product while adding an image, removing it and changing it, and found that all was functioning as expected.
 
 - Access control to all product admin pages was tested and functioning as expected. As a non-superuser one cannot access these pages and will be notified with an errror message displayed on screen.
+
+- Once our AWS bucket was created and the the new storage location setup for our static files, I ran a deployment and found that it was not working as expected. This is listed as bug no. 7 in the [Bugs found section](#bugs-found).
 
 ### Stripe Testing
 
@@ -410,6 +412,8 @@ After initial installation I used the Stripe test card number and processed a pa
 5. Found a bug with the checkout signals while testing the checkout flow - first I found a duplicate function name in signals.py within the checkout app, I changed this and added a print message in order to test the delete signal in the update on delete function.**RESOLVED** by finding that the signal was recieved, printed my message to the terminal and updated the orders totals. Just to make sure I then created and deleted another order, updated and modified a few line items and found it all was working as expected, including the delivery costs while I was busy testing the rest of the functionality.
 
 6. While testing the checkout success page and the Stripe webhooks, I found an error with the form submit function in the stripe_elements.js file. I was trying to trim and collect form data which is preset in the model as well as non editable fields, and not captured on the form from the users input. **RESOLVED** by removing the code for collecting and trimming the users form input, for these 3 field: City, Country and state.
+
+7. While testing if the static files were being loaded to our AWS S3 bucket, an error appeared that our static files were not being loaded to AWS. Since I was using the Boutique Ado project as a guiudeline for this project, I opened the requirements.txt file and compared it to my own as I thought the error might lie with the relationship between older versions of certain software trying to communicate with newer versions of others. I proceeded to then uninstall and reinstall any versions of software that looked like they were a lot newer than once used in Boutique Ado and this **RESOLVED** the issue and all my static files were loaded to our AWS bucket.
 
 ## Unfixed Bugs
 
