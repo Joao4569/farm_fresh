@@ -32,11 +32,11 @@
     <!-- Row for table containg shopping cart content -->
     <div class="row">
       <div class="col">
-        {% if cart/cart_items %}
+        {% if cart_items %}
           <div class="d-block d-md-none">
             <div class="row">
               <div class="col">
-                {% include "cart-total.html" %}
+                {% include "cart/cart-total.html" %}
               </div>
             </div>
             <div class="row">
