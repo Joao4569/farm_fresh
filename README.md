@@ -396,6 +396,8 @@ After initial installation I used the Stripe test card number and processed a pa
 
 - While testing if images were displaying on the deployed site I found a bug with the image URL's. This is now fixed and noted as bug no.8 in the [Bugs found section](#bugs-found).
 
+- Once all bugs found thus far had been attended to, I then proceeded to test all images, shopping cart functions and checkout functionailty by logging in and compiling an order, then processing a payment and viewing the test users order history and found the purchase and checkout functionality all working as expected on the deployed site.
+
 
 **Image Placeholder**
 
