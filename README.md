@@ -400,6 +400,8 @@ After initial installation I used the Stripe test card number and processed a pa
 
 - After setting up a functioning email service, I proceeded to create a test user with a temporary email address and registered on the site. I recieved an email with a confirmation link and found everything working as expected.
 
+- While testing for mobile devices UX, I found 2 minor bugs which were easily fixed. Noted as bug no. 10 in the [Bugs found section](#bugs-found).
+
 
 **Image Placeholder**
 
@@ -427,6 +429,8 @@ After initial installation I used the Stripe test card number and processed a pa
 8. After testing if all images were displaying after having been moved to AWS, I found that non of the images were displaying. I **RESOLVED** this by fixing all the image source URL's by using newly setup media url instead of the normal `/media/` file path used in gitpod throughout production.
 
 9. While deploying to Heroku I found an error with the deployment, the standard Heroku Python runtime version is not compatible with the setup of this application. I **RESOLVED** this by creating a `runtime.txt` file containing a runtime Python version to be used by Heroku. The source of this solution is listed in the Credits [content](#content) section of this document.
+
+10. While testing deployment for mobile devices I found 2 minor bugs, the first was a naming convention that I forgot to change while building and the other I found when trying to access the shopping cart. I recieved a 500 error (Internal server error) and managed to trace it bag to either views.py, urls.py or in cart.html file for the checkout app. While checking cart.html for errors, I realised that when creating the new includes for this page, that I had made an error with one of the includes names. This is now **RESOLVED**.
 
 ## Unfixed Bugs
 
