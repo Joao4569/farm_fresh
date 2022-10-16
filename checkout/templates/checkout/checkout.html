@@ -52,7 +52,7 @@
               <!-- Item image -->
               <a href="{% url 'product_detail' item.product.id %}">
                 {% if item.product.image %}
-                  <img class="w-100" src="/media/{{ item.product.image }}" alt="{{ product.name }}">
+                  <img class="w-100" src="{{ MEDIA_URL }}{{ item.product.image }}" alt="{{ product.name }}">
                 {% else %}
                   <img class="w-100" src="{{ MEDIA_URL }}noimage.png" alt="{{ product.name }}">
                 {% endif %}
