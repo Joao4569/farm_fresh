@@ -66,6 +66,11 @@
     * [Product Detail Template](#product-detail-template)
     * [Toasts](#toasts)
     * [404 Errors](#404-errors)
+    * [Products Template](#products-template)
+    * [Product Detail](#product-detail-template)
+    * [Checkout Template](#checkout-template)
+    * [Checkout Success Template](#checkout-success-template)
+    * [Profile Template](#profile-template)
 
 * [SEO Optimization](#seo-optimization)
 
@@ -392,7 +397,7 @@ This template will render a custom 404 error message to users when they try and 
 
 ### Products Template
 
-This template extends the base template and allows the user to view lists of products including some details of the products, their prices and product images. The superuser will be able to edit or delete inventory items if logged on to this page.
+This template extends the base template and allows the user to view lists of products including some details of the products, their prices and product images. The superuser will be able to edit or delete inventory items if logged in on this page.
 
 Contains the following:
 
@@ -405,7 +410,38 @@ Contains the following:
 
 ### Product Detail Template
 
-- CSRF Token used in form in order to take advantage of Django's cross-site request forgery protection. As a security precaution without this token Django won't allow you to submit the form.
+This template will provide the user with a detailed view of the selected product with a full product description. The superuser will be able to edit or delete inventory items if logged in on this page.
+
+Contains the following:
+
+- A CSRF Token used in form in order to take advantage of Django's cross-site request forgery protection. As a security precaution without this token Django won't allow you to submit the form.
+- A bigger product image.
+- A product description.
+- A quantity selector.
+- Keep shopping and add to cart buttons.
+
+### Checkout Template
+
+This will act as the template for finalizing a order and processing a payment.
+
+Contains the following:
+
+- A order summary view with product count and order price totals.
+- A form for the user to input their delivery and payment information.
+- A button for going back to the cart and amending the order.
+
+### Checkout Success Template
+
+### Profile Template
+
+This template will act as a page for the user to view and update there delivery information and view their order history.
+
+Contains the following:
+
+- A form for viewing the users delivery information.
+- A button for updating their information.
+- A view of their order history.
+- A link to view previous orders by clicking on the displayed order number.
 
 ### SEO Optimization
 
