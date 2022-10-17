@@ -6,46 +6,77 @@
 
 ## Table of Contents
 
-* [Conception](#Conception)
-  * [Project Scope](#Project-Scope)
-  * [Basic Wireframe Design](#Basic-Wireframe-Design)
-  * [Agile](#Agile)
+* [Conception](#conception)
+
+  * [Project Scope](#project-Scope)
+
+  * [Basic Wireframe Design](#basic-wireframe-design)
+    * [Landing Page Wireframe](#landing-page-wireframe)
+    * [Products Page Wireframe](#products-page-wireframe)
+    * [Product Detail Page Wireframe](#products-detail-page-wireframe)
+    * [Shopping Cart Wireframe](#shopping-cart-wireframe)
+    * [Checkout Page Wireframe](#checkout-page-wireframe)
+
+  * [Agile](#agile)
 
 * [Project Setup](#Project-Setup)
-  * [Installing Django and supporting libraries](#Installing-Django-and-supporting-libraries)
-  * [Create new Django project and app](#Create-new-Django-project-and-app)
+  * [Installing Django and supporting libraries](#installing-django-and-supporting-libraries)
+  * [Create new Django project](#create-new-django-project)
   * [Django Allauth](#django-allauth)
     * [Required Django Allauth settings](#required-django-allauth-settings)
-  * [Deployment on Heroku](#Deployment-on-Heroku)
-    * [Steps to create Heroku App](#Steps-to-create-Heroku-App)
-    * [Setting up Config Vars](#Setting-up-Config-Vars)
-    * [Wiring up the Database](#Wiring-up-the-Database)
-    * [Cloudinary Setup](Cloudinary-Setup)
-    * [Deployment](#Deployment)
 
-* [Deployment Testing](#Deployment-Testing)
+* [Deployment on Heroku](#deployment-on-heroku)
+
+* [Access Control](#access-control)
 
 * [Features - Existing Features](#features---existing-features)
 
-* [MVT Architecture](#MVT-Architecture)
-  * [Models](#Models)
-  * [Views](#Views)
-  * [Templates](#Templates)
+  * [Django Apps](#django-apps)
+    * [Home App](#home-app)
+    * [Product App](#product-app)
 
-* [Access Control](#Access-Control)
+    * [Cart App](#cart-app)
+      * [Template Tags](#template-tags)
+      * [Context Processor](#context-processor)
 
-* [Features - Features Left To Implement](#features---features-left-to-impliment)
+    * [Checkout App](#checkout-app)
 
-* [Testing](#Testing)
-  * [Manual Testing](#Manual-Testing)
-  * [Validator Testing](#Validator-Testing)
-    * [Initial Validator Tests](#Initial-Validator-Tests)
-    * [Final Validator Tests](#Final-Validator-Tests)
+* [MVT Architecture](#mvt-architecture)
+
+  * [Models](#models)
+    * [Products](#products)
+      * [Category Model](#category-model)
+      * [Product Model](#product-model)
+      * [Producer Model](#producer-model)
+
+  * [Views](#views)
+    * [Index View](#index-view)
+    * [All Products View](#all-products-view)
+    * [Add to Cart View](#add-to-cart-view)
+
+  * [Templates](#templates)
+    * [Allauth Templates](#allauth-templates)
+
+    * [Base Template](#base-template)
+      * [Includes](#includes)
+      * [Mobile Top Header](#mobile-top-header)
+
+    * [Products Template](#products-template)
+    * [Product Detail Template](#product-detail-template)
+    * [Toasts](#toasts)
+
+* [Features - Features Left To Implement](#features-left-to-implement)
+
+* [Testing](#testing)
+  * [Manual Testing](#manual-testing)
+  * [Stripe Testing](#stripe-testing)
+  * [Deployment Testing](#deployment-testing)
+  * [Validator Testing](#validator-testing)
   * [Bugs Found](#bugs-found)
-  * [Unfixed Bugs](#Unfixed-Bugs)
+  * [Unfixed Bugs](#unfixed-bugs)
 
-* [Credits](#Credits)
-  * [Content](#Content)
+* [Credits](#credits)
+  * [Content](#content)
   * [Media](#media)
 
 
@@ -69,23 +100,23 @@ Once I had the basic scope and logic in place, I then proceeded to design a visu
 
 #### Landing Page Wireframe
 
-![wf_landing_page](media/wf_landing_page.png)
+![wf_landing_page]({{ MEDIA_URL }}/readme_images/wireframe/wf_landing_page.png)
 
 #### Products Page Wireframe
 
-![wf_product_page](media/wf_products.png)
+![wf_product_page](media/readme_images/wireframe/wf_products.png)
 
 #### Products Detail Page Wireframe
 
-![wf_product_detail_page](media/wf_product_detail.png)
+![wf_product_detail_page](media/readme_images/wireframe/wf_product_detail.png)
 
 #### Shopping Cart Wireframe
 
-![wf_shopping_cart](media/wf_shopping_cart.png)
+![wf_shopping_cart](media/readme_images/wireframe/wf_shopping_cart.png)
 
 #### Checkout Page Wireframe
 
-![wf_checkout_page](media/wf_checkout.png)
+![wf_checkout_page](media/readme_images/wireframe/wf_checkout.png)
 
 
 ### Agile
@@ -111,15 +142,15 @@ This is how I approached the challenge:
 
 #### Kanban Example
 
-![kanban](media/kanban.png)
+![kanban](media/readme_images/agile/kanban.png)
 
 #### Product Backlog Example
 
-![product_backlog](media/product_backlog.png)
+![product_backlog](media/readme_images/agile/product_backlog.png)
 
 #### Moscow Prioritisation Example
 
-![moscow_prioritisation](media/moscow_prioritisation.png)
+![moscow_prioritisation](media/readme_images/agile/moscow_prioritisation.png)
 
 ## Project Setup
 
@@ -161,11 +192,9 @@ Opposed to building my own authentication system, allauth already has all the fe
 9. I also set a minimum username length of four characters and specified a login url and a url to redirect back to after logging in.
 10. Finally create a allauth directory within the project level templates directory in order to store the customised allauth templates.
 
-## Deployment
+## Deployment on Heroku
 
 - create heroku app
-
-## Deployment testing
 
 ## Access Control
 
@@ -196,7 +225,7 @@ This app conatins everything needed for Farm Fresh's products, like the product 
 
 ### Cart App
 
- - templatetags:
+#### Template Tags
 
   - A useful trick to have in your arsenal.
 For this column, the subtotal should be the quantity times the product price.
@@ -237,7 +266,7 @@ Within this context processor, for convenience to the user, to let the user know
 
 ### Models
 
-#### Product App
+#### Products
 
 #### Category Model
 
@@ -292,7 +321,7 @@ All templates folders for apps were created with inner directories matching the 
 
 All allauth templates were copied and stored in a unique directory within the project level templates directory in order to store and customise all the required allauth templates for Farm Fresh.
 
-#### base.html
+#### Base Template
 
 Recommended best practises taken from Boutique Ado walkthrough project. Seperate blocks were created so that I can extend this template later on and replace segments of it as needed.
 
@@ -301,11 +330,11 @@ Recommended best practises taken from Boutique Ado walkthrough project. Seperate
 - Contains all the secmented sections of blocks so that I can extend this template later on and replace segments of it as needed.
 - Contains the sites main header with logo, search bar, user related links and the link to the shopping cart.
 
-#### Includes folder
+#### Includes
 
 This is commonly found in larger web projects, this gives us a place where we can create small HTML snippets and then include them in the base template using Django.
 
-#### Mobile top header
+#### Mobile Top Header
 
 The list items here are almost identical to the ones that exist in the header in base.html except for a few key things:
  - First you'll notice that the links in them each use the d-block and the d-lg none classes from bootstrap. This way they'll be hidden on large screens where      instead they'll show up in the top portion of the header.
@@ -321,7 +350,7 @@ All of this makes sure that the top portion of the navbar which is separate from
 
 #### Toasts
 
-
+# Features Left To Implement
 
 # Testing
 
@@ -329,7 +358,7 @@ All of this makes sure that the top portion of the navbar which is separate from
 
 - After creating the `farm_fresh` project in Gitpod, I tested it buy running the application and recieved visual confirmation that the application is working successfully from Django.
 
-![django_app_test](media/django_test_app.png)
+![django_app_test](media/readme_images/testing/django_test_app.png)
 
 - After installing Django allauth, I manually tested logging in and out of the admin site. I found some issues but they are now all resolved and noted in the Bugs found section of this document.
 

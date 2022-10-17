@@ -24,7 +24,7 @@ def cart_contents(request):
             'item_id': item_id,
             'quantity': quantity,
             'product': product,
-         })
+        })
 
     if total < settings.FREE_DELIVERY_THRESHOLD:
         """ I used the decimal function since this is a financial transaction
@@ -46,5 +46,7 @@ def cart_contents(request):
         'free_delivery_threshold': settings.FREE_DELIVERY_THRESHOLD,
         'grand_total': grand_total,
     }
+
+    print(cart_items)
 
     return context
