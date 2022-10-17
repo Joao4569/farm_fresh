@@ -338,6 +338,7 @@ Contains the following:
   - All the secmented sections of blocks so that I can extend this template later on and replace segments of it as needed.
   - Link to it's CSS file for styling.
   - The sites main header with logo, search bar, user related links and the link to the shopping cart.
+  - The search bar has the functionality to search for terms in either the products name or its description.
   - The delivery banner and navigation bar structure.
   - Code for displaying messages from Django by means of [toasts](#toasts).
 
@@ -345,7 +346,7 @@ Contains the following:
 
 This is commonly found in larger web projects, this gives us a place where we can create small HTML snippets and then include them in the base template using Django.
 
-### Mobile Top Header
+#### Mobile Top Header
 
 This include will act as the top header for smaller mobile devices that access the site.
 
@@ -361,7 +362,7 @@ Contains the following:
 
 All of this makes sure that the top portion of the navbar which is separate from the main navigation will display cleanly on mobile and give the user a much better UX.
 
-### Main Navigation
+#### Main Navigation
 
 This include will act as the main navigation of each page of Farm Fresh.
 
@@ -388,6 +389,17 @@ Contains the following:
 This template will render a custom 404 error message to users when they try and access pages that do not exist for a better UX when navigating this site.
 
 ### Products Template
+
+This template extends the base template and allows the user to view lists of products including some details of the products, their prices and product images. The superuser will be able to edit or delete inventory items if logged on to this page.
+
+Contains the following:
+
+ - An overlay to cover the background image for a cleaner look and feel to the user.
+ - Sorting functionality so that the user my sort products by price, name or category.
+ - A product counter to show the user the number of products on the page for a better UX.
+ - The logic for how to display the products for various screen sizes giving the user the best possible UX.
+ - A button to return to the top of the screen, also for a good UX.
+ - The Javascript for the return to top button and the sorting functionality.
 
 ### Product Detail Template
 
