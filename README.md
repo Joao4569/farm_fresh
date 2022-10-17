@@ -423,6 +423,25 @@ I made use of the best semantic layouts and best practices that I could througho
 
 I then proceeded to search, research and filter my results in order to make up a final list of short tail and long tail keywords for use in Farm Fresh.
 
+Next I then An xml sitemap is a file that . It .
+A sitemap file ensures search engines will crawl every essential page on your website.
+This is especially useful if there are pages of your site that don’t have any internal links pointing to them.
+So a sitemap 
+
+1. I implemented meta tags with a description of Farm Fresh and keywords that i found to be usefull.
+2. I made use of some strong tags and changed some of the text on templates to better suite my selected keywords.
+3. Throughout the production of this application I made use of some things to better optimize the site for Googles search engine:
+  - I made use of good semantics.
+  - I ensured that my image names were custom to the subject of the image for a better `alt` attribute on my templates.
+  - And by ensuring that the content of the site matches its purpose.
+4. I created a `sitemap.xml` file in order to list Farm Fresh's important page urls, making sure that search engines can crawl, or navigate,  
+through them and also help search engines understand the website structure which can help speed up content discovery for search engines when they crawl and index this web application.
+5. I also created a `robots.txt` file in order to tell search engines where they are not allowed to go on a website. It lists out any folders or files that will not be crawled or indexed by search engine spiders. Having a robots.txt file shows that you acknowledge that search engines are allowed on your site and that they may have free access to it. For this reason, search engines take the existence of this file in this project as a sign of quality and improve Farm Fresh's SEO ranking.
+  - The file contains disallows for the following:
+   - Accounts
+   - Cart App
+   - Sitemap
+
 
 
 # Features Left To Implement
@@ -572,3 +591,4 @@ None that I am aware of.
 - Instructions for runtime Python error found while deploying to Heroku sourced on [Slack](https://app.slack.com/client/T0L30B202/search/search-eyJkIjoiYmFja3BvcnRzLnpvbmVpbmZvIiwicSI6IlUwMjlVUUQyRUpDIiwiciI6ImJhY2twb3J0cy56b25laW5mbyJ9/thread/C7EJUQT2N-1661678262.009779) thread. Noted as bug no.9 in the [Bugs found section](#bugs-found).
 - I made use of [temp-mail.org](https://temp-mail.org/en/) for creating temporary emails for testing purposes throughout this build.
 - I made use of [miniwebtool.com](https://miniwebtool.com/django-secret-key-generator/) in order to generate Django secret keys where needed throughout this build.
+- I made use of [XML-Sitemaps.com](https://www.xml-sitemaps.com/) for creating the `sitemap.xml` file, for SEO optimization.
