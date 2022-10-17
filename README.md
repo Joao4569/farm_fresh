@@ -323,6 +323,8 @@ All templates folders for apps were created with inner directories matching the 
 
 All allauth templates were copied and stored in a unique directory within the project level templates directory in order to store and customise all the required allauth templates for Farm Fresh.
 
+All Allauth templates that are in the account folder have been customised for use on Farm Fresh.
+
 ### Base Template
 
 This will act as the main base from which most other templates will be based on, containing the main generic content and styling for Farm Fresh. Recommended best practises taken from Boutique Ado walkthrough project.
@@ -370,13 +372,21 @@ Contains the following:
   - The pantry navigation dropdown menu.
   - The special offers navigation dropdown menu.
 
+### Toasts
+
+To add to the overall user experience on the site I added a feature of bootstrap called toasts, which will give us some nice clean notifications that we can customize. This will use the Django messages framework to communicate with our users as they use our store.
+
+Contains the following:
+
+  - Each toast consists of a header, body and a close button.
+  - The success toast additinally contains code for displaying a summary of the users shopping cart, for review by the user, if items have been added to the cart.
+  - The success toast also contains a link for the user to go to there shopping cart for a more detailed view.
+
 ### Products Template
 
 ### Product Detail Template
 
 - CSRF Token used in form in order to take advantage of Django's cross-site request forgery protection. As a security precaution without this token Django won't allow you to submit the form.
-
-### Toasts
 
 # Features Left To Implement
 
