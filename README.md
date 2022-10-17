@@ -65,6 +65,7 @@
     * [Products Template](#products-template)
     * [Product Detail Template](#product-detail-template)
     * [Toasts](#toasts)
+    * [404 Errors](#404-errors)
 
 * [Features - Features Left To Implement](#features-left-to-implement)
 
@@ -381,6 +382,10 @@ Contains the following:
   - Each toast consists of a header, body and a close button.
   - The success toast additinally contains code for displaying a summary of the users shopping cart, for review by the user, if items have been added to the cart.
   - The success toast also contains a link for the user to go to there shopping cart for a more detailed view.
+
+### 404 Errors
+
+This template will render a custom 404 error message to users when they try and access pages that do not exist for a better UX when navigating this site.
 
 ### Products Template
 
