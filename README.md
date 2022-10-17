@@ -72,6 +72,8 @@
     * [Checkout Success Template](#checkout-success-template)
     * [Profile Template](#profile-template)
 
+* [Web Marketing](#web-marketing)
+
 * [SEO Optimization](#seo-optimization)
 
 * [Features - Features Left To Implement](#features-left-to-implement)
@@ -443,15 +445,35 @@ Contains the following:
 - A view of their order history.
 - A link to view previous orders by clicking on the displayed order number.
 
+### Web Marketing
+
+Web marketing is the process of marketing a business online, and it's a cost-effective way to reach people who are most interested in what your business has to offer.
+
+I chose to make use of [SEO optimization](#seo-optimization), social media marketing by means of organic growth as well as email marketing by means of a newsletter which users can sign up to.
+
+I believe the benefits of doing this will be:
+
+  - Making Farm Fresh optimized for Google searches
+  - Build brand identity
+  - Ability to connect with customers
+  - Ability to build relationships and loyalty with our audience
+  - Improve customer service
+  - Ability to share content that will attract relevent customers
+  - Content can be shared by cutomers to new potential customers
+  - Quick and easy to setup
+  - A low cost to the new business
+  - Easy scalability
+  - Increase sales
+
 ### SEO Optimization
 
 My first step in keyword research was to make a list of important, relevant topics, based on what I know about the  business behind this web application.
   
-I tried to put myself in the shoes of my potential  customers and thought about their possible personas in order to think about the general topics that I would want to rank highly for.
+I tried to put myself in the shoes of my potential customers and thought about their possible personas in order to think about the general topics that I would want to rank highly for.
 
-I tried my ideas out on Google and took note of the relevant suggestions it gave me in return. Google search itself was an excellent tool  for getting a feel for which keywords are popular, or what common questions come up for users searching on similar topics.
+I tried my ideas out on Google and took note of the relevant suggestions it gave me in return. Google search itself was an excellent tool for getting a feel for which keywords are popular, or what common questions come up for users searching on similar topics.
 
-The “People also ask” and “Related searches”  sections on the google results page gave me examples of popular searches on similar topics to the one's that I entered in my own search.  
+The “People also ask” and “Related searches” sections on the google results page gave me examples of popular searches on similar topics to the one's that I entered in my own search.  
 
 These were extremely valuable, because they are almost always in the form of those all important long-tail keyword phrases. I did my best to filter out keywords with a high volume and a low competition.
 
@@ -459,10 +481,7 @@ I made use of the best semantic layouts and best practices that I could througho
 
 I then proceeded to search, research and filter my results in order to make up a final list of short tail and long tail keywords for use in Farm Fresh.
 
-Next I then An xml sitemap is a file that . It .
-A sitemap file ensures search engines will crawl every essential page on your website.
-This is especially useful if there are pages of your site that don’t have any internal links pointing to them.
-So a sitemap 
+Next I then created a xml sitemap. A sitemap file ensures search engines will crawl every essential page on Farm Fresh.
 
 1. I implemented meta tags with a description of Farm Fresh and keywords that i found to be usefull.
 2. I made use of some strong tags and changed some of the text on templates to better suite my selected keywords.
@@ -476,9 +495,8 @@ through them and also help search engines understand the website structure which
   - The file contains disallows for the following:
    - Accounts
    - Cart App
+   - Checkout App
    - Sitemap
-
-
 
 # Features Left To Implement
 
