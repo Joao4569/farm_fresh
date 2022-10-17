@@ -1,7 +1,8 @@
 <!-- For loading static files -->
 {% load static %}
 
-<!-- Recommended best practises taken from Boutique Ado walkthrough project -->
+<!-- Recommended best practises taken from Boutique Ado walkthrough project.
+The main structure of this template is based on Boutique Ado and modified for Farm Fresh -->
 
 <!doctype html>
 <html lang="en">
@@ -19,7 +20,7 @@
   {% block extra_meta %}
   {% endblock %}
 
-  <!-- This block contains the tag for the required CSS of Bootstrap -->
+  <!-- This block contains the tag for the required CSS of Bootstrap and our custom CSS -->
   {% block corecss %}
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
       integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
@@ -30,11 +31,10 @@
   {% block extra_css %}
   {% endblock %}
 
-  <!-- This block contains all the tags required for Bootstrap, Jquery as well as the
+  <!-- This block contains all the tags required for Bootstrap, Jquery, stripe as well as the
   script tag required for the font awesome kit -->
   {% block corejs %}
     <script src="https://kit.fontawesome.com/e26a309e14.js" crossorigin="anonymous"></script>
-    <!--<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>-->
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"
       integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
@@ -167,8 +167,7 @@
     <!-- delivery banner -->
     <div id="delivery-banner" class="row text-center">
       <div class="col bg-orange text-white">
-        <h4 class="my-1">Zürich Delivery only, Free delivery over CHF {{ free_delivery_threshold }}!</h4>
-        <!-- free delivery on orders over CHF 30 - ORIGINAL TEXT -->            
+        <h4 class="my-1">Zürich Delivery only, Free delivery over CHF {{ free_delivery_threshold }}!</h4>            
       </div>            
     </div>
   </header>

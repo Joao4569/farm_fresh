@@ -59,7 +59,8 @@
 
     * [Base Template](#base-template)
       * [Includes](#includes)
-      * [Mobile Top Header](#mobile-top-header)
+        * [Mobile Top Header](#mobile-top-header)
+        * [Mobile Navigation](#main-navigation)
 
     * [Products Template](#products-template)
     * [Product Detail Template](#product-detail-template)
@@ -80,7 +81,7 @@
   * [Media](#media)
 
 
-## Conception
+# Conception
 
 My thinking was that given the requirements of the project, it would be very beneficial to formulate some kind of plan which would lay out the basic scope and design of my project in order to have some kind of structure with which to work with in order to avoid missing any crucial steps during construction and make the whole construction process as efficient as possible.
 
@@ -131,12 +132,13 @@ This is how I approached the challenge:
 4. After creating some stucture and scope for how to approach the task at hand, I started recording all my processes on Github:
     - I created user story templates on Github for efficiency in the Agile process.
     - I made use of Github issues to create and manage my user stories and for future defects if they arise.
-    - I also came up with user story acceptance criteria which I added to the user stories on Github issues.
+    - I also came up with user story acceptance criteria which I added to the user stories as comments on Github issues.
     - I allocated each user story with user story points, just as good practice.
     - A product backlog was also created using Github milestones, and managed throughout the development of the project in order to structure my development process.
     - As the build developed I would make refinements to the backlog.
-    - I also created an iteration milestone on Github for use in this project as a timebox.
+    - I also created an iteration milestones on Github projects for use in this project as a timebox.
     - I made use of MoSCow prioritization by creating labels on Github and allocating them to the relevant user stories.
+    - I also tried to keep balance of 60% Must have's, 20% Should have's and 20% Could have's for each iteration.
     - I created a Kanban board for use as an information radiator in this project by using "projects" on Github.
 
 
@@ -152,7 +154,7 @@ This is how I approached the challenge:
 
 ![moscow_prioritisation](media/readme_images/agile/moscow_prioritisation.png)
 
-## Project Setup
+# Project Setup
 
 After completing the basic conception of my idea and designing some basic structure to it, I then proceeded to setting up my IDE for the project using the steps recommended by Code Institute, namely:
 1. Install Django
@@ -166,7 +168,7 @@ After completing the basic conception of my idea and designing some basic struct
 
 #### Installing Django and supporting libraries
 
-1. Install Django version 3.2 which is the Long Term Support version of Django and recommended by Code Institute for the use on our projects.
+1. I installed Django version 3.2 which is the Long Term Support version of Django and recommended by Code Institute for the use on our projects.
 **Note** - I changed the version of Django from 3.2 to 3.0.1 as I was having issues logging in to the admin site after installing Django allauth version 0.41.0. The Code institute tutorial specified to install Django 3.2 with Django allauth 0.41.0 but in the requirements.txt file for the tutorial it is specified as Django 3.0.1 and this resolved my issues.
 
 #### Create new Django project
@@ -192,11 +194,11 @@ Opposed to building my own authentication system, allauth already has all the fe
 9. I also set a minimum username length of four characters and specified a login url and a url to redirect back to after logging in.
 10. Finally create a allauth directory within the project level templates directory in order to store the customised allauth templates.
 
-## Deployment on Heroku
+# Deployment on Heroku
 
 - create heroku app
 
-## Access Control
+# Access Control
 
 I have created a few users which will be helpfull for testing the project:
 
@@ -262,31 +264,31 @@ Within this context processor, for convenience to the user, to let the user know
 - Crispy  forms
 - settings.py built-ins
 
-## MVT Architecture
+# MVT Architecture
 
-### Models
+## Models
 
-#### Products
+### Products
 
-#### Category Model
+### Category Model
 
 This model contains the information for product categories such as it's related attributes and model methods. This model is related to the Product model and only contains the information for a category's programmatic name and an easier to read and use, friendly name..
 
-#### Product Model
+### Product Model
 
 This model contains all the information for each product such as it's name, description, price, image and other related attributes such as if a product is in season or organic.
 
-#### Producer Model
+### Producer Model
 
 This model contains all the information for each producer such as there name, description and an image.
 
-### Views
+## Views
 
-#### Index view
+### Index view
 
 This view acts as the home/landing page for users.
 
-#### All Products view
+### All Products view
 
 This view acts as the main products page for Farm Fresh. It also contains the neccessary code in order for the search bar functionality to function.
 
@@ -300,7 +302,7 @@ This view acts as the main products page for Farm Fresh. It also contains the ne
 
  - By setting a `queries` variable equal to a Q object, where the product name contains the query or the product description contains the query, the pipe here then generates the "or" statement and the `i` in front of `contains` makes the queries case insensitive. With those queries constructed one can pass them to the filter method in order to actually filter the products.
 
-#### Add to cart view
+### Add to cart view
 
 In modern versions of HTTP every request-response cycle between the server and the client, in my case between the django view on the server-side and our form making the request on the client-side. Uses what's called a session, to allow information to be stored until the client and server are done communicating. This is especially handy in a situation like an e-commerce store.
 
@@ -313,42 +315,68 @@ Because it allows us to store the contents of the shopping cart in the HTTP sess
  - Finally the item gets added to the cart or the quantity gets updated if it already exists and then the variable in the session gets overwritten with the updated  version.
 
 
-### Templates
+## Templates
 
 All templates folders for apps were created with inner directories matching the apps names to make sure that django knows which app these templates belong to, in case any of them end up having the same names as other templates.
 
-#### Allauth templates
+### Allauth templates
 
 All allauth templates were copied and stored in a unique directory within the project level templates directory in order to store and customise all the required allauth templates for Farm Fresh.
 
-#### Base Template
+### Base Template
 
-Recommended best practises taken from Boutique Ado walkthrough project. Seperate blocks were created so that I can extend this template later on and replace segments of it as needed.
+This will act as the main base from which most other templates will be based on, containing the main generic content and styling for Farm Fresh. Recommended best practises taken from Boutique Ado walkthrough project.
 
-- I incorporated the use of a `http-equiv` meta tag to allow the support of older Internet Explorer versions and eliminate validation errors when validating our HTML.
-- Contains all the relevant script tags needed to run Bootstrap version 4.6.
-- Contains all the secmented sections of blocks so that I can extend this template later on and replace segments of it as needed.
-- Contains the sites main header with logo, search bar, user related links and the link to the shopping cart.
+Contains the following:
 
-#### Includes
+  - Seperate blocks were created so that I can extend this template later on and replace segments of it as needed.
+  - I incorporated the use of a `http-equiv` meta tag to allow the support of older Internet Explorer versions and eliminate validation errors when validating our HTML.
+  - All the relevant script tags needed to run Bootstrap version 4.6.
+  - All the secmented sections of blocks so that I can extend this template later on and replace segments of it as needed.
+  - Link to it's CSS file for styling.
+  - The sites main header with logo, search bar, user related links and the link to the shopping cart.
+  - The delivery banner and navigation bar structure.
+  - Code for displaying messages from Django by means of [toasts](#toasts).
+
+### Includes
 
 This is commonly found in larger web projects, this gives us a place where we can create small HTML snippets and then include them in the base template using Django.
 
-#### Mobile Top Header
+### Mobile Top Header
 
-The list items here are almost identical to the ones that exist in the header in base.html except for a few key things:
+This include will act as the top header for smaller mobile devices that access the site.
+
+The list items used here are almost identical to the ones that exist in the header in `base.html` except for a few key things:
  - First you'll notice that the links in them each use the d-block and the d-lg none classes from bootstrap. This way they'll be hidden on large screens where      instead they'll show up in the top portion of the header.
  - Secondly the search form is now in a drop-down menu, instead of creating a list of links like I did for the My Account drop-down, I put a form in it instead.
 
+Contains the following:
+
+  - Button for accessing the search bar.
+  - Button for opening my account menu dropdown menu.
+  - Button for access to the shopping cart displaying it's current value.
+
 All of this makes sure that the top portion of the navbar which is separate from the main navigation will display cleanly on mobile and give the user a much better UX.
 
-#### Products Template
+### Main Navigation
 
-#### Product Detail Template
+This include will act as the main navigation of each page of Farm Fresh.
+
+Contains the following:
+
+  - The all products navigation dropdown menu.
+  - The fruit and veg navigation dropdown menu.
+  - The milk and eggs navigation dropdown menu.
+  - The pantry navigation dropdown menu.
+  - The special offers navigation dropdown menu.
+
+### Products Template
+
+### Product Detail Template
 
 - CSRF Token used in form in order to take advantage of Django's cross-site request forgery protection. As a security precaution without this token Django won't allow you to submit the form.
 
-#### Toasts
+### Toasts
 
 # Features Left To Implement
 
@@ -411,13 +439,13 @@ All of this makes sure that the top portion of the navbar which is separate from
 
 - Access control to all product admin pages was tested and functioning as expected. As a non-superuser one cannot access these pages and will be notified with an errror message displayed on screen.
 
-### Stripe Testing
+## Stripe Testing
 
 When entering an invalid card number, the numbers change to red indicating an invalid card number.
 
 After initial installation I used the Stripe test card number and processed a payment, the form submitted and the payment was shown as successfull on the Stripe site.
 
-### Deployment Testing
+## Deployment Testing
 
 - Once our AWS bucket was created and the the new storage location setup for our static files, I ran a deployment and found that it was not working as expected. This is listed as bug no. 7 in the [Bugs found section](#bugs-found).
 
@@ -439,7 +467,12 @@ After initial installation I used the Stripe test card number and processed a pa
 - I Made use of the official [(Jigsaw) validator](https://jigsaw.w3.org/css-validator/) for the CSS file and the official [W3C validator](https://validator.w3.org/) for all HTML file testing.
 - I made use of [PEP8 online checker](http://pep8online.com/) to validate all python code.
 
-## Bugs found
+HTML code passes through the official W3C validator with no issues
+CSS code passes through the official (Jigsaw) validator with no issues
+JavaScript code passes through a linter (e.g. jslint.com) with no significant issues
+Python code is consistent in style and conforms to the PEP8 style guide (or another explicitly mentioned style guide, such as Google's)
+
+# Bugs found
 
 1. While testing Django allauth I found that I did not have a matching Django and Django allauth versions in order to proceed with the project as I was taught - **RESOLVED** by uninstalling Django 3.2 and installing Django 3.0.1, then creating a new SuperUser.
 
@@ -461,13 +494,13 @@ After initial installation I used the Stripe test card number and processed a pa
 
 10. While testing deployment for mobile devices I found 2 minor bugs, the first was a naming convention that I forgot to change while building and the other I found when trying to access the shopping cart. I recieved a 500 error (Internal server error) and managed to trace it bag to either views.py, urls.py or in cart.html file for the checkout app. While checking cart.html for errors, I realised that when creating the new includes for this page, that I had made an error with one of the includes names. This is now **RESOLVED**.
 
-## Unfixed Bugs
+# Unfixed Bugs
 
 None that I am aware of.
 
-## Credits
+# Credits
 
-### Media
+## Media
 
 - All flowcharts and ERD diagrams used in this project were designed by making use of [Lucidchart.com](https://www.lucidchart.com/).
 - All wireframes used in this project were designed by making use of [Balsamiq.com](https://balsamiq.com/).
@@ -477,7 +510,7 @@ None that I am aware of.
 - Icon class for centering Font Awesome icons taken from [Bulma CSS Framework](https://bulma.io/documentation/elements/icon/), as suggested in the Boutique Ado walkthrough project.
 - All product images sourced and taken from [Farmy.ch](https://www.farmy.ch/).
 
-### Content
+## Content
 
  - I learned how to use `inline code blocks` in a Markdown file on [RIP Tutorial](https://riptutorial.com/markdown/example/1802/inline-code).
  - Git commit message best practices taken from [How to Write Good Commit Messages: A Practical Git Guide](https://www.freecodecamp.org/news/writing-good-commit-messages-a-practical-guide/)
