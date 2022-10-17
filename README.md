@@ -100,7 +100,7 @@ Once I had the basic scope and logic in place, I then proceeded to design a visu
 
 #### Landing Page Wireframe
 
-![wf_landing_page]({{ MEDIA_URL }}/readme_images/wireframe/wf_landing_page.png)
+![wf_landing_page](media/readme_images/wireframe/wf_landing_page.png)
 
 #### Products Page Wireframe
 
