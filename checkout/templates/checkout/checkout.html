@@ -63,12 +63,12 @@
             <div class="col-7">
               <p class="my-0"><strong>{{ item.product.name }}</strong></p>
               {% if item.product.organic %}
-                <p class="my-0 small text-muted"><i class="fa-solid fa-seedling mr-1 text-green"></i>Organic</p>
+                <p class="my-0 small text-muted"><i class="fa-solid fa-seedling mr-1 text-green"></i><strong>Organic</strong></p>
               {% else %}
                 <p class="my-0 small text-muted text-orange">Non-Organic</p>
               {% endif %}
               {% if item.product.in_season %}
-                <p class="my-0 small text-muted"><i class="fa-solid fa-leaf mr-1 text-green"></i>In Season</p>
+                <p class="my-0 small text-muted"><i class="fa-solid fa-leaf mr-1 text-green"></i><strong>In Season</strong></p>
               {% else %}
                 <p class="my-0 small text-muted text-orange">Not in Season</p>
               {% endif %}
@@ -97,7 +97,7 @@
       </div>
 
       <div class="col-12 col-lg-6">
-        <p class="text-muted">Please fill out the form below to complete your order</p>
+        <p class="text-muted">Please fill out the form below to complete your Farm Fresh order</p>
 
         <!-- Customer information form for order -->
         <form action="{% url 'checkout' %}" method="POST" id="payment-form">
