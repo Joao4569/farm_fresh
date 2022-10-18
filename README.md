@@ -25,6 +25,8 @@
   * [Django Allauth](#django-allauth)
     * [Required Django Allauth settings](#required-django-allauth-settings)
 
+* [Stripe Payments](#stripe-payments)
+
 * [Deployment on Heroku](#deployment-on-heroku)
   * [Heroku Deployment - Setting up AWS](#heroku-deployment---setting-up-aws)
 
@@ -205,6 +207,27 @@ Opposed to building my own authentication system, allauth already has all the fe
 9. I also set a minimum username length of four characters and specified a login url and a url to redirect back to after logging in.
 10. Finally create a allauth directory within the project level templates directory in order to store the customised allauth templates.
 
+# Stripe payments
+
+Stripe works with what are called payment intents. The process will be that when a user hits the checkout page the checkout view will call out to stripe and create a payment intent for the current amount of the shopping cart.
+
+When stripe creates it, it'll also have a secret that identifies it, which will be returned to us and we'll send it to the template as the client secret variable.
+Then in the JavaScript on the client side. We'll call the confirm card payment method from stripe js, using the client secret which will verify the card number.
+
+**_Worth noting_**:
+
+- I made use of stripe elements to add a prebuilt credit card input to our form by making use of Stripes Javascript and placed it in a file called `stripe_elements.js` within the checkout apps JS folder.
+- I then styled the Stripe elements to match the current style of the forms that I created and installed Stripe.
+- Throughout the process I made multiple manual tests listed [here](#stripe-testing).
+- I made use of [Stripe's documentation](https://stripe.com/docs) throughout the process and customised it where needed.
+- If there's an error, the error will be put right into the card error div and otherwise if the status of the payment intent comes back as succeeded then the form will be submitted. Also if there's an error, the card element and the submit button will be re-enabled to allow the user to fix it.
+- When a user submits their payment information, the order is created in the database and the user is redirected to a success page.
+- If the order form isn't valid, a message letting the user know will appear and the user will be sent back to the checkout page with the form errors shown.
+- There is a big giant spinner icon right in the center of the screen and a green overlay to cover up the page and indicate that the payment is being processed.
+- Redundancy was added, by means of webhooks and a webhook handler, so that if the users somehow intentionally or accidentally closes the browser window after the payment is confirmed but before the form is submitted we end up with a payment in stripe and an order in our database.
+
+
+
 # Deployment on Heroku
 
 These are the steps I followed in order to get Farm Fresh deployed on Heroku, as explained and taught to me in the Boutique Ado walkthrough project.
@@ -241,8 +264,38 @@ I made use of Amazons Web Services S3 as the cloud based storage service for sto
 25. Next I copied the ARN which stands for Amazon resource name and pasted it into the ARN box and proceeded to add the statement and generated a policy.
 26. I then copied this policy into the bucket policy editor and added a slash star onto the end of the resource key to allow access to all resources in this bucket.
 27. I proceeded to the access control list section and set the list objects permission for everyone under the Public Access section.
-28. 
+28. Then I created a group with IAM (Identity and Access Management) called Farm Fresh Management
+29. Next I created a policy used to access the bucket by clicking create policy and go to the JSON tab and then select import managed policy which will let us
+import one that AWS has pre-built for full access to s3.
+30. I then allowed full access to the new bucket and everything within it by allocating the bucket's ARN to the policy.
+31. Then I attached the policy to the group that I created.
+32. Finally I created a user to allocate to the group and named the user Farm-Fresh-staticfiles-user.
+33. I then downloaded the CSV file which contains this users access key and secret access key which will be used to authenticate the user from the Django app.
+34. In order for Django to connect to the S3 bucket, I installed boto3 and django-storages and froze them to the requirements file.
+35. In settings.py I created an a statement that checks if there's an environment variable called `USE_AWS` in the environment and within it I defined the bucket name, the AWS region name, the access key and secret access key while keeping the 2 keys secret and hiding them in environment variables.
+36. I then went to Heroku and added the AWS keys to the configuration variables while creating the `USE_AWS` variable and setting it to True, so that our settings file knows to use the AWS configuration when we deploy to Heroku.
+37. I then removed the collect static variable from Heroku's configuration variables so when I deploy to Heroku this time, django will collectstatic files automatically and upload them to s3.
+38. Back in the settings file on Gitpod I created a "f" string to tell Django where the static files will be coming from in production, containing the AWS S3 bucket name to be interpreted and added to generate the appropriate URL.
+39. The next step was to tell Django that in production we want to use S3 to store our static files whenever someone runs collectstatic and that we want any uploaded product images to go there as well. I created a file called custom storages.
+40. I then imported both our settings from django.conf as well as the s3 boto3 storage class from Django storages which I just installed.
+41. I then created a custom class called static storage, which will inherit the one from django storages, giving it all its functionality.
+42. I copied this into another class for media files which has an identical structure.
+43. I then set it in settings.py, that for static file storage I want to use the storage class that I just created and that the location it should save static files  to is a folder called static. Then I did exactly the same thing for media files by using the default file storage and media files location settings.
+44. I proceeded to then override and explicitly set the URLs for static and media files using the custom domain and the new locations.
 
+What happens now is when our project is deployed to Heroku, it will run `python3 manage.py collectstatic` during the build process. Which will search through all our apps and project folders looking for static files and it will use the s3 custom domain setting here in conjunction with our custom storage classes that tell it the location at that URL where we'd like to save things.
+
+So in effect when the `USE_AWS` setting is true and whenever collectstatic is run, Static files will be collected into a static folder within the S3 bucket, automatically.
+
+45. Next I added a setting , `AWS_S3_OBJECT_PARAMETERS`, to tell the browser that it's okay to cache static files for a long time since they don't change very often, and this will improve performance for our users.
+46. On the AWS site and in S3, I create a new folder called media and placed all the relevant media files within it.
+47. Under the manage public permissions I selected grant public read access to these objects.
+48. I then logged in to the admin site of Farm Fresh and verified my new superusers email address.
+49. Thereafter I added the stripe keys to the Heroku config variables.
+50. Since my current webhook is sending webhooks to my gitpod workspace, I logged in to Stripe and added a new webhook endpoint while adding the URL for the Heroku app followed by `/checkout/WH` and then selected to receive all events and added the endpoint.
+51. I then revealed the webhooks signing secret and added that to the Heroku config variables.
+
+Deployment Complete!
 
 # Access Control
 
@@ -599,9 +652,22 @@ through them and also help search engines understand the website structure which
 
 ## Stripe Testing
 
-When entering an invalid card number, the numbers change to red indicating an invalid card number.
+- I set a couple of variables for the public and secret keys, then I set the secret key on stripe. Created the payment intent with `stripe.payment.intent.create`
+giving it the amount and the currency and printed it out. I then navigated to the checkout page to see that it was working as intended.
 
-After initial installation I used the Stripe test card number and processed a payment, the form submitted and the payment was shown as successfull on the Stripe site.
+- When entering an invalid card number, the numbers change to red indicating an invalid card number.
+
+- After initial installation I used the Stripe test card number and processed a payment, the form submitted and the payment was shown as successfull on the Stripe site.
+
+- In order to test the basic functionality I navigated to the checkout page, filled out the payment form and entered the stripe test card number. When it worked and the payment form was submitted, I went to the stripe dashboard and clicked developers then events and could see that the payment was indeed successful.
+
+- I created an order and processed it, the order total is correct and if I update the number of line items the total changes correctly, reducing it to under the delivery threshold also adds the correct delivery costs and removing the line item entirely sets the order total to zero. Indicating that our model method and payment flow is working correctly.
+
+- I processed an order and tested that the green overlay for an order being processed is working as well as the checkout success page.
+
+- Throughout the process of building the infrastructure for Stripe payment functionality, I made numerous tests checking for form submission, stripe connectivity and kept making minor changes to ensure that the payment system performed as I had intended.
+
+- In the stripe elements JavaScript, I commented out the form submission and made another purchase. This simulates either a user who closed the page before the form was submitted but after the payment was confirmed or something else that went wrong causing the form not to be submitted. While this will break the payment flow, I went to stripe and looked at the webhook response and saw a message that the order was created in the webhook. I can verify that in the admin our payment system is now complete.
 
 ## Deployment Testing
 
