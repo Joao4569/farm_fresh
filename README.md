@@ -26,6 +26,7 @@
     * [Required Django Allauth settings](#required-django-allauth-settings)
 
 * [Deployment on Heroku](#deployment-on-heroku)
+  * [Heroku Deployment - Setting up AWS](#heroku-deployment---setting-up-aws)
 
 * [Access Control](#access-control)
 
@@ -206,7 +207,42 @@ Opposed to building my own authentication system, allauth already has all the fe
 
 # Deployment on Heroku
 
-- create heroku app
+These are the steps I followed in order to get Farm Fresh deployed on Heroku, as explained and taught to me in the Boutique Ado walkthrough project.
+
+1. Firstly I created a Heroku app within Heroku.
+2. Then I provisioned a Postgres database on Heroku.
+3. In order to use the Postgres database I installed dj_database_url and psycopg2.
+4. Froze and updated my `requirements.txt` file in order to make sure Heroku installs all the apps requirements when it is deployed.
+5. I then imported dj_databse_url into settings.py and commented out the default configuration and replaced the default database with a call to `dj_database_url.parse` and gave it the database URL from Heroku. Which one can get from the config variables in the Heroku app settings page.
+6. I then proceeded to run migrations for the new Postgres database.
+7. As the products model data was the only crucial data that I needed, I created the `products.json` file with data dumped from the SQLite database and loaded it into the new Postgres database on Heroku.
+8. I then created a new superuser as there would be no users on the new database models, in order to stil be able to access the Django admin site.
+9. I then removed the Heroku database configuration and uncommented the original settings so that the database URL doesn't end up in version control.
+10. I made use of an if statement in settings.py, database setup, so that when Farm Fresh is running on Heroku where the database URL environment variable will be defined, it is possible to work on either database depending on future requirements.
+11. Then I needed to install gunicorn, which will act as the webserver and froze that into the requirements file.
+12. I created a Procfile in order to tell Heroku to create a web dyno which will run gunicorn and serve our Django app.
+13. I temporarily disabled collectstatic by using Heroku configuration settings and set disable collectstatic equals 1 so that Heroku won't try to collect static files when I deploy.
+14. I then added the hostname of the Heroku app to `ALLOWED_HOSTS` in settings.py and also added localhost in there so that gitpod would still work too.
+15. I then push my changes and attempted the initial deployment on Heroku.
+16. I removed the secret key from our settings and generated a key and added it to my config variables in Heroku which will be the key for the Heroku app and did the same for Gitpod in my user settings tab.
+17. I replaced the secret key setting with the call to get it from the environment and used an empty string as a default.
+18. I then also set debug to be True only if there's a variable called DEVELOPMENT in the environment.
+
+## Heroku Deployment - Setting up AWS
+
+I made use of Amazons Web Services S3 as the cloud based storage service for storing Farm Fresh's static and media files.
+
+19. I logged into my AWS account and opened S3 and created a new bucket which will be used to store our files.
+20. I unchecked block all public access and acknowledged that the bucket will be public and finalised the buckets creation.
+21. Once the bucket was created I set a few basic settings on our new bucket, on the properties tab I turned on static website hosting which will give me a new endpoint that I can use to access it from the internet.
+22. Within the permissions settings I pasted in thea coors configuration provided by Code Institute which is going to set up the required access between the Heroku app and this S3 bucket.
+23. Next in the bucket policy section I accessed the policy generator in order to create a security policy for the bucket.
+24. The policy type was set to be a S3 bucket policy and allowed all principals and the action was set to get object.
+25. Next I copied the ARN which stands for Amazon resource name and pasted it into the ARN box and proceeded to add the statement and generated a policy.
+26. I then copied this policy into the bucket policy editor and added a slash star onto the end of the resource key to allow access to all resources in this bucket.
+27. I proceeded to the access control list section and set the list objects permission for everyone under the Public Access section.
+28. 
+
 
 # Access Control
 
