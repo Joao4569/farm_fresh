@@ -269,8 +269,11 @@ color: #17a2b8; /* text-info */
 }
 
 .footer {
-  height: 60px;
-  clear: both;
+  height: fit-content;
+}
+
+.product-container {
+  margin-bottom: 50px;
 }
 
 /* -------------------------------- Media Queries */
