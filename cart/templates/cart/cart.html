@@ -77,26 +77,29 @@
                     <form class="form update-form" method="POST" action="{% url 'adjust_cart' item.item_id %}">
                       {% csrf_token %}
                       <div class="form-group">
-                        <div class="input-group">
-                          <div class="input-group-prepend">
-                            <button class="decrement-qty btn btn-sm btn-black rounded-0" 
-                              data-item_id="{{ item.item_id }}" id="decrement-qty_{{ item.item_id }}">
-                              <span>
-                                <i class="fas fa-minus fa-sm"></i>
-                              </span>
-                            </button>
-                          </div>
-                          <input class="form-control form-control-sm qty_input" type="number"
-                            name="quantity" value="{{ item.quantity }}" min="1" max="99"
-                            data-item_id="{{ item.item_id }}"
-                            id="id_qty_{{ item.item_id }}">
-                          <div class="input-group-append">
-                            <button class="increment-qty btn btn-sm btn-black rounded-0"
-                              data-item_id="{{ item.item_id }}" id="increment-qty_{{ item.item_id }}">
-                              <span>
-                                <i class="fas fa-plus fa-sm"></i>
-                              </span>
-                            </button>
+                        <div class="col-12">
+                          <p class="mt-3"><strong>Quantity:</strong></p>
+                          <div class="form-group w-50">
+                            <div class="input-group input-group-{{ product.id }}">
+                              <div class="input-group-prepend">
+                                <button class="decrement-qty btn btn-black rounded-0 decrement-qty_{{ product.id }}" 
+                                  data-item_id="{{ product.id }}">
+                                  <span class="icon">
+                                    <i class="fas fa-minus"></i>
+                                  </span>
+                                </button>
+                              </div>
+                              <input class="form-control qty_input id_qty_{{ product.id }}" type="number"
+                                name="quantity" value="1" min="1" max="99" data-item_id="{{ product.id }}">
+                              <div class="input-group-append">
+                                <button class="increment-qty btn btn-black rounded-0 increment-qty_{{ product.id }}"
+                                  data-item_id="{{ product.id }}">
+                                  <span class="icon">
+                                    <i class="fas fa-plus"></i>
+                                  </span>
+                                </button>
+                              </div>
+                            </div>
                           </div>
                         </div>
                       </div>
@@ -174,7 +177,7 @@
   $('.update-link').click(function(e) {
       var form = $(this).prev('.update-form');
       form.submit();
-  })
+  });
 
   // Remove item and reload on click
   $('.remove-item').click(function(e) {
@@ -187,7 +190,7 @@
        .done(function() {
            location.reload();
        });
-  })
+  });
 </script>
 
 {% endblock %}
