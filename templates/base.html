@@ -35,7 +35,7 @@ The main structure of this template is based on Boutique Ado and modified for Fa
   {% block extra_css %}
   {% endblock %}
 
-  <!-- This block contains all the tags required for Bootstrap, Jquery, stripe as well as the
+  <!-- This block contains all the tags required for Bootstrap, Jquery, Mailchimp, stripe as well as the
   script tag required for the font awesome kit -->
   {% block corejs %}
     <script src="https://kit.fontawesome.com/e26a309e14.js" crossorigin="anonymous"></script>
@@ -46,6 +46,15 @@ The main structure of this template is based on Boutique Ado and modified for Fa
     </script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
       integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
+    </script>
+
+    <!-- Mailchimp -->
+    <script id="mcjs">
+      !function(c,h,i,m,p){
+        m=c.createElement(h),
+        p=c.getElementsByTagName(h)[0],
+        m.async=1,m.src=i,p.parentNode.insertBefore(m,p)
+      }(document,"script","https://chimpstatic.com/mcjs-connected/js/users/03cfae6caaeed1a0e80448cfe/db1474fdc71149fc38f900031.js");
     </script>
 
     <!-- Stripe -->
@@ -233,13 +242,6 @@ The main structure of this template is based on Boutique Ado and modified for Fa
   {% block postloadjs %}
   <script type="text/javascript">
      $('.toast').toast('show');
-  </script>
-  <script id="mcjs">
-    !function(c,h,i,m,p){
-      m=c.createElement(h),
-      p=c.getElementsByTagName(h)[0],
-      m.async=1,m.src=i,p.parentNode.insertBefore(m,p)
-    }(document,"script","https://chimpstatic.com/mcjs-connected/js/users/03cfae6caaeed1a0e80448cfe/db1474fdc71149fc38f900031.js");
   </script>
   {% endblock %}
 
