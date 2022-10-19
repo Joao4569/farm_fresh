@@ -242,6 +242,12 @@ display: inline-block;
 color: #17a2b8; /* text-info */
 }
 
+.img-thumbnail {
+  background-color: #f9e3c9;
+  padding: 5% 10% 30% 10% !important;
+  border-color: #f9e3c9;
+}
+
 /* Product Form */
 
 .btn-file {
@@ -296,7 +302,7 @@ color: #17a2b8; /* text-info */
 /* Product details */
 
 .product-details-container {
-  padding-bottom: 5rem;
+  padding-bottom: 2rem;
 }
 
 /* -------------------------------- Media Queries */

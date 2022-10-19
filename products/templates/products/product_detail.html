@@ -27,13 +27,9 @@ and give this page a white background. -->
     <div class="col-12 col-md-6 col-lg-4 offset-lg-2">
       <div class="image-container my-5">
         {% if product.image %}
-          <a href="{{ MEDIA_URL }}{{ product.image }}" target="_blank">
-            <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}{{ product.image }}" alt="{{ product.name }}">
-          </a>
+          <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}{{ product.image }}" alt="{{ product.name }}">
         {% else %}
-          <a href="">
-            <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}noimage.png" alt="{{ product.name }}">
-          </a>
+          <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}noimage.png" alt="{{ product.name }}">
         {% endif %}
       </div>
     </div>
@@ -119,8 +115,31 @@ and give this page a white background. -->
           </div>
         </form>
       </div>
-
     </div>
+    
+      <div class="col-12 text-center">
+        <h2 class="logo-text mb-5">Produced by</h2>
+      </div>
+
+      <!-- producer information container -->
+      <div class="col-12 col-md-6 col-lg-4 offset-lg-2">
+        <div class="product-details-container mb-5 mt-md-5">
+          <p class="mb-0 lead font-weight-bold">{{ product.producer.name }}</p>
+          <p class="mt-3">{{ product.producer.description }}</p>
+        </div>
+      </div>
+
+      <!-- producer image container -->
+      <div class="col-12 col-md-6 col-lg-4">
+        <div class="image-container my-5">
+          {% if product.producer %}
+            <img class="img-thumbnail" src="{{ MEDIA_URL }}{{ product.producer.image }}" alt="{{ product.producer.name }}">
+          {% else %}
+            <img class="img-thumbnail" src="{{ MEDIA_URL }}noimage.png" alt="{{ product.producer.name }}">
+          {% endif %}
+        </div>
+      </div>
+
   </div>
 </div>
 {% endblock %}
