@@ -159,6 +159,8 @@ This is how I approached the challenge:
 
 ![kanban](media/readme_images/agile/kanban.png)
 
+![kanban_iteration_2](media/readme_images/agile/kanban_iteration2.png)
+
 #### Product Backlog Example
 
 ![product_backlog](media/readme_images/agile/product_backlog.png)
@@ -166,6 +168,8 @@ This is how I approached the challenge:
 #### Moscow Prioritisation Example
 
 ![moscow_prioritisation](media/readme_images/agile/moscow_prioritisation.png)
+
+![moscow_prioritisation](media/readme_images/agile/)
 
 # Project Setup
 
@@ -646,9 +650,11 @@ through them and also help search engines understand the website structure which
 
 - When I completed the new style image field in the product admin section, I tested it by adding and editing a new test product while adding an image, removing it and changing it, and found that all was functioning as expected.
 
+![Stripe Testing](media/readme_images/testing/image_bug_test.png)
+
 - Access control to all product admin pages was tested and functioning as expected. As a non-superuser one cannot access these pages and will be notified with an errror message displayed on screen.
 
-- After doing some refactoring I found a bug with the cart template. I refactored the code by extracing sections of code and made use of Djangos template syntax in order to add the code to cart.html by means of includes, once this was done the cart page would not display and continuously gave errors. recorded as bug no. 11 in the [Bugs found section](#bugs-found).
+- After doing some refactoring I found a bug with the cart template. I refactored the code by extracing sections of code and made use of Djangos template syntax in order to add the code to cart.html by means of includes, once this was done the cart page would not display and continuously gave errors. recorded as bug no.10 and 11 in the [Bugs found section](#bugs-found).
 
 ## Stripe Testing
 
@@ -667,13 +673,17 @@ giving it the amount and the currency and printed it out. I then navigated to th
 
 - Throughout the process of building the infrastructure for Stripe payment functionality, I made numerous tests checking for form submission, stripe connectivity and kept making minor changes to ensure that the payment system performed as I had intended.
 
+![Stripe Testing](media/readme_images/testing/stripe_testing.png)
+
+![Stripe Testing 2](media/readme_images/testing/stripe_testing_2.png)
+
 - In the stripe elements JavaScript, I commented out the form submission and made another purchase. This simulates either a user who closed the page before the form was submitted but after the payment was confirmed or something else that went wrong causing the form not to be submitted. While this will break the payment flow, I went to stripe and looked at the webhook response and saw a message that the order was created in the webhook. I can verify that in the admin our payment system is now complete.
 
 ## Deployment Testing
 
 - Once our AWS bucket was created and the the new storage location setup for our static files, I ran a deployment and found that it was not working as expected. This is listed as bug no. 7 in the [Bugs found section](#bugs-found).
 
-- While trying to deploy to Heroku I found an error pertaining to `backports.zoneinfo` not being able to build its wheels during deployment. I sourced a fix for this and it is listed as bug no. 9in the [Bugs found section](#bugs-found).
+- While trying to deploy to Heroku I found an error pertaining to `backports.zoneinfo` not being able to build its wheels during deployment. I sourced a fix for this and it is listed as bug no. 9 in the [Bugs found section](#bugs-found).
 
 - While testing if images were displaying on the deployed site I found a bug with the image URL's. This is now fixed and noted as bug no.8 in the [Bugs found section](#bugs-found).
 
@@ -716,9 +726,15 @@ Python code is consistent in style and conforms to the PEP8 style guide (or anot
 
 9. While deploying to Heroku I found an error with the deployment, the standard Heroku Python runtime version is not compatible with the setup of this application. I **RESOLVED** this by creating a `runtime.txt` file containing a runtime Python version to be used by Heroku. The source of this solution is listed in the Credits [content](#content) section of this document.
 
+![Stripe Testing](media/readme_images/testing/deployment_bug.png)
+
 10. While testing deployment for mobile devices I found 2 minor bugs, the first was a naming convention that I forgot to change while building and the other I found when trying to access the shopping cart. I recieved a 500 error (Internal server error) and managed to trace it bag to either views.py, urls.py or in cart.html file for the checkout app. While checking cart.html for errors, I realised that when creating the new includes for this page, that I had made an error with one of the includes names. This is now **RESOLVED**.
 
 11. After refactoring code in cart.html, by extracting code blocks and making use of includes within cart.html, I continuously had errors and the page would not display. I posted the issue on Slack and consulted with my mentor but as far as we can see my includes were done correctly and the source of this bug is still a mystery to me. I **RESOLVED** this by reverting the code from cart.html to how it was prior to refactoring and removed the new files that I had created for the includes and the cart page is now working as it should.
+
+![refactor bug](media/readme_images/testing/refactor_bug.png)
+
+![refactor bug 2](media/readme_images/testing/refactor_bug_2.png)
 
 # Unfixed Bugs
 
