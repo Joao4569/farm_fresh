@@ -285,12 +285,19 @@ color: #17a2b8; /* text-info */
 
 .social-links {
   font-size: 2rem;
+  padding: 0rem 2rem
 }
 
 /* payment form */
 
 #payment-form {
   margin-bottom: 9rem;
+}
+
+/* Product details */
+
+.product-details-container {
+  padding-bottom: 5rem;
 }
 
 /* -------------------------------- Media Queries */
@@ -376,6 +383,11 @@ to bug found - recorded as bug number 4 in readme */
 
   body {
       height: calc(100vh - 150px);
+  }
+
+  .social-links {
+    font-size: 2rem;
+    padding: 0rem 1rem
   }
 }
 
