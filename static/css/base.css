@@ -15,7 +15,6 @@ body {
   height: calc(100vh - 164px); /* Height of top header 164px - Check for Farm Fresh application */
   color: #555;
   font-family: 'Signika', serif;
-  /*font-family: 'PT Serif', serif;*/
 }
 
 /* This icon class was taken from Bulma which will ensure that whenever font awesome icons are used,
@@ -50,7 +49,7 @@ they will always stay perfectly centered and have a consistent size - credited i
   color: white;
 }*/
 
-.btn-outline-green {
+.btn-custom {
   background: #28a745;
   color: black !important; /* !important will override link colors for <a> elements */
 }
@@ -58,9 +57,9 @@ they will always stay perfectly centered and have a consistent size - credited i
 .shop-now-button:hover,
 .shop-now-button:active,
 .shop-now-button:focus,
-.btn-black:hover,
-.btn-black:active,
-.btn-black:focus {
+.btn-custom:hover,
+.btn-custom:active,
+.btn-custom:focus {
   background: #eb8909;
   color: white;
 }
@@ -354,13 +353,13 @@ to bug found - recorded as bug number 4 in readme */
       font-size: .9rem;
   }
 
-  .btn.btn-outline-black.rounded-0,
-  .btn.btn-black.rounded-0 {
+  .btn.btn-custom.rounded-0,
+  .btn.btn-custom.rounded-0 {
       padding: .375rem .375rem;
   }
 
-  .btn.btn-outline-black.rounded-0.btn-lg,
-  .btn.btn-black.rounded-0.btn-lg {
+  .btn.btn-custom.rounded-0.btn-lg,
+  .btn.btn-custom.rounded-0.btn-lg {
       padding: .375rem .375rem;
       font-size: .75rem;
   }

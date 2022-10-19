@@ -76,7 +76,7 @@ The main structure of this template is based on Boutique Ado and modified for Fa
 
       <!-- Farm Fresh Logo -->
       <div class="col-12 col-lg-4 my-auto py-1 py-lg-0 text-center text-lg-left">
-        <a href="{% url 'home' %}" class="nav-link main-logo-link">
+        <a href="{% url 'home' %}" class="nav-link main-logo-link" aria-label="Link to home page">
           <h2 class="logo-font text-green my-0"><strong>Farm</strong> Fresh</h2>
         </a>
       </div>
@@ -90,7 +90,7 @@ The main structure of this template is based on Boutique Ado and modified for Fa
             <div class="input-group-append">
 
               <!-- Search button -->
-              <button class="form-control btn btn-black border border-black rounded-0" type="submit">
+              <button class="form-control btn btn-custom border border-black rounded-0" type="submit" aria-label="Button for searching our products">
                 <span class="icon">
                   <i class="fas fa-search"></i>
                 </span>
@@ -105,7 +105,7 @@ The main structure of this template is based on Boutique Ado and modified for Fa
           <!-- Link to user account/product management/logout/login and for user registration -->
           <li class="list-inline-item dropdown">
             <a class="text-white nav-link" href="#" id="user-options" data-toggle="dropdown" aria-haspopup="true"
-              aria-expanded="false">
+              aria-expanded="false" aria-label="User account graphic and text as a link">
               <div class="text-center">
                 <div><i class="fas fa-user fa-lg text-green"></i></div>
                 <p class="my-0 text-green">My Account</p>
@@ -120,30 +120,31 @@ The main structure of this template is based on Boutique Ado and modified for Fa
                 {% if request.user.is_superuser %}
 
                   <!-- Product management link -->
-                  <a href="{% url 'add_product' %}" class="dropdown-item">Product Management</a>
+                  <a href="{% url 'add_product' %}" class="dropdown-item" aria-label="Link for product management">Product Management</a>
                 {% endif %}
 
                 <!-- Link to user account/profile -->
-                <a href="{% url 'profile' %}" class="dropdown-item">My Profile</a>
+                <a href="{% url 'profile' %}" class="dropdown-item" aria-label="Link to view your profile">My Profile</a>
 
                 <!-- Link to logout page -->
-                <a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a>
+                <a href="{% url 'account_logout' %}" class="dropdown-item" aria-label="Link to logout of user account">Logout</a>
 
               <!-- If the user is not authenticated(registered and logged in) -->
               {% else %}
 
                 <!-- link to registration page -->
-                <a href="{% url 'account_signup' %}" class="dropdown-item">Register</a>
+                <a href="{% url 'account_signup' %}" class="dropdown-item" aria-label="Link to register as a new user">Register</a>
 
                 <!-- Link to login page -->
-                <a href="{% url 'account_login' %}" class="dropdown-item">Login</a>
+                <a href="{% url 'account_login' %}" class="dropdown-item" aria-label="Link to log into user account">Login</a>
               {% endif %}
             </div>
           </li>
 
           <!-- Link to shopping cart -->
           <li class="list-inline-item">
-            <a class="{% if grand_total %}text-info font-weight-bold{% else %}text-black{% endif %} nav-link" href="{% url 'view_cart' %}">
+            <a class="{% if grand_total %}text-info font-weight-bold{% else %}text-black{% endif %} nav-link" href="{% url 'view_cart' %}"
+              aria-label="Link to shopping cart">
               <div class="text-center">
                 <div><i class="fa-solid fa-cart-shopping text-green"></i></div>
                 <p class="my-0 text-green">
@@ -233,7 +234,10 @@ The main structure of this template is based on Boutique Ado and modified for Fa
       </div>
 
       <div class="col-12 col-md-4 text-center text-white d-flex justify-content-center">
-        <p class="text-white my-auto">Subscribe to our newsletter</p>
+        <a href="https://www.swiss-farmers.ch/seasonal-calendar/seasonal-calendar-fruits/" target="_blank" rel="noopener"
+        aria-label="Visit Swiss seasonal fruit calender page (opens in a new tab)">
+          <p class="text-white my-auto">Swiss farmers - Seasonal Fruit calender</p>
+        </a>
       </div>
     </div>
   </footer>

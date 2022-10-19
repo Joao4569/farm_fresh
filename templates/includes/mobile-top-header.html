@@ -3,7 +3,7 @@
 <!-- button for opening the search bar -->
 <li class="list-inline-item">
   <a class="text-green nav-link d-block d-lg-none" href="#" id="mobile-search" data-toggle="dropdown"
-    aria-haspopup="true" aria-expanded="false">
+    aria-haspopup="true" aria-expanded="false" aria-label="Search button">
     <div class="text-center">
       <div><i class="fas fa-search fa-lg"></i></div>
       <p class="my-0">Search</p>
@@ -14,7 +14,7 @@
       <div class="input-group w-100">
         <input class="form-control border border-white rounded-0" type="text" name="q" placeholder="Search our site">
         <div class="input-group-append">
-          <button class="form-control form-control btn btn-black border border-black rounded-0" type="submit">
+          <button class="form-control form-control btn btn-custom border border-black rounded-0" type="submit">
             <span class="icon">
               <i class="fas fa-search"></i>
             </span>
@@ -28,7 +28,7 @@
 <!-- button for opening the my account dropdown menu -->
 <li class="list-inline-item dropdown">
   <a class="text-white nav-link d-block d-lg-none" href="#" id="user-options" data-toggle="dropdown"
-    aria-haspopup="true" aria-expanded="false">
+    aria-haspopup="true" aria-expanded="false" aria-label="Link to user account">
     <div class="text-center">
       <div><i class="fas fa-user fa-lg text-green"></i></div>
       <p class="my-0 text-green">My Account</p>
@@ -37,13 +37,28 @@
   <div class="dropdown-menu border-0" aria-labelledby="user-options">
     {% if request.user.is_authenticated %}
       {% if request.user.is_superuser %}
-        <a href="{% url 'add_product' %}" class="dropdown-item">Product Management</a>
+        <a href="{% url 'add_product' %}" class="dropdown-item"
+          aria-label="Product management link">
+          Product Management
+        </a>
       {% endif %}
-      <a href="{% url 'profile' %}" class="dropdown-item">My Profile</a>
-      <a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a>
+      <a href="{% url 'profile' %}" class="dropdown-item"
+        aria-label="User profile link">
+      My Profile
+      </a>
+      <a href="{% url 'account_logout' %}" class="dropdown-item"
+        aria-label="Log out link">
+        Logout
+      </a>
     {% else %}
-      <a href="{% url 'account_signup' %}" class="dropdown-item">Register</a>
-      <a href="{% url 'account_login' %}" class="dropdown-item">Login</a>
+      <a href="{% url 'account_signup' %}" class="dropdown-item"
+        aria-label="Registration link">
+        Register
+      </a>
+      <a href="{% url 'account_login' %}" class="dropdown-item"
+        aria-label="Link to log in">
+        Login
+      </a>
     {% endif %}
   </div>
 </li>
@@ -51,7 +66,7 @@
 <!-- button for accessing the shopping cart -->
 <li class="list-inline-item">
   <a class="{% if grand_total %}text-primary font-weight-bold{% else %}text-black{% endif %} nav-link d-block d-lg-none"
-    href="{% url 'view_cart' %}">
+    href="{% url 'view_cart' %}" aria-label="Link to shopping cart">
     <div class="text-center">
       <div><i class="fa-solid fa-cart-shopping text-green"></i></div>
       <p class="my-0 text-green">
