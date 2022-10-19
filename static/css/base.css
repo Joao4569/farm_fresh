@@ -242,6 +242,8 @@ display: inline-block;
 color: #17a2b8; /* text-info */
 }
 
+/* Producer */
+
 .img-thumbnail {
   background-color: #f1eae1;
   padding: 5% 10% 30% 10% !important;
@@ -303,6 +305,13 @@ color: #17a2b8; /* text-info */
 
 .product-details-container {
   padding-bottom: 2rem;
+}
+
+/* cart table */
+
+.bottom-of-table,
+.bottom-of-form {
+  margin-bottom: 7rem;
 }
 
 /* -------------------------------- Media Queries */

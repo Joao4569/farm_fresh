@@ -33,7 +33,7 @@
     <div class="row">
       <div class="col">
         {% if cart_items %}
-          <div class="table-responsive rounded">
+          <div class="table-responsive bottom-of-table rounded">
             <table class="table table-sm table-borderless">
               <thead class="text-black">
                 <tr>
@@ -79,7 +79,7 @@
                       <div class="form-group">
                         <div class="col-12">
                           <p class="mt-3"><strong>Quantity:</strong></p>
-                          <div class="form-group w-50">
+                          <div class="form-group w-100">
                             <div class="input-group input-group-{{ product.id }}">
                               <div class="input-group-prepend">
                                 <button class="decrement-qty btn btn-custom rounded-0 decrement-qty_{{ product.id }}" 
