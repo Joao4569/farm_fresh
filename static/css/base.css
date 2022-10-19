@@ -74,7 +74,7 @@ It will be reused in multiple templates and I think this will be the easiest sol
 	top: 0;
 	left: 0;
 	position: fixed;
-	background: white;
+	background: #f9e3c9;
 	z-index: -1;
 }
 
@@ -92,6 +92,10 @@ It will be reused in multiple templates and I think this will be the easiest sol
 
 .bg-orange {
   background: #eb8909 !important;
+}
+
+.bg-beige {
+  background-color: #f9e3c9;
 }
 
 a.category-badge > span.badge:hover {
@@ -268,12 +272,20 @@ color: #17a2b8; /* text-info */
   border-radius: 0;
 }
 
-.footer {
-  height: fit-content;
-}
-
 .product-container {
   margin-bottom: 50px;
+}
+
+/* Footer */
+
+.footer {
+  height: fit-content;
+  padding-top: 1rem;
+  padding-bottom: 0.5rem;
+}
+
+.social-links {
+  font-size: 2rem;
 }
 
 /* -------------------------------- Media Queries */
@@ -362,12 +374,42 @@ to bug found - recorded as bug number 4 in readme */
   }
 }
 
-@media (max-width: 396px) {
+@media (max-width: 410px) {
   .header-container {
       padding-top: 220px;
   }
 
   body {
       height: calc(100vh - 220px);
+  }
+
+  footer {
+    font-size: 0.8rem;
+  }
+
+  .shop-now-button {
+    min-width: 180px;
+    padding: 0.5rem 0 !important;
+    font-size: 1rem;
+  }
+
+  .shop-button-container {
+    margin-top: 0 !important;
+  }
+
+  .slogan {
+    font-size: 2rem;
+  }
+
+  .footer {
+    padding-top: 0.5rem;
+  }
+
+  .social-links {
+    font-size: 1.2rem;
+  }
+
+  .social-link-container {
+    margin: 0.5rem 0 !important;
   }
 }

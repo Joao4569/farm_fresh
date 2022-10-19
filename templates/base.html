@@ -63,7 +63,7 @@ The main structure of this template is based on Boutique Ado and modified for Fa
 <body>
   <!-- Header has classes of container-fluid and fixed-top to ensure that it sticks to the top of the page -->
   <header class="container-fluid fixed-top">
-    <div id="topnav" class="row bg-white pt-lg-2 d-none d-lg-flex">
+    <div id="topnav" class="row bg-beige pt-lg-2 d-none d-lg-flex">
 
       <!-- Farm Fresh Logo -->
       <div class="col-12 col-lg-4 my-auto py-1 py-lg-0 text-center text-lg-left">
@@ -156,7 +156,7 @@ The main structure of this template is based on Boutique Ado and modified for Fa
     </div>
 
     <!-- main navbars -->
-    <div class="row bg-white">
+    <div class="row bg-beige">
       <nav class="navbar navbar-expand-lg navbar-light w-100">
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-nav" aria-controls="main-nav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -207,21 +207,47 @@ The main structure of this template is based on Boutique Ado and modified for Fa
   {% endblock %}
 
 <footer class="container-fluid fixed-bottom">
-  <div class="row footer bg-white">
+  <div class="row footer bg-orange">
 
-    <div class="col-12 col-md-4 text-center">
-      <p class="text-black">@Copyright d fjalfadhfgadshl</p>
+    <div class="col-12 col-md-4 text-center d-flex justify-content-center">
+      <p class="text-white my-auto">@Copyright - Made by J.Rodrigues</p>
     </div>
 
-    <div class="col-12 col-md-4 text-center">
-      <p class="text-black"></p>
+    <div class="col-12 col-md-4 text-center d-flex justify-content-center my-auto social-link-container">
+      <a href="https://facebook.com" target="_blank" rel="noopener"
+      aria-label="Visit our Facebook page (opens in a new tab)"><i class="fa-brands fa-facebook px-3 text-green social-links"></i></a>
+    <a href="https://instagram.com" target="_blank" rel="noopener"
+      aria-label="Visit our Instagram page (opens in a new tab)"><i class="fa-brands fa-instagram-square px-3 text-green social-links"></i></a>
+    <a href="https://twitter.com" target="_blank" rel="noopener"
+      aria-label="Visit our Twitter page (opens in a new tab)"><i class="fa-brands fa-twitter-square px-3 text-green social-links"></i></a>
     </div>
 
-    <div class="col-12 col-md-4 text-center">
-      <p class="text-black">Subscribe to our newsletter</p>
+    <div class="col-12 col-md-4 text-center text-white d-flex justify-content-center">
+      <p class="text-white my-auto">Subscribe to our newsletter</p>
     </div>
   </div>
 </footer>
+
+<!--<footer class="row border-top border-dark pt-5">
+  <div class="col-12 col-md-4 d-flex justify-content-center">
+    {% if user.is_authenticated %}
+      <p class="mt-3">Logged in as <span class="font-weight-bold">{{ user }}</span></p>
+    {% else %}
+      <p class="mt-3">Logged in as <span class="font-weight-bold">Guest</span></p>
+    {% endif %}
+  </div>
+  <div id="social-links" class="col-12 col-md-4 d-flex justify-content-center">
+    <a href="https://facebook.com" target="_blank" rel="noopener"
+      aria-label="Visit our Facebook page (opens in a new tab)"><i class="fa-brands fa-facebook px-3"></i></a>
+    <a href="https://instagram.com" target="_blank" rel="noopener"
+      aria-label="Visit our Instagram page (opens in a new tab)"><i class="fa-brands fa-instagram-square px-3"></i></a>
+    <a href="https://twitter.com" target="_blank" rel="noopener"
+      aria-label="Visit our Twitter page (opens in a new tab)"><i class="fa-brands fa-twitter-square px-3"></i></a>
+  </div>
+  <div class="col-12 col-md-4 d-flex justify-content-center mt-3">
+    <p>Made by J.Rodrigues</p>
+  </div>
+</footer>-->
 
   <!-- This block will add JavaScript needed in order to display toasts -->
   {% block postloadjs %}
