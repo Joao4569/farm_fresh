@@ -168,20 +168,20 @@
 
     <!-- This script will handle the click function for the back to top link -->
     <script type="text/javascript">
-		  $('.btt-link').click(function(e) {
+		  $(".btt-link").click(function(e) {
 			  window.scrollTo(0,0)
-		  })
+		  });
 	  </script>
     
     <script type="text/javascript">
       // Capture sort selector change event
-      $('#sort-selector').change(function() {
+      $("#sort-selector").change(function() {
           var selector = $(this);
           var currentUrl = new URL(window.location);
 
           // Capture user selected value
           var selectedVal = selector.val();
-          if(selectedVal != "reset"){
+          if(selectedVal !== "reset"){
 
             // Capture sort parameter
             var sort = selectedVal.split("_")[0];
@@ -196,12 +196,12 @@
             window.location.replace(currentUrl);
         } else {
 
-            // If user selects reset, then delete sort and direction and replace the location 
+            // If user selects reset, then delete sort and direction and replace the location
             currentUrl.searchParams.delete("sort");
             currentUrl.searchParams.delete("direction");
 
             window.location.replace(currentUrl);
         }
-      })
+      });
     </script>
 {% endblock %}
