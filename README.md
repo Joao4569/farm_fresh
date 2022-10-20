@@ -63,14 +63,13 @@
     * [Base Template](#base-template)
       * [Includes](#includes)
         * [Mobile Top Header](#mobile-top-header)
-        * [Mobile Navigation](#main-navigation)
+        * [Main Navigation](#main-navigation)
 
-    * [Products Template](#products-template)
-    * [Product Detail Template](#product-detail-template)
     * [Toasts](#toasts)
     * [404 Errors](#404-errors)
     * [Products Template](#products-template)
-    * [Product Detail](#product-detail-template)
+    * [Product Detail Template](#product-detail-template)
+    * [Product Detail Template](#product-detail-template)
     * [Checkout Template](#checkout-template)
     * [Checkout Success Template](#checkout-success-template)
     * [Profile Template](#profile-template)
@@ -169,7 +168,7 @@ This is how I approached the challenge:
 
 ![moscow_prioritisation](media/readme_images/agile/moscow_prioritisation.png)
 
-![moscow_prioritisation](media/readme_images/agile/)
+![moscow_prioritisation](media/readme_images/agile/moscow_iteration2.png)
 
 # Project Setup
 
@@ -307,12 +306,19 @@ I have created a few users which will be helpfull for testing the project:
 
 **Superuser**
 
-I created a Superuser in order to access the admin functions of Django. The Superuser is also what I use to create employees, as it is now a new employee can register his or her self the same way as a customer and with the Superuser logged in, one can allocate the "is Staff" property on the admin site.
+I created a Superuser in order to access the admin functions of Django.
 
- Credentials:
+ Gitpod Superuser Credentials:
+
    - Username: **FarmFresh**
    - Email: **joaorodrigues1@gmx.de**
    - Password: **Produce45** (case sensitive)
+
+ Heroku (deployed) Superuser Credentials:
+ 
+   - Username: **FarmFresh1**
+   - Email: **test@test.com**
+   - Password: **Produce4U** (case sensitive)
 
 # Features - Existing Features
 
@@ -443,6 +449,8 @@ Contains the following:
   - The search bar has the functionality to search for terms in either the products name or its description.
   - The delivery banner and navigation bar structure.
   - Code for displaying messages from Django by means of [toasts](#toasts).
+  - This template also contains a footer with social links, an external link to the Swiss farmers seasonal fruit calender as well as a link to Farm Fresh's GDPR privacy policy.
+  - Also in the head element there is code for rendering MailChimps pop up newsletter subsciption service customised for Farm Fresh.
 
 ### Includes
 
@@ -694,8 +702,6 @@ giving it the amount and the currency and printed it out. I then navigated to th
 - While testing for mobile devices UX, I found 2 minor bugs which were easily fixed. Noted as bug no. 10 in the [Bugs found section](#bugs-found).
 
 
-**Image Placeholder**
-
 ## Validator Testing
 
 - I Made use of the official [(Jigsaw) validator](https://jigsaw.w3.org/css-validator/) for the CSS file and the official [W3C validator](https://validator.w3.org/) for all HTML file testing.
@@ -751,6 +757,8 @@ None that I am aware of.
 - Icons used on Farm Fresh taken from [Font Awesome](https://fontawesome.com/).
 - Icon class for centering Font Awesome icons taken from [Bulma CSS Framework](https://bulma.io/documentation/elements/icon/), as suggested in the Boutique Ado walkthrough project.
 - All product images sourced and taken from [Farmy.ch](https://www.farmy.ch/).
+- I made use of [Mailchimp](https://mailchimp.com/) to provide a pop up window when users access the site, for the opertunity for them to sign up to Farm Fresh's newsletter.
+- The noimage image was sourced from Code Institutes Boutique Ado Walkthrough project.
 
 ## Content
 
@@ -768,3 +776,5 @@ None that I am aware of.
 - I made use of [temp-mail.org](https://temp-mail.org/en/) for creating temporary emails for testing purposes throughout this build.
 - I made use of [miniwebtool.com](https://miniwebtool.com/django-secret-key-generator/) in order to generate Django secret keys where needed throughout this build.
 - I made use of [XML-Sitemaps.com](https://www.xml-sitemaps.com/) for creating the `sitemap.xml` file, for SEO optimization.
+- I made use of [Privacy Policy Generator](https://www.privacypolicygenerator.info/) to create a custom privacy policy for users of Farm Fresh.
+- I made use of a template provided by Code Institute for creating a mock up Facebook page for Farm Fresh.
