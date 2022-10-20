@@ -64,6 +64,7 @@
       * [Includes](#includes)
         * [Mobile Top Header](#mobile-top-header)
         * [Main Navigation](#main-navigation)
+        * [Index Template](#index-template)
 
     * [Toasts](#toasts)
     * [404 Errors](#404-errors)
@@ -72,6 +73,7 @@
     * [Product Detail Template](#product-detail-template)
     * [Checkout Template](#checkout-template)
     * [Checkout Success Template](#checkout-success-template)
+    * [Cart Template](#cart-template)
     * [Profile Template](#profile-template)
 
 * [Web Marketing](#web-marketing)
@@ -434,6 +436,10 @@ All allauth templates were copied and stored in a unique directory within the pr
 
 All Allauth templates that are in the account folder have been customised for use on Farm Fresh.
 
+![allauth_signup](media/readme_images/screenshots/allauth_signup.png)
+
+![allauth_signout](media/readme_images/screenshots/allauth_sign_out.png)
+
 ### Base Template
 
 This will act as the main base from which most other templates will be based on, containing the main generic content and styling for Farm Fresh. Recommended best practises taken from Boutique Ado walkthrough project.
@@ -484,6 +490,12 @@ Contains the following:
   - The pantry navigation dropdown menu.
   - The special offers navigation dropdown menu.
 
+### Index Template
+
+![homepage](media/readme_images/screenshots/home_page.png)
+
+![product_management](media/readme_images/screenshots/product_management.png)
+
 ### Toasts
 
 To add to the overall user experience on the site I added a feature of bootstrap called toasts, which will give us some nice clean notifications that we can customize. This will use the Django messages framework to communicate with our users as they use our store.
@@ -511,6 +523,10 @@ Contains the following:
  - A button to return to the top of the screen, also for a good UX.
  - The Javascript for the return to top button and the sorting functionality.
 
+![all_products](media/readme_images/screenshots/all_products.png)
+
+![all_products_superuser](media/readme_images/screenshots/all_products_superuser.png)
+
 ### Product Detail Template
 
 This template will provide the user with a detailed view of the selected product with a full product description. The superuser will be able to edit or delete inventory items if logged in on this page.
@@ -523,6 +539,8 @@ Contains the following:
 - A quantity selector.
 - Keep shopping and add to cart buttons.
 
+![product_detail](media/readme_images/screenshots/product_detail.png)
+
 ### Checkout Template
 
 This will act as the template for finalizing a order and processing a payment.
@@ -533,7 +551,17 @@ Contains the following:
 - A form for the user to input their delivery and payment information.
 - A button for going back to the cart and amending the order.
 
+![checkout](media/readme_images/screenshots/checkout.png)
+
 ### Checkout Success Template
+
+![checkout_success](media/readme_images/screenshots/checkout_success.png)
+
+![processing_order](media/readme_images/screenshots/processing_order.png)
+
+### Cart Template
+
+![cart](media/readme_images/screenshots/cart.png)
 
 ### Profile Template
 
@@ -600,6 +628,9 @@ through them and also help search engines understand the website structure which
    - Sitemap
 
 # Features Left To Implement
+
+- To send an order confirmation email to the user once the order is confirmed - listed as won't have for iteration 2 in Github issues.
+- Password recovery emails - listed as won't have for iteration 2 in Github issues.
 
 # Testing
 
