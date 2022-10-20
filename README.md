@@ -767,7 +767,7 @@ None that I am aware of.
  - I made extensive use of Code Institute's learning content and tutorials throughout the project for revision as well as usefull content for my readme file.
  - I made extensive use of the Django Allauth documentation for most aspects of setting up authorisation for this project.
  - Solution to issue found in terminal window while testing Django allauth sourced from [Stackoverflow.com](https://stackoverflow.com/questions/64634674/django-typeerror-argument-of-type-posixpath-is-not-iterable).
- - The Boutique Ado walkthrough project was the biggest source of information for this project and I have used many snippets of code and text from it's tutorial's, all have been commented and credited as and where required.
+ - The Boutique Ado walkthrough project was the biggest source of information for this project and I have used many snippets of code and text from it's tutorial's and customised it where appropriate for use and as a guideline for Farm Fresh.
  - Font pairing of Signika and PT Serif sourced and taken from [Farmy.ch](https://www.farmy.ch/).
  - Method for using the model choices field attribute in the packinging model of the products app sourced from [Stackoverflow.com](https://stackoverflow.com/questions/18676156/how-to-properly-use-the-choices-field-option-in-django).
  - All product descriptions, pricing and producer content was sourced on [Farmy.ch](https://www.farmy.ch/) and modified where needed to suite its application on Farm Fresh.
@@ -778,3 +778,4 @@ None that I am aware of.
 - I made use of [XML-Sitemaps.com](https://www.xml-sitemaps.com/) for creating the `sitemap.xml` file, for SEO optimization.
 - I made use of [Privacy Policy Generator](https://www.privacypolicygenerator.info/) to create a custom privacy policy for users of Farm Fresh.
 - I made use of a template provided by Code Institute for creating a mock up Facebook page for Farm Fresh.
+- Code for CSS triangle in base.css taken from [CSS tricks](https://css-tricks.com/snippets/css/css-triangle/).
