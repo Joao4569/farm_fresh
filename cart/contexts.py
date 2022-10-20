@@ -2,6 +2,7 @@ from decimal import Decimal
 from django.conf import settings
 from django.shortcuts import get_object_or_404
 from products.models import Product
+# taken directly from Boutique Ado and customised for Farm Fresh
 
 
 def cart_contents(request):

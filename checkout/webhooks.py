@@ -6,6 +6,7 @@ from django.views.decorators.csrf import csrf_exempt
 from checkout.webhook_handler import StripeWH_Handler
 
 import stripe
+# taken directly from Boutique Ado and customised for Farm Fresh
 
 
 @require_POST

@@ -1,6 +1,7 @@
 from django import forms
 from .widgets import CustomClearableFileInput
 from .models import Product, Category
+# taken directly from Boutique Ado and customised for Farm Fresh
 
 
 class ProductForm(forms.ModelForm):

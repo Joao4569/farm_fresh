@@ -1,5 +1,6 @@
 from django.contrib import admin
 from .models import Order, OrderLineItem
+# taken directly from Boutique Ado and customised for Farm Fresh
 
 
 class OrderLineItemAdminInline(admin.TabularInline):
@@ -8,6 +9,7 @@ class OrderLineItemAdminInline(admin.TabularInline):
 
 
 class OrderAdmin(admin.ModelAdmin):
+    """ Setup for order admin display to user """
     inlines = (OrderLineItemAdminInline,)
 
     readonly_fields = ('order_number', 'date', 'country',

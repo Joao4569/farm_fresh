@@ -1,5 +1,6 @@
 from django.contrib import admin
 from .models import Product, Category, Producer, Packaging
+# taken directly from Boutique Ado and customised for Farm Fresh
 
 
 class ProductAdmin(admin.ModelAdmin):

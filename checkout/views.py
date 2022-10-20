@@ -14,10 +14,12 @@ from cart.contexts import cart_contents
 
 import stripe
 import json
+# taken directly from Boutique Ado and customised for Farm Fresh
 
 
 @require_POST
 def cache_checkout_data(request):
+    """ Decorator method for cacheing user checkout data """
     try:
         pid = request.POST.get('client_secret').split('_secret')[0]
         stripe.api_key = settings.STRIPE_SECRET_KEY
@@ -34,6 +36,7 @@ def cache_checkout_data(request):
 
 
 def checkout(request):
+    """ Method for handling users checkout data """
     stripe_public_key = settings.STRIPE_PUBLIC_KEY
     stripe_secret_key = settings.STRIPE_SECRET_KEY
 

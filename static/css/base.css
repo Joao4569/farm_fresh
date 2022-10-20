@@ -12,7 +12,7 @@ html {
 body {
   background: url('/media/farmer_carrying_box_of_veg.jpg') no-repeat center center fixed;
   background-size: cover;
-  height: calc(100vh - 164px); /* Height of top header 164px - Check for Farm Fresh application */
+  height: calc(100vh - 164px);
   color: #555;
   font-family: 'Signika', serif;
 }
@@ -39,15 +39,8 @@ they will always stay perfectly centered and have a consistent size - credited i
 
 /* For buttons so that they consistently match the theme of the shop now button on the homepage. */
 .shop-now-button {
-  /*background: #28a745;
-  color: white;*/
   min-width: 260px;
 }
-
-/*.btn-green {
-  background: #28a745;
-  color: white;
-}*/
 
 .btn-custom {
   background: #28a745;
@@ -142,7 +135,7 @@ input[name='q']::placeholder {
 .arrow-up {
   width: 0; 
   height: 0; 
-  border-left: 4px solid transparent;           /*CREDIT IN README CREDIT IN README CREDIT N README*/
+  border-left: 4px solid transparent;
   border-right: 4px solid transparent; 
   border-bottom: 10px solid black;
   position: absolute;

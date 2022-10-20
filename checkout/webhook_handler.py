@@ -10,6 +10,8 @@ from user_profiles.models import UserProfile
 import json
 import time
 
+# taken directly from Boutique Ado and customised for Farm Fresh
+
 
 class StripeWH_Handler:
     """Handle Stripe webhooks"""

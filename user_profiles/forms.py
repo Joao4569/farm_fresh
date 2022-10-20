@@ -1,5 +1,7 @@
 from django import forms
 from .models import UserProfile
+"""The main structure of this is based on Boutique Ado and
+modified for Farm Fresh"""
 
 
 class UserProfileForm(forms.ModelForm):

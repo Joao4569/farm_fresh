@@ -1,4 +1,5 @@
 from django.db import models
+# taken directly from Boutique Ado and customised for Farm Fresh
 
 
 class Category(models.Model):

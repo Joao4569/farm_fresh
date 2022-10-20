@@ -4,6 +4,7 @@ from django.shortcuts import (
 from django.contrib import messages
 
 from products.models import Product
+# taken directly from Boutique Ado and customised for Farm Fresh
 
 
 def view_cart(request):

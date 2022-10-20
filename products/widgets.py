@@ -1,5 +1,6 @@
 from django.forms.widgets import ClearableFileInput
 from django.utils.translation import gettext_lazy as _
+# taken directly from Boutique Ado and customised for Farm Fresh
 
 
 class CustomClearableFileInput(ClearableFileInput):
