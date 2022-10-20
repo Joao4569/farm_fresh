@@ -763,13 +763,31 @@ giving it the amount and the currency and printed it out. I then navigated to th
 
 ## Validator Testing
 
-- I Made use of the official [(Jigsaw) validator](https://jigsaw.w3.org/css-validator/) for the CSS file and the official [W3C validator](https://validator.w3.org/) for all HTML file testing.
-- I made use of [PEP8 online checker](http://pep8online.com/) to validate all python code.
+- I Made use of the official [(Jigsaw) validator](https://jigsaw.w3.org/css-validator/) for the CSS files and the official [W3C validator](https://validator.w3.org/) for HTML file testing.
 
-HTML code passes through the official W3C validator with no issues
-CSS code passes through the official (Jigsaw) validator with no issues
-JavaScript code passes through a linter (e.g. jslint.com) with no significant issues
-Python code is consistent in style and conforms to the PEP8 style guide (or another explicitly mentioned style guide, such as Google's)
+Results:
+
+1. base.html - Passed without errors except for Django template literals.
+2. index.html - Passed without errors except for Django template literals.
+3. products.html - Passed without errors except for Django template literals.
+4. product_detail.html - Passed without errors except for Django template literals.
+5. cart.html - Passed without errors except for Django template literals.
+6. chekout.html - Passed without errors except for Django template literals.
+
+7. base.css - Passed without errors.
+8. checkout.css - Passed without errors.
+9. profile.css - Passed without errors.
+
+- I checked that my JavaScript code passes through a linter, [JSLint.com](https://www.jslint.com/) with no significant issues.
+
+1. cart.html - Found errors with missing semicolons and the use of double quotes instead of single quotes - All fixed and passed, only Jquery syntax errors displaying, which is acceptable to me.
+2. stripe-elements.js - Found errors with missing semicolons and the use of double quotes instead of single quotes - All fixed and passed, only Jquery syntax errors, Django syntax errors and error due to injected CSS displaying, which is acceptable to me.
+3. products.html postload JS - Found errors with missing semicolons, the use of double quotes instead of single quotes and an error for using `!=` instead of `!==` - All fixed and passed, only Jquery syntax errors displaying and an errror for line of code exceeding 80 characters, which is acceptable to me due to the application thereof.
+4. add_product.html postload JS - Passed, only Jquery syntax errors displaying, which is acceptable to me. 
+
+- I made use of [PEP8 python checker](https://www.pythonchecker.com/) to validate python code.
+
+To be honest I found this checker a bit wierd, giving spacing errors and other minor errors, but which were not in reality in my actual python files, but found no serious errors regarding samples of my python code. The recommended checker recommeded by Code Institute no longer exists. There are no serioius terminal errors for all my custom Python files except for a few line item length errors which I could not resolve but I have made sure that aöö unneccesary errors are all taken care of.
 
 # Bugs found
 
