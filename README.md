@@ -18,69 +18,57 @@ Our design and build process is now laid out for you to review with all neccessa
 ## Table of Contents
 
 * [Conception](#conception)
-
   * [Project Scope](#project-Scope)
-
   * [Basic Wireframe Design](#basic-wireframe-design)
     * [Landing Page Wireframe](#landing-page-wireframe)
     * [Products Page Wireframe](#products-page-wireframe)
     * [Product Detail Page Wireframe](#products-detail-page-wireframe)
     * [Shopping Cart Wireframe](#shopping-cart-wireframe)
     * [Checkout Page Wireframe](#checkout-page-wireframe)
-
   * [Agile](#agile)
-
 * [Project Setup](#Project-Setup)
   * [Installing Django and supporting libraries](#installing-django-and-supporting-libraries)
   * [Create new Django project](#create-new-django-project)
   * [Django Allauth](#django-allauth)
     * [Required Django Allauth settings](#required-django-allauth-settings)
-
 * [Stripe Payments](#stripe-payments)
-
 * [Deployment on Heroku](#deployment-on-heroku)
   * [Heroku Deployment - Setting up AWS](#heroku-deployment---setting-up-aws)
-
 * [Access Control](#access-control)
-
 * [Features - Existing Features](#features---existing-features)
-
   * [Django Apps](#django-apps)
     * [Home App](#home-app)
     * [Product App](#product-app)
-
     * [Cart App](#cart-app)
-      * [Template Tags](#template-tags)
+      * [Cart Template Tags](#template-tags)
       * [Context Processor](#context-processor)
-
     * [Checkout App](#checkout-app)
 
 * [MVT Architecture](#mvt-architecture)
-
   * [Models](#models)
     * [Products](#products)
       * [Category Model](#category-model)
       * [Product Model](#product-model)
       * [Producer Model](#producer-model)
-    
+      * [Packaging Model](#packaging-model)
     * [Checkout](#checkout)
-
-    * [User Profile](#user-profile)
-
+    * [Order Model](#order-model)
+    * [Order Line Item Model](#order-line-item-model)
+    * [Profile](#profile)
+    * [User Profile Model](#user-profile-model)
   * [Views](#views)
-    * [Index View](#index-view)
-    * [All Products View](#all-products-view)
-    * [Add to Cart View](#add-to-cart-view)
-
+    * [Home View](#home-view)
+    * [Products Views](#products-views)
+    * [Cart Views](#cart-views)
+    * [Checkout Views](#checkout-views)
+    * [Profile View](#profile-view)
   * [Templates](#templates)
     * [Allauth Templates](#allauth-templates)
-
     * [Base Template](#base-template)
       * [Includes](#includes)
         * [Mobile Top Header](#mobile-top-header)
         * [Main Navigation](#main-navigation)
         * [Index Template](#index-template)
-
     * [Toasts](#toasts)
     * [404 Errors](#404-errors)
     * [Products Template](#products-template)
@@ -90,13 +78,9 @@ Our design and build process is now laid out for you to review with all neccessa
     * [Checkout Success Template](#checkout-success-template)
     * [Cart Template](#cart-template)
     * [Profile Template](#profile-template)
-
 * [Web Marketing](#web-marketing)
-
 * [SEO Optimization](#seo-optimization)
-
 * [Features - Features Left To Implement](#features-left-to-implement)
-
 * [Testing](#testing)
   * [Manual Testing](#manual-testing)
   * [Stripe Testing](#stripe-testing)
@@ -104,11 +88,9 @@ Our design and build process is now laid out for you to review with all neccessa
   * [Validator Testing](#validator-testing)
   * [Bugs Found](#bugs-found)
   * [Unfixed Bugs](#unfixed-bugs)
-
 * [Credits](#credits)
   * [Content](#content)
   * [Media](#media)
-
 
 # Conception
 
@@ -123,7 +105,7 @@ I made use of the following resources in order to plan and visualise my project,
 
 ### Project Scope
 
-Here is a diagram representing Farm Fresh's scope and logic.
+Here is a diagram representing Farm Fresh's scope and logic which I used for planning.
 
 ![scope_logic](media/readme_images/screenshots/scope_logic.png)
 
@@ -201,7 +183,7 @@ After completing the basic conception of my idea and designing some basic struct
 5. Create a directory for storing all of the required and customised Django allauth templates.
 6. Create the MVT Architecture for Farm Fresh.
 
-### Worth Noting:
+**_Worth Noting:_**
 
 #### Installing Django and supporting libraries
 
@@ -354,31 +336,13 @@ I created a Superuser in order to access the admin functions of Django.
 
 This app conatins everything needed for Farm Fresh's products, like the product models, views and URL's.
 
-
 ### Cart App
+
+This conatins all the views, templates and logic for the shopping cart to function the way that it does.
 
 #### Template Tags
 
-  - A useful trick to have in your arsenal.
-For this column, the subtotal should be the quantity times the product price.
-In a new folder called template tags.
-I'll create a file called bag_tools.py
-And I'll also create an empty file called `__init__ .py`
-which will ensure that this directory is treated as a Python package
-making our bag tools module available for imports and to use in templates.
-Now in the bag tools file from django i'll import template.
-And then create a function called calc_subtotal
-Which takes in a price and a quantity as parameters and simply returns their irproduct.
-Now to register this filter we need to create a variable called register.
-Which is an instance of template.library
-And then use the register filter decorator to register our function as a template filter.
-All of this is straight from the django documentation by the way
-so if you'd like a deeper explanation of how it works
-just go there and look up creating custom template tags and filters.
-With the filter finished all we need to do to use it is load it in the bag template with load bag tools.
-Then we can pipe the price into it as the first argument.
-And send the item quantity as the second.
-
+I created `cart_tools.py` and it's `__init__ .py` file which will ensure that this directory is treated as a Python package making the cart tools module availablefor imports and to use in templates. It also contains a function called calc_subtotal which takes in a price and a quantity as parameters and simply returns theirsubtotal.
 
 #### Context Processor
 
@@ -391,8 +355,7 @@ Within this context processor, for convenience to the user, to let the user know
 
 #### checkout app
 
-- Crispy  forms
-- settings.py built-ins
+This app will handle all views, models and templates associated with making a purchase on Farm Fresh.
 
 # MVT Architecture
 
@@ -400,17 +363,19 @@ Within this context processor, for convenience to the user, to let the user know
 
 ## Models
 
-Entity relational diagram made up for Farm Fresh
+Entity relational diagram made up for Farm Fresh:
 
 ![erd](media/readme_images/screenshots/erd_complete.png)
 
 ### Products
 
+Products app model structure:
+
 ![erd_category](media/readme_images/screenshots/erd_products.png)
 
 ### Category Model
 
-This model contains the information for product categories such as it's related attributes and model methods. This model is related to the Product model and only contains the information for a category's programmatic name and an easier to read and use, friendly name..
+This model contains the information for product categories such as it's related attributes and model methods. This model is related to the Product model and only contains the information for a category's programmatic name and an easier to read and use, friendly name. This model is linked to the product model.
 
 ### Product Model
 
@@ -418,25 +383,41 @@ This model contains all the information for each product such as it's name, desc
 
 ### Producer Model
 
-This model contains all the information for each producer such as there name, description and an image.
+This model contains all the information for each producer such as there name, description and an image. This model is linked to the product model.
+
+### Packaging Model
+
+This model contains all the data and options for packaging used for products on Farm Fresh. This model is linked to the product model.
 
 ### Checkout
 
 ![erd_checkout](media/readme_images/screenshots/erd_checkout.png)
 
-### User Profile
+### Order Model
+
+This model contains all the neccessary data needed for a customers order, including their delivery information and order totals.
+
+### Order Line Item Model
+
+This model contains all the data for creating and analysing line items within the order model. 
+
+### Profile
 
 ![erd_user](media/readme_images/screenshots/erd_profile.png)
 
+### User Profile Model
+
+This model contains all the users default delivery information, if the user decides to create a profile. This model is linked to the order model.
+
 ## Views
 
-### Index view
+### Home View
 
-This view acts as the home/landing page for users.
+This view will render the homeppage to the user.
 
-### All Products view
+### Products Views
 
-This view acts as the main products page for Farm Fresh. It also contains the neccessary code in order for the search bar functionality to function.
+This view will render the all products, product detail, add product, edit product and delete product templaets while containg all the neccessary logic to do so.
 
 **Worth Noting**
 
@@ -448,18 +429,17 @@ This view acts as the main products page for Farm Fresh. It also contains the ne
 
  - By setting a `queries` variable equal to a Q object, where the product name contains the query or the product description contains the query, the pipe here then generates the "or" statement and the `i` in front of `contains` makes the queries case insensitive. With those queries constructed one can pass them to the filter method in order to actually filter the products.
 
-### Add to cart view
+### Cart views
 
-In modern versions of HTTP every request-response cycle between the server and the client, in my case between the django view on the server-side and our form making the request on the client-side. Uses what's called a session, to allow information to be stored until the client and server are done communicating. This is especially handy in a situation like an e-commerce store.
+This view wil render the cart, add to cart, adjust cart and remove from cart templates to the user while containg all the neccessary logic to do so.
 
-Because it allows us to store the contents of the shopping cart in the HTTP session while the user browses the site and adds items to be purchased.By storing the shopping bag in the session. It will persist until the user closes their browser so that they can add something to the cart. Then browse to a different part of the site add something else and so on without losing the contents of their cart. I created this view to implement this concept.
+### Checkout Views
 
- So for a brief review:
+This view will render the checkout and checkout success templates while containing the logic to do so as well as cacheing the checkout data and handel Stripe requirements.
 
- - The user submits the form to this view including the product id and the quantity.
- - Once in the view we'll get the cart variable if it exists in the session or create it if it doesn't.
- - Finally the item gets added to the cart or the quantity gets updated if it already exists and then the variable in the session gets overwritten with the updated  version.
+### Profile View
 
+This view will render the user profile to the user with their order history while containg all the neccessary logic to do so.
 
 ## Templates
 
@@ -545,6 +525,8 @@ Contains the following:
 
 This template will render a custom 404 error message to users when they try and access pages that do not exist for a better UX when navigating this site.
 
+![error_404](media/readme_images/screenshots/error_404.png)
+
 ### Products Template
 
 This template extends the base template and allows the user to view lists of products including some details of the products, their prices and product images. The superuser will be able to edit or delete inventory items if logged in on this page.
@@ -608,6 +590,8 @@ Contains the following:
 - A button for updating their information.
 - A view of their order history.
 - A link to view previous orders by clicking on the displayed order number.
+
+![profile](media/readme_images/screenshots/profile.png)
 
 ### Web Marketing
 
