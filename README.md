@@ -51,6 +51,10 @@
       * [Category Model](#category-model)
       * [Product Model](#product-model)
       * [Producer Model](#producer-model)
+    
+    * [Checkout](#checkout)
+
+    * [User Profile](#user-profile)
 
   * [Views](#views)
     * [Index View](#index-view)
@@ -107,6 +111,10 @@ I made use of the following resources in order to plan and visualise my project,
 
 
 ### Project Scope
+
+Here is a diagram representing Farm Fresh's scope and logic.
+
+![scope_logic](media/readme_images/screenshots/scope_logic.png)
 
 
 ### Basic Wireframe Design
@@ -377,9 +385,17 @@ Within this context processor, for convenience to the user, to let the user know
 
 # MVT Architecture
 
+![mvt](media/readme_images/screenshots/mvt.png)
+
 ## Models
 
+Entity relational diagram made up for Farm Fresh
+
+![erd](media/readme_images/screenshots/erd_complete.png)
+
 ### Products
+
+![erd_category](media/readme_images/screenshots/erd_products.png)
 
 ### Category Model
 
@@ -392,6 +408,14 @@ This model contains all the information for each product such as it's name, desc
 ### Producer Model
 
 This model contains all the information for each producer such as there name, description and an image.
+
+### Checkout
+
+![erd_checkout](media/readme_images/screenshots/erd_checkout.png)
+
+### User Profile
+
+![erd_user](media/readme_images/screenshots/erd_profile.png)
 
 ## Views
 
@@ -593,6 +617,10 @@ I believe the benefits of doing this will be:
   - A low cost to the new business
   - Easy scalability
   - Increase sales
+
+Mock up Facebook Image:
+
+![facebook_mockup](media/readme_images/screenshots/facebook_mockup.png)
 
 ### SEO Optimization
 
