@@ -2,7 +2,18 @@
 
 ## Introduction
 
+Farm Fresh is a newly designed online store designed at providing customers with access to fresh mostly organic and seasonal fruits and vegetables, with some other related items, to shoppers in Zürich Switzerland. We also provide a delivery service with a free delivery to any purchases over 30 Swiss Francs within the city of Zürich, with plans to expand our delivery scope in future.
 
+Farm Fresh was designed with its users in mind, both customers and its staff. It is a mobile first design which suits Bootstrap and takes the user experience as
+one of the most important aspects. It is a secure platform where everthing is laid out in a logical and easy to use structure.
+
+Providing users with a layout which is easy to understand, high quality and being very scalable for future expansion.
+
+We also provide users with a profile for storing their purchase history and personal information as to ease the process of future purchases on the platform. There is also an option for users to sign up for our monthly newsletter, a link to our Facebook page as well as a link to the Swiss farmers seasonal fruit harvest times, in order to give our customers ways to stay connected with us and gain some usefull information to suit their needs.
+
+The platform is also designed to always keep users informed of their actions by providing custom and usefull feedback whenever it is needed, always ensuring that the user feels secure and comfortable in their interactions with our store.
+
+Our design and build process is now laid out for you to review with all neccessary and relevant steps documented in this document, her is the layout of this document for you to easily access important sections with ease.
 
 ## Table of Contents
 
