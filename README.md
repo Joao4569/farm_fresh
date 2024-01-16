@@ -339,13 +339,7 @@ I have created a few users which will be helpful for testing the project:
 
 I created a Superuser in order to access the admin functions of Django.
 
- Gitpod Superuser Credentials:
-
-   - Username: **FarmFresh**
-   - Email: **joaorodrigues1@gmx.de**
-   - Password: **Produce45** (case sensitive)
-
- Heroku (deployed) Superuser Credentials:
+ Superuser Credentials:
  
    - Username: **FarmFresh1**
    - Email: **test@test.com**
