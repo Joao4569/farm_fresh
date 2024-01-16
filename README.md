@@ -34,6 +34,7 @@ Our design and build process is now laid out for you to review with all neccessa
 * [Stripe Payments](#stripe-payments)
 * [Deployment on Heroku](#deployment-on-heroku)
   * [Heroku Deployment - Setting up AWS](#heroku-deployment---setting-up-aws)
+  * [Environment Variables](#environment-variables)
 * [Access Control](#access-control)
 * [Features - Existing Features](#features---existing-features)
   * [Django Apps](#django-apps)
@@ -302,6 +303,33 @@ So in effect when the `USE_AWS` setting is true and whenever collectstatic is ru
 51. I then revealed the webhooks signing secret and added that to the Heroku config variables.
 
 Deployment Complete!
+
+## Environment Variables
+
+I created a `env.py` file which is used to set the environment variables for the project.
+
+This file contains sensitive information such as API keys, database URLs, and secret keys that are crucial for the proper functioning of the application. 
+
+Here's a sample structure of the `env.py` file:
+
+```python
+import os
+
+os.environ["SECRET_KEY"] = "<your-secret-key>"
+os.environ["DEBUG"] = "<True-or-False>"  # Set to False in Production
+os.environ["DEVELOPMENT"] = "<True-or-False>"  # Set to False in Production
+os.environ["DATABASE_URL"] = "<your-database-url>"
+os.environ["AWS_ACCESS_KEY_ID"] = "<your-aws-access-key-id>"
+os.environ["AWS_SECRET_ACCESS_KEY"] = "<your-aws-secret-access-key>"
+os.environ["EMAIL_HOST_PASS"] = "<your-email-host-pass>"
+os.environ["EMAIL_HOST_USER"] = "<your-email-host-user>"
+os.environ["STRIPE_PUBLIC_KEY"] = "<your-stripe-public-key>"
+os.environ["STRIPE_SECRET_KEY"] = "<your-stripe-secret-key>"
+os.environ["STRIPE_WH_SECRET"] = "<your-stripe-wh-secret>"
+os.environ["USE_AWS"] = "<True-or-False>"  # Set to True in Production
+```
+
+The `env.py` file is added to the `.gitignore` file. This is done to prevent the exposure of sensitive data to the public as the `.gitignore` file instructs Git to ignore the specified files and directories, and thus they are not tracked or pushed to the repository. It's a good practice to add all files that contain sensitive data to `.gitignore`.
 
 # Access Control
 
@@ -725,7 +753,7 @@ giving it the amount and the currency and printed it out. I then navigated to th
 
 - When entering an invalid card number, the numbers change to red indicating an invalid card number.
 
-- After initial installation I used the Stripe test card number and processed a payment, the form submitted and the payment was shown as successfull on the Stripe site.
+- After initial installation I used the Stripe test card number and processed a payment, the form submitted and the payment was shown as successful on the Stripe site.
 
 - In order to test the basic functionality I navigated to the checkout page, filled out the payment form and entered the stripe test card number. When it worked and the payment form was submitted, I went to the stripe dashboard and clicked developers then events and could see that the payment was indeed successful.
 
