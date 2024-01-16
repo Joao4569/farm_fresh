@@ -5,15 +5,15 @@
 Farm Fresh is a newly designed online store designed at providing customers with access to fresh mostly organic and seasonal fruits and vegetables, with some other related items, to shoppers in Zürich Switzerland. We also provide a delivery service with a free delivery to any purchases over 30 Swiss Francs within the city of Zürich, with plans to expand our delivery scope in future.
 
 Farm Fresh was designed with its users in mind, both customers and its staff. It is a mobile first design which suits Bootstrap and takes the user experience as
-one of the most important aspects. It is a secure platform where everthing is laid out in a logical and easy to use structure.
+one of the most important aspects. It is a secure platform where everything is laid out in a logical and easy to use structure.
 
 Providing users with a layout which is easy to understand, high quality and being very scalable for future expansion.
 
-We also provide users with a profile for storing their purchase history and personal information as to ease the process of future purchases on the platform. There is also an option for users to sign up for our monthly newsletter, a link to our Facebook page as well as a link to the Swiss farmers seasonal fruit harvest times, in order to give our customers ways to stay connected with us and gain some usefull information to suit their needs.
+We also provide users with a profile for storing their purchase history and personal information as to ease the process of future purchases on the platform. There is also an option for users to sign up for our monthly newsletter, a link to our Facebook page as well as a link to the Swiss farmers seasonal fruit harvest times, in order to give our customers ways to stay connected with us and gain some useful information to suit their needs.
 
-The platform is also designed to always keep users informed of their actions by providing custom and usefull feedback whenever it is needed, always ensuring that the user feels secure and comfortable in their interactions with our store.
+The platform is also designed to always keep users informed of their actions by providing custom and useful feedback whenever it is needed, always ensuring that the user feels secure and comfortable in their interactions with our store.
 
-Our design and build process is now laid out for you to review with all neccessary and relevant steps documented in this document, her is the layout of this document for you to easily access important sections with ease.
+Our design and build process is now laid out for you to review with all necessary and relevant steps documented in this document, her is the layout of this document for you to easily access important sections with ease.
 
 ## Table of Contents
 
@@ -145,7 +145,7 @@ This is how I approached the challenge:
 1. After reading the project requirements and the User's goal for the project idea that I had selected, I came up with the project's user goal, themes and epics.
 2. From the epic's I derived the various user stories and built on this as the project developed.
 3. Once I had created some user stories, I then came up with the relevant tasks for each user story.
-4. After creating some stucture and scope for how to approach the task at hand, I started recording all my processes on Github:
+4. After creating some structure and scope for how to approach the task at hand, I started recording all my processes on Github:
     - I created user story templates on Github for efficiency in the Agile process.
     - I made use of Github issues to create and manage my user stories and for future defects if they arise.
     - I also came up with user story acceptance criteria which I added to the user stories as comments on Github issues.
@@ -243,10 +243,10 @@ These are the steps I followed in order to get Farm Fresh deployed on Heroku, as
 2. Then I provisioned a Postgres database on Heroku.
 3. In order to use the Postgres database I installed dj_database_url and psycopg2.
 4. Froze and updated my `requirements.txt` file in order to make sure Heroku installs all the apps requirements when it is deployed.
-5. I then imported dj_databse_url into settings.py and commented out the default configuration and replaced the default database with a call to `dj_database_url.parse` and gave it the database URL from Heroku. Which one can get from the config variables in the Heroku app settings page.
+5. I then imported `dj_database_url` into settings.py and commented out the default configuration and replaced the default database with a call to `dj_database_url.parse` and gave it the database URL from Heroku. Which one can get from the config variables in the Heroku app settings page.
 6. I then proceeded to run migrations for the new Postgres database.
 7. As the products model data was the only crucial data that I needed, I created the `products.json` file with data dumped from the SQLite database and loaded it into the new Postgres database on Heroku.
-8. I then created a new superuser as there would be no users on the new database models, in order to stil be able to access the Django admin site.
+8. I then created a new superuser as there would be no users on the new database models, in order to still be able to access the Django admin site.
 9. I then removed the Heroku database configuration and uncommented the original settings so that the database URL doesn't end up in version control.
 10. I made use of an if statement in settings.py, database setup, so that when Farm Fresh is running on Heroku where the database URL environment variable will be defined, it is possible to work on either database depending on future requirements.
 11. Then I needed to install gunicorn, which will act as the webserver and froze that into the requirements file.
@@ -265,7 +265,7 @@ I made use of Amazons Web Services S3 as the cloud based storage service for sto
 19. I logged into my AWS account and opened S3 and created a new bucket which will be used to store our files.
 20. I unchecked block all public access and acknowledged that the bucket will be public and finalised the buckets creation.
 21. Once the bucket was created I set a few basic settings on our new bucket, on the properties tab I turned on static website hosting which will give me a new endpoint that I can use to access it from the internet.
-22. Within the permissions settings I pasted in thea coors configuration provided by Code Institute which is going to set up the required access between the Heroku app and this S3 bucket.
+22. Within the permissions settings I pasted in the cors configuration provided by Code Institute which is going to set up the required access between the Heroku app and this S3 bucket.
 23. Next in the bucket policy section I accessed the policy generator in order to create a security policy for the bucket.
 24. The policy type was set to be a S3 bucket policy and allowed all principals and the action was set to get object.
 25. Next I copied the ARN which stands for Amazon resource name and pasted it into the ARN box and proceeded to add the statement and generated a policy.
@@ -333,7 +333,7 @@ The `env.py` file is added to the `.gitignore` file. This is done to prevent the
 
 # Access Control
 
-I have created a few users which will be helpfull for testing the project:
+I have created a few users which will be helpful for testing the project:
 
 **Superuser**
 
@@ -362,15 +362,15 @@ I created a Superuser in order to access the admin functions of Django.
 
 ### Product App
 
-This app conatins everything needed for Farm Fresh's products, like the product models, views and URL's.
+This app contains everything needed for Farm Fresh's products, like the product models, views and URL's.
 
 ### Cart App
 
-This conatins all the views, templates and logic for the shopping cart to function the way that it does.
+This contains all the views, templates and logic for the shopping cart to function the way that it does.
 
 #### Template Tags
 
-I created `cart_tools.py` and it's `__init__ .py` file which will ensure that this directory is treated as a Python package making the cart tools module availablefor imports and to use in templates. It also contains a function called calc_subtotal which takes in a price and a quantity as parameters and simply returns theirsubtotal.
+I created `cart_tools.py` and it's `__init__ .py` file which will ensure that this directory is treated as a Python package making the cart tools module available for imports and to use in templates. It also contains a function called calc_subtotal which takes in a price and a quantity as parameters and simply returns their subtotal.
 
 #### Context Processor
 
@@ -423,7 +423,7 @@ This model contains all the data and options for packaging used for products on 
 
 ### Order Model
 
-This model contains all the neccessary data needed for a customers order, including their delivery information and order totals.
+This model contains all the necessary data needed for a customers order, including their delivery information and order totals.
 
 ### Order Line Item Model
 
@@ -441,11 +441,11 @@ This model contains all the users default delivery information, if the user deci
 
 ### Home View
 
-This view will render the homeppage to the user.
+This view will render the homepage to the user.
 
 ### Products Views
 
-This view will render the all products, product detail, add product, edit product and delete product templaets while containg all the neccessary logic to do so.
+This view will render the all products, product detail, add product, edit product and delete product templates while containing all the necessary logic to do so.
 
 **Worth Noting**
 
@@ -459,7 +459,7 @@ This view will render the all products, product detail, add product, edit produc
 
 ### Cart views
 
-This view wil render the cart, add to cart, adjust cart and remove from cart templates to the user while containg all the neccessary logic to do so.
+This view wil render the cart, add to cart, adjust cart and remove from cart templates to the user while containing all the necessary logic to do so.
 
 ### Checkout Views
 
@@ -467,7 +467,7 @@ This view will render the checkout and checkout success templates while containi
 
 ### Profile View
 
-This view will render the user profile to the user with their order history while containg all the neccessary logic to do so.
+This view will render the user profile to the user with their order history while containing all the necessary logic to do so.
 
 ## Templates
 
@@ -489,17 +489,17 @@ This will act as the main base from which most other templates will be based on,
 
 Contains the following:
 
-  - Seperate blocks were created so that I can extend this template later on and replace segments of it as needed.
+  - Separate blocks were created so that I can extend this template later on and replace segments of it as needed.
   - I incorporated the use of a `http-equiv` meta tag to allow the support of older Internet Explorer versions and eliminate validation errors when validating our HTML.
   - All the relevant script tags needed to run Bootstrap version 4.6.
-  - All the secmented sections of blocks so that I can extend this template later on and replace segments of it as needed.
+  - All the segmented sections of blocks so that I can extend this template later on and replace segments of it as needed.
   - Link to it's CSS file for styling.
   - The sites main header with logo, search bar, user related links and the link to the shopping cart.
   - The search bar has the functionality to search for terms in either the products name or its description.
   - The delivery banner and navigation bar structure.
   - Code for displaying messages from Django by means of [toasts](#toasts).
   - This template also contains a footer with social links, an external link to the Swiss farmers seasonal fruit calender as well as a link to Farm Fresh's GDPR privacy policy.
-  - Also in the head element there is code for rendering MailChimps pop up newsletter subsciption service customised for Farm Fresh.
+  - Also in the head element there is code for rendering MailChimps pop up newsletter subscription service customised for Farm Fresh.
 
 ### Includes
 
@@ -546,7 +546,7 @@ To add to the overall user experience on the site I added a feature of bootstrap
 Contains the following:
 
   - Each toast consists of a header, body and a close button.
-  - The success toast additinally contains code for displaying a summary of the users shopping cart, for review by the user, if items have been added to the cart.
+  - The success toast additionally contains code for displaying a summary of the users shopping cart, for review by the user, if items have been added to the cart.
   - The success toast also contains a link for the user to go to there shopping cart for a more detailed view.
 
 ### 404 Errors
@@ -634,8 +634,8 @@ I believe the benefits of doing this will be:
   - Ability to connect with customers
   - Ability to build relationships and loyalty with our audience
   - Improve customer service
-  - Ability to share content that will attract relevent customers
-  - Content can be shared by cutomers to new potential customers
+  - Ability to share content that will attract relevant customers
+  - Content can be shared by customers to new potential customers
   - Quick and easy to setup
   - A low cost to the new business
   - Easy scalability
@@ -663,7 +663,7 @@ I then proceeded to search, research and filter my results in order to make up a
 
 Next I then created a xml sitemap. A sitemap file ensures search engines will crawl every essential page on Farm Fresh.
 
-1. I implemented meta tags with a description of Farm Fresh and keywords that i found to be usefull.
+1. I implemented meta tags with a description of Farm Fresh and keywords that i found to be useful.
 2. I made use of some strong tags and changed some of the text on templates to better suite my selected keywords.
 3. Throughout the production of this application I made use of some things to better optimize the site for Googles search engine:
   - I made use of good semantics.
@@ -687,13 +687,13 @@ through them and also help search engines understand the website structure which
 
 ## Manual Testing
 
-- After creating the `farm_fresh` project in Gitpod, I tested it buy running the application and recieved visual confirmation that the application is working successfully from Django.
+- After creating the `farm_fresh` project in Gitpod, I tested it buy running the application and received visual confirmation that the application is working successfully from Django.
 
 ![django_app_test](media/readme_images/testing/django_test_app.png)
 
 - After installing Django allauth, I manually tested logging in and out of the admin site. I found some issues but they are now all resolved and noted in the Bugs found section of this document.
 
-- After finalising the Django allauth installation I manually went to the accounts login page and tested the authentication by redirecting a successfull login to a "success" url (which does not exist) and confirmed that it is working as expected.
+- After finalising the Django allauth installation I manually went to the accounts login page and tested the authentication by redirecting a successful login to a "success" url (which does not exist) and confirmed that it is working as expected.
 
 - After creating the home app and index.html template with its associated view and urls, I manually tested that the template was working correctly.
 
@@ -701,7 +701,7 @@ through them and also help search engines understand the website structure which
 
 - Once the initial basic products.html view was created I manually did a test to see if the context, containing products and their attributes were displaying as i expected, confirming that the views, URL's and and templates are all working as planned.
 
-- After creating the product detail tamplate, I manually tested that all links to individual products and product images worked and that the shop now button worked as intended. All worked as expected but I found a bug, on a small mobile device the empty header container wasn't pushing the top of the page down to the bottom of the main site header, the bug and fix is recorded as bug number 4 in the [Bugs found section](#bugs-found).
+- After creating the product detail template, I manually tested that all links to individual products and product images worked and that the shop now button worked as intended. All worked as expected but I found a bug, on a small mobile device the empty header container wasn't pushing the top of the page down to the bottom of the main site header, the bug and fix is recorded as bug number 4 in the [Bugs found section](#bugs-found).
 
 - Once the logic was in place for the search bar functionality, I manually tested it by running multiple search queries with search terms that were either in the products names or descriptions and checking the results. I did not find an error with this and it is working as expected.
 
@@ -714,23 +714,23 @@ through them and also help search engines understand the website structure which
 - Throughout the process of creating the shopping cart, the buttons for quantity adjustment of a product and the links for updating and removing items from the shopping cart, I extensively tested for the expected functionality and found all buttons, links and pricing functioned as I had envisioned.
 
 - After creating the success toast, I manually added a product to the cart and tested its operation. It worked as expected.
- - Once the logic for different toasts allocated to different levels was in place, I also tested its functiionality by creating various toast allocations using my views in order to test its operation. All worked successfully.
+ - Once the logic for different toasts allocated to different levels was in place, I also tested its functionality by creating various toast allocations using my views in order to test its operation. All worked successfully.
 
 - While checking the checkout flow by adding items to the cart, processing a test checkout payment, checking that the form is submitted and testing that the checkout_success page was working as expected, I found that the costs for the order did not appear in the order on the admin site, I suspected that the signals were not working as intended. The bug and it's fix is recorded as bug no. 5 in the [Bugs found section](#bugs-found).
 
 - I did a test log in and logout and found that the standard Allauth templates did not function well and started with their customisation thereafter.
 
-- Once all the Allauth templates were customised, I then proceeded to test login, logout and registration by creating a new user. At the same time I also tested that the confirmation emails were functioning. I had to temporary block out the signal for the model function of the UserProfile model in order to log in with the superuser as it was created prior to the signal, this was to avoid it giving an error and to avoid having to create a new superuser. All tests were successfull.
+- Once all the Allauth templates were customised, I then proceeded to test login, logout and registration by creating a new user. At the same time I also tested that the confirmation emails were functioning. I had to temporary block out the signal for the model function of the UserProfile model in order to log in with the superuser as it was created prior to the signal, this was to avoid it giving an error and to avoid having to create a new superuser. All tests were successful.
 
 - Once the functionality was in place for users to update their profile with new information, I tested it for the expected functionality and found it all to be in order.
 
-- Once all the functionality was in place to test the order history and if user information is saved, if so selected by the user, I then proceeded to place an order as a authenticated user, process a test payment with test information to update the test users information. All functioned as expected and the order history is diplayed and the users information was updated and stored.
+- Once all the functionality was in place to test the order history and if user information is saved, if so selected by the user, I then proceeded to place an order as a authenticated user, process a test payment with test information to update the test users information. All functioned as expected and the order history is displayed and the users information was updated and stored.
 
  - I also tested the order history link by clicking on the order number on the profile pages order history section and was redirected to the information of the specific order.
 
-- Once everything was in place for the users information to be pre-filled on an order if they have the neccessary information saved, I then proceeded to test this by creating a new order and checking that the users info was in place as expected. All was in order.
+- Once everything was in place for the users information to be pre-filled on an order if they have the necessary information saved, I then proceeded to test this by creating a new order and checking that the users info was in place as expected. All was in order.
 
-- After adding the functionality to the webhook handler of the checkout app, to handle the form submision if for some reason the checkout view fails, I adjusted the Javascipt not to submit the form and tested if the webhook handler performed as expected. I found all to be in order and functioning as intended. The users order history also updated and got saved to the users profile.
+- After adding the functionality to the webhook handler of the checkout app, to handle the form submission if for some reason the checkout view fails, I adjusted the JavaScript not to submit the form and tested if the webhook handler performed as expected. I found all to be in order and functioning as intended. The users order history also updated and got saved to the users profile.
 
 - After initially creating the add product form and view, I tested its operation buy adding the url, going to the page and testing all fields. All tested well and as expected.
 
@@ -742,9 +742,9 @@ through them and also help search engines understand the website structure which
 
 ![Stripe Testing](media/readme_images/testing/image_bug_test.png)
 
-- Access control to all product admin pages was tested and functioning as expected. As a non-superuser one cannot access these pages and will be notified with an errror message displayed on screen.
+- Access control to all product admin pages was tested and functioning as expected. As a non-superuser one cannot access these pages and will be notified with an error message displayed on screen.
 
-- After doing some refactoring I found a bug with the cart template. I refactored the code by extracing sections of code and made use of Djangos template syntax in order to add the code to cart.html by means of includes, once this was done the cart page would not display and continuously gave errors. recorded as bug no.10 and 11 in the [Bugs found section](#bugs-found).
+- After doing some refactoring I found a bug with the cart template. I refactored the code by extracting sections of code and made use of Django's template syntax in order to add the code to cart.html by means of includes, once this was done the cart page would not display and continuously gave errors. recorded as bug no.10 and 11 in the [Bugs found section](#bugs-found).
 
 ## Stripe Testing
 
@@ -777,9 +777,9 @@ giving it the amount and the currency and printed it out. I then navigated to th
 
 - While testing if images were displaying on the deployed site I found a bug with the image URL's. This is now fixed and noted as bug no.8 in the [Bugs found section](#bugs-found).
 
-- Once all bugs found thus far had been attended to, I then proceeded to test all images, shopping cart functions and checkout functionailty by logging in and compiling an order, then processing a payment and viewing the test users order history and found the purchase, checkout and Stripe functionality all working as expected on the deployed site.
+- Once all bugs found thus far had been attended to, I then proceeded to test all images, shopping cart functions and checkout functionality by logging in and compiling an order, then processing a payment and viewing the test users order history and found the purchase, checkout and Stripe functionality all working as expected on the deployed site.
 
-- After setting up a functioning email service, I proceeded to create a test user with a temporary email address and registered on the site. I recieved an email with a confirmation link and found everything working as expected.
+- After setting up a functioning email service, I proceeded to create a test user with a temporary email address and registered on the site. I received an email with a confirmation link and found everything working as expected.
 
 - While testing for mobile devices UX, I found 2 minor bugs which were easily fixed. Noted as bug no. 10 in the [Bugs found section](#bugs-found).
 
@@ -795,7 +795,7 @@ Results:
 3. products.html - Passed without errors except for Django template literals.
 4. product_detail.html - Passed without errors except for Django template literals.
 5. cart.html - Passed without errors except for Django template literals.
-6. chekout.html - Passed without errors except for Django template literals.
+6. checkout.html - Passed without errors except for Django template literals.
 
 7. base.css - Passed without errors.
 8. checkout.css - Passed without errors.
@@ -805,12 +805,12 @@ Results:
 
 1. cart.html - Found errors with missing semicolons and the use of double quotes instead of single quotes - All fixed and passed, only Jquery syntax errors displaying, which is acceptable to me.
 2. stripe-elements.js - Found errors with missing semicolons and the use of double quotes instead of single quotes - All fixed and passed, only Jquery syntax errors, Django syntax errors and error due to injected CSS displaying, which is acceptable to me.
-3. products.html postload JS - Found errors with missing semicolons, the use of double quotes instead of single quotes and an error for using `!=` instead of `!==` - All fixed and passed, only Jquery syntax errors displaying and an errror for line of code exceeding 80 characters, which is acceptable to me due to the application thereof.
+3. products.html postload JS - Found errors with missing semicolons, the use of double quotes instead of single quotes and an error for using `!=` instead of `!==` - All fixed and passed, only Jquery syntax errors displaying and an error for line of code exceeding 80 characters, which is acceptable to me due to the application thereof.
 4. add_product.html postload JS - Passed, only Jquery syntax errors displaying, which is acceptable to me. 
 
 - I made use of [PEP8 python checker](https://www.pythonchecker.com/) to validate python code.
 
-To be honest I found this checker a bit wierd, giving spacing errors and other minor errors, but which were not in reality in my actual python files, but found no serious errors regarding samples of my python code. The recommended checker recommeded by Code Institute no longer exists. There are no serioius terminal errors for all my custom Python files except for a few line item length errors which I could not resolve but I have made sure that aöö unneccesary errors are all taken care of.
+To be honest I found this checker a bit weird, giving spacing errors and other minor errors, but which were not in reality in my actual python files, but found no serious errors regarding samples of my python code. The recommended checker recommended by Code Institute no longer exists. There are no serious terminal errors for all my custom Python files except for a few line item length errors which I could not resolve but I have made sure that aöö unnecessary errors are all taken care of.
 
 # Bugs found
 
@@ -818,15 +818,15 @@ To be honest I found this checker a bit wierd, giving spacing errors and other m
 
 2. While testing Django allauth I found this error in the terminal window: `TypeError: argument of type 'PosixPath' is not iterable`, I found a solution to the issue on [Stackoverflow](https://stackoverflow.com/questions/64634674/django-typeerror-argument-of-type-posixpath-is-not-iterable) by making use of the `os.path.join()` method on the default database name value.
 
-3. While creating the products models and attempting to make migrations I recieved the following error from the terminla window : `(fields.E210) Cannot use ImageField because Pillow is not installed.` - **RESOLVED** by installing Pillow.
+3. While creating the products models and attempting to make migrations I received the following error from the terminal window : `(fields.E210) Cannot use ImageField because Pillow is not installed.` - **RESOLVED** by installing Pillow.
 
-4. While testing the product detail template I found that on a small mobile device the empty header container wasn't pushing the top of the page down to the bottom of the main site header - **RESOLVED** by adding another 3 media queries in the base.css file in order to push the body down on mobile devies due to the slightly different layout used.
+4. While testing the product detail template I found that on a small mobile device the empty header container wasn't pushing the top of the page down to the bottom of the main site header - **RESOLVED** by adding another 3 media queries in the base.css file in order to push the body down on mobile devices due to the slightly different layout used.
 
-5. Found a bug with the checkout signals while testing the checkout flow - first I found a duplicate function name in signals.py within the checkout app, I changed this and added a print message in order to test the delete signal in the update on delete function.**RESOLVED** by finding that the signal was recieved, printed my message to the terminal and updated the orders totals. Just to make sure I then created and deleted another order, updated and modified a few line items and found it all was working as expected, including the delivery costs while I was busy testing the rest of the functionality.
+5. Found a bug with the checkout signals while testing the checkout flow - first I found a duplicate function name in signals.py within the checkout app, I changed this and added a print message in order to test the delete signal in the update on delete function.**RESOLVED** by finding that the signal was received, printed my message to the terminal and updated the orders totals. Just to make sure I then created and deleted another order, updated and modified a few line items and found it all was working as expected, including the delivery costs while I was busy testing the rest of the functionality.
 
 6. While testing the checkout success page and the Stripe webhooks, I found an error with the form submit function in the stripe_elements.js file. I was trying to trim and collect form data which is preset in the model as well as non editable fields, and not captured on the form from the users input. **RESOLVED** by removing the code for collecting and trimming the users form input, for these 3 field: City, Country and state.
 
-7. While testing if the static files were being loaded to our AWS S3 bucket, an error appeared that our static files were not being loaded to AWS. Since I was using the Boutique Ado project as a guiudeline for this project, I opened the requirements.txt file and compared it to my own as I thought the error might lie with the relationship between older versions of certain software trying to communicate with newer versions of others. I proceeded to then uninstall and reinstall any versions of software that looked like they were a lot newer than once used in Boutique Ado and this **RESOLVED** the issue and all my static files were loaded to our AWS bucket.
+7. While testing if the static files were being loaded to our AWS S3 bucket, an error appeared that our static files were not being loaded to AWS. Since I was using the Boutique Ado project as a guideline for this project, I opened the requirements.txt file and compared it to my own as I thought the error might lie with the relationship between older versions of certain software trying to communicate with newer versions of others. I proceeded to then uninstall and reinstall any versions of software that looked like they were a lot newer than once used in Boutique Ado and this **RESOLVED** the issue and all my static files were loaded to our AWS bucket.
 
 8. After testing if all images were displaying after having been moved to AWS, I found that non of the images were displaying. I **RESOLVED** this by fixing all the image source URL's by using newly setup media url instead of the normal `/media/` file path used in gitpod throughout production.
 
@@ -834,7 +834,7 @@ To be honest I found this checker a bit wierd, giving spacing errors and other m
 
 ![Stripe Testing](media/readme_images/testing/deployment_bug.png)
 
-10. While testing deployment for mobile devices I found 2 minor bugs, the first was a naming convention that I forgot to change while building and the other I found when trying to access the shopping cart. I recieved a 500 error (Internal server error) and managed to trace it bag to either views.py, urls.py or in cart.html file for the checkout app. While checking cart.html for errors, I realised that when creating the new includes for this page, that I had made an error with one of the includes names. This is now **RESOLVED**.
+10. While testing deployment for mobile devices I found 2 minor bugs, the first was a naming convention that I forgot to change while building and the other I found when trying to access the shopping cart. I received a 500 error (Internal server error) and managed to trace it bag to either views.py, urls.py or in cart.html file for the checkout app. While checking cart.html for errors, I realised that when creating the new includes for this page, that I had made an error with one of the includes names. This is now **RESOLVED**.
 
 11. After refactoring code in cart.html, by extracting code blocks and making use of includes within cart.html, I continuously had errors and the page would not display. I posted the issue on Slack and consulted with my mentor but as far as we can see my includes were done correctly and the source of this bug is still a mystery to me. I **RESOLVED** this by reverting the code from cart.html to how it was prior to refactoring and removed the new files that I had created for the includes and the cart page is now working as it should.
 
@@ -857,19 +857,19 @@ None that I am aware of.
 - Icons used on Farm Fresh taken from [Font Awesome](https://fontawesome.com/).
 - Icon class for centering Font Awesome icons taken from [Bulma CSS Framework](https://bulma.io/documentation/elements/icon/), as suggested in the Boutique Ado walkthrough project.
 - All product images sourced and taken from [Farmy.ch](https://www.farmy.ch/).
-- I made use of [Mailchimp](https://mailchimp.com/) to provide a pop up window when users access the site, for the opertunity for them to sign up to Farm Fresh's newsletter.
+- I made use of [Mailchimp](https://mailchimp.com/) to provide a pop up window when users access the site, for the opportunity for them to sign up to Farm Fresh's newsletter.
 - The noimage image was sourced from Code Institutes Boutique Ado Walkthrough project.
 
 ## Content
 
  - I learned how to use `inline code blocks` in a Markdown file on [RIP Tutorial](https://riptutorial.com/markdown/example/1802/inline-code).
  - Git commit message best practices taken from [How to Write Good Commit Messages: A Practical Git Guide](https://www.freecodecamp.org/news/writing-good-commit-messages-a-practical-guide/)
- - I made extensive use of Code Institute's learning content and tutorials throughout the project for revision as well as usefull content for my readme file.
+ - I made extensive use of Code Institute's learning content and tutorials throughout the project for revision as well as useful content for my readme file.
  - I made extensive use of the Django Allauth documentation for most aspects of setting up authorisation for this project.
  - Solution to issue found in terminal window while testing Django allauth sourced from [Stackoverflow.com](https://stackoverflow.com/questions/64634674/django-typeerror-argument-of-type-posixpath-is-not-iterable).
  - The Boutique Ado walkthrough project was the biggest source of information for this project and I have used many snippets of code and text from it's tutorial's and customised it where appropriate for use and as a guideline for Farm Fresh.
  - Font pairing of Signika and PT Serif sourced and taken from [Farmy.ch](https://www.farmy.ch/).
- - Method for using the model choices field attribute in the packinging model of the products app sourced from [Stackoverflow.com](https://stackoverflow.com/questions/18676156/how-to-properly-use-the-choices-field-option-in-django).
+ - Method for using the model choices field attribute in the packaging model of the products app sourced from [Stackoverflow.com](https://stackoverflow.com/questions/18676156/how-to-properly-use-the-choices-field-option-in-django).
  - All product descriptions, pricing and producer content was sourced on [Farmy.ch](https://www.farmy.ch/) and modified where needed to suite its application on Farm Fresh.
  - Instructions for how to transfer database data from SQLite to Heroku Postgres taken from Boutique Ado Walkthrough project link to solution on [Slack](https://app.slack.com/client/T0L30B202/C01C4AU8ULA).
 - Instructions for runtime Python error found while deploying to Heroku sourced on [Slack](https://app.slack.com/client/T0L30B202/search/search-eyJkIjoiYmFja3BvcnRzLnpvbmVpbmZvIiwicSI6IlUwMjlVUUQyRUpDIiwiciI6ImJhY2twb3J0cy56b25laW5mbyJ9/thread/C7EJUQT2N-1661678262.009779) thread. Noted as bug no.9 in the [Bugs found section](#bugs-found).
