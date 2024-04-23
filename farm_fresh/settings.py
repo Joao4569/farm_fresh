@@ -147,12 +147,12 @@ else:
     DATABASES = {
 
         'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'django-testing-db',
-        'USER': os.environ.get('TESTING_DB_USER'),
-        'PASSWORD': os.environ.get('TESTING_DB_PASSWORD'),
-        'HOST': 'localhost',
-        'PORT': '5432',
+            'ENGINE': 'django.db.backends.postgresql',
+            'NAME': 'django-testing-db',
+            'USER': os.environ.get('TESTING_DB_USER'),
+            'PASSWORD': os.environ.get('TESTING_DB_PASSWORD'),
+            'HOST': 'localhost',
+            'PORT': '5432',
         }
     }
 
